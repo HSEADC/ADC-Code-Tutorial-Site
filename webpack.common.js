@@ -60,6 +60,13 @@ module.exports = {
       template: './src/articles/atoms/A_Button.html',
       filename: './atoms/A_Button.html',
       chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_Chip.html',
+      filename: './atoms/A_Chip.html',
+      chunks: ['index']
     })
   ],
   optimization: {
