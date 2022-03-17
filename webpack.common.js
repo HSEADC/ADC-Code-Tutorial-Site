@@ -19,6 +19,10 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      },
+      {
         test: /\.html$/i,
         loader: 'html-loader'
       },
@@ -38,6 +42,13 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'images/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(ttf|otf)$/i,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
         }
       }
     ]

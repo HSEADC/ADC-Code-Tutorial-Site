@@ -108,7 +108,40 @@
           лист. Состояния, когда чипс имеет функциональность в своей структуре
           наказаны ниже
         </p>
-        <figure></figure>
+
+        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
+import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
+// import Q_MenuIcon from '../../quarks/Q_MenuIcon/Q_MenuIcon.jsx'
+// import C_MenuItems from '../../collections/C_MenuItems/C_MenuItems.jsx'
+import './O_Menu.scss'
+
+export default class O_Menu extends PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const { menu } = this.props
+    const { top, bottom } = menu
+    const topMenuElements = []
+    const bottomMenuElements = []
+
+    top.forEach((item, i) =&gt; {
+      topMenuElements.push(&lt;A_MenuItem {...item} /&gt;)
+    })
+
+    bottom.forEach((item, i) =&gt; {
+      bottomMenuElements.push(&lt;A_MenuItem {...item} /&gt;)
+    })
+
+    return (
+      &lt;div className="O_Menu"&gt;
+        &lt;div className="C_MenuItems"&gt;{topMenuElements}&lt;/div&gt;
+        &lt;div className="C_MenuItems"&gt;{bottomMenuElements}&lt;/div&gt;
+      &lt;/div&gt;
+    )
+  }
+}</code></pre>
 
         <h2 id="links">Ссылки</h2>
 
