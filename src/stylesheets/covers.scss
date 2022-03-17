@@ -1,0 +1,51 @@
+.articleCover,
+.suggestCover {
+  background-size: cover;
+  border: 0.5px solid #dedede;
+  border-radius: 10px;
+}
+
+.articleCover {
+  width: 744px;
+  height: 386px;
+
+  &.A_Chip {
+    background-image: url('images/atoms/A_Chip/A_Chip-article-cover-desktop.png');
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .articleCover {
+    &.A_Chip {
+      background-image: url('images/atoms/A_Chip/A_Chip-article-cover-desktop@2x.png');
+    }
+  }
+}
+
+.suggestCover {
+  width: 366px;
+  height: 223px;
+
+  &.A_Chip {
+    background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop.png');
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .suggestCover {
+    &.A_Chip {
+      background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop@2x.png');
+    }
+  }
+}
+
+// @media only screen and (-webkit-min-device-pixel-ratio: 3),
+//   only screen and (min--moz-device-pixel-ratio: 3),
+//   only screen and (-o-min-device-pixel-ratio: 3/1),
+//   only screen and (min-device-pixel-ratio: 3) {
+//   .articleCover {
+//     &.A_Chip {
+//       background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile@3x.png');
+//     }
+//   }
+// }
