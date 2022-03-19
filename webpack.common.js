@@ -82,6 +82,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_TextButton.html',
+      filename: './atoms/A_TextButton.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
       template: './src/articles/atoms/A_Chip.html',
       filename: './atoms/A_Chip.html',
       chunks: ['index']

@@ -12,12 +12,48 @@
   &.A_Chip {
     background-image: url('images/atoms/A_Chip/A_Chip-article-cover-desktop.png');
   }
+  &.A_Button {
+    background-image: url('images/atoms/A_Button/A_Button-article-cover-desktop.png');
+  }
+  &.A_TextButton {
+    background-image: url('images/atoms/A_TextButton/A_TextButton-article-cover-desktop.png');
+  }
+  &.UDF {
+    background-image: url('images/general/UDF/UDF-article-cover-desktop.png');
+  }
+
+  @media (max-width: 768px) {
+    width: 578px;
+    height: 300px;
+  }
+  @media (max-width: 578px) {
+    width: 374px;
+    height: 235px;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .articleCover {
     &.A_Chip {
       background-image: url('images/atoms/A_Chip/A_Chip-article-cover-desktop@2x.png');
+    }
+    &.A_Button {
+      background-image: url('images/atoms/A_Button/A_Button-article-cover-desktop@2x.png');
+    }
+    &.A_TextButton {
+      background-image: url('images/atoms/A_TextButton/A_TextButton-article-cover-desktop@2x.png');
+    }
+    &.UDF {
+      background-image: url('images/general/UDF/UDF-article-cover-desktop@2x.png');
+    }
+
+    @media (max-width: 768px) {
+      width: 578px;
+      height: 300px;
+    }
+    @media (max-width: 578px) {
+      width: 374px;
+      height: 235px;
     }
   }
 }
@@ -26,15 +62,37 @@
   width: 366px;
   height: 223px;
 
-  &.A_Chip {
-    background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop.png');
+  &.Q_Icon {
+    background-image: url('images/quark/Q_Icon/Q_Icon-suggest-cover-desktop.png');
+  }
+  &.O_MultiselectInput {
+    background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-desktop.png');
+  }
+  &.O_SingIn {
+    background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-desktop.png');
+  }
+
+  @media (max-width: 768px) {
+    width: 280px;
+    height: 170px;
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .suggestCover {
-    &.A_Chip {
-      background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop@2x.png');
+    &.Q_Icon {
+      background-image: url('images/quark/Q_Icon/Q_Icon-suggest-cover-desktop@2x.png');
+    }
+    &.O_MultiselectInput {
+      background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-desktop@2x.png');
+    }
+    &.O_SingIn {
+      background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-desktop@2x.png');
+    }
+
+    @media (max-width: 768px) {
+      width: 280px;
+      height: 170px;
     }
   }
 }

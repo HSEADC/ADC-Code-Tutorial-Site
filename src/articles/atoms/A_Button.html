@@ -1,11 +1,237 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>A_Button | ADC Code Tutorial</title>
+    <title>A_Button</title>
   </head>
 
   <body class="article">
-    A_Button
+    <menu class="menubar">
+      <a href="#">О проекте</a>
+      <a href="#">Компоненты</a>
+      <a href="#">О нас</a>
+    </menu>
+
+    <div class="contentAreaWrapper">
+      <menu class="sidebar">
+        <a href="#initiation">Введение</a>
+        <a href="#structure">Струтура компонента</a>
+        <a href="#state">Состояние компонента</a>
+        <a href="#realization">Реализация</a>
+        <a href="#links">Ссылки</a>
+      </menu>
+
+      <article>
+        <figure class="articleCover A_Button"></figure>
+
+        <h1 id="initiation">Button</h1>
+        <p>
+          Кнопки передают действия, которые пользователи могут применять. Они
+          обычно размещаются по всему пользовательскому интерфейсу в таких
+          местах, как: диалоги, ьодные окна, формы, карты, панели инструментов.
+          Кнопки должны указывать на то, что они могут инициировать действие, их
+          состояние должно быть четким, а также их должно быть легко найти среди
+          других элементов интерфейса.
+        </p>
+
+        <h2 id="structure">Структура компонента</h2>
+        <p>
+          Текстовые кнопки используют текстовые метки, которые описывают
+          действие, которое произойдет, если пользователь нажмет кнопку. Если
+          текстовая метка не используется, должен присутствовать значок,
+          обозначающий, что делает кнопка.
+        </p>
+
+        <img
+          srcset="
+            ../../images/atoms/A_Button/A_Button-content-image-1.png,
+            ../../images/atoms/A_Button/A_Button-content-image-1@2x.png 2x,
+            ../../images/atoms/A_Button/A_Button-content-image-1@3x.png 3x
+          "
+          src="../../images/atoms/A_Button/A_Button-content-image-1.png"
+          alt="Структура кнопки"
+        />
+
+        <h2 id="state">Состояние компонента</h2>
+        <p>
+          Кнопки обычно помещаются в контейнеры, такие как карточки или диалоги.
+          По мере того, как родительский контейнер масштабируется для адаптации
+          к различным размерам экрана, размер, положение и выравнивание кнопки в
+          контейнере также могут меняться. Кнопки могут быть выровнены влево,
+          вправо или по центру по мере масштабирования родительского контейнера.
+          Также кнопки имеют состояния, они стандартные и их всегда нужно
+          учитывать при проектировании интерфейсов.
+        </p>
+        <img
+          srcset="
+            ../../images/atoms/A_Button/A_Button-content-image-2.png,
+            ../../images/atoms/A_Button/A_Button-content-image-2@2x.png 2x,
+            ../../images/atoms/A_Button/A_Button-content-image-2@3x.png 3x
+          "
+          src="../../images/atoms/A_Button/A_Button-content-image-2.png"
+          alt="Состояния кнопки"
+        />
+
+        <h2 id="realization">Реализация</h2>
+        <p>
+          Для начала в папке с компонентами создаем новую папку A_Button, в неё
+          кладем A_Button.jsx и A_Button.scss. Затем описываем функционал
+          button. Получаем следующий код, который описывает все состояния
+          disabled, initial, hover.
+        </p>
+
+        <pre><code class="language-javascript">import classnames from 'classnames'
+import React, { PureComponent } from 'react'
+import './A_Button.scss'
+
+export default class A_Button extends PureComponent {
+constructor(props) {
+  super(props)
+}
+
+handleClick = () => {
+  const { disabled, handleClick } = this.props
+
+  if (!disabled) {
+    handleClick()
+  }
+}
+
+render() {
+  const { text, disabled } = this.props
+
+  const classes = classnames({
+    A_Button: true,
+    disabled: disabled
+  })
+  return (
+    &lt;div className={classes} onClick={this.handleClick &gt;
+      {text}
+    &lt;/div&gt;
+  )
+}
+}</code></pre>
+
+        <p>
+          Выводим получившуюся структуру в файле с примером:
+        </p>
+        <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import A_Button from '../../components/atoms/A_Button/A_Button.jsx'
+import './example_2.scss'
+
+function handleClick() {
+console.log('click')
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+ReactDOM.render(
+  &lt&gt;
+    &lt;A_Button text="Привет" handleClick={handleClick} &gt;
+    &lt;A_Button text="Пока" disabled={true} handleClick={handleClick} &gt;
+  &lt&gt;,
+  document.body.appendChild(document.createElement('div'))
+)
+})</code></pre>
+
+        <p>
+          Затем прописываем стили для A_Chip. Не забываем описать для button
+          состоянии disabled и hover.
+        </p>
+        <pre><code class="language-javascript">.A_Button {
+  position: relative;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #426060;
+  background-color: #b7fcfc;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: #5be7e7;
+  }
+  &.disabled {
+    color: #abd9d9;
+    background-color: #f2ffff;
+    cursor: default;
+  }
+}</code></pre>
+
+        <p>
+          Получаем следующий результат:
+        </p>
+
+        <img
+          srcset="
+            ../../images/atoms/A_Button/A_Button-content-image-3.png,
+            ../../images/atoms/A_Button/A_Button-content-image-3@2x.png 2x,
+            ../../images/atoms/A_Button/A_Button-content-image-3@3x.png 3x
+          "
+          src="../../images/atoms/A_Button/A_Button-content-image-3.png"
+          alt="Результат"
+        />
+
+        <h2 id="links">Ссылки</h2>
+
+        <p>
+          Также для тебя ссылки на Figma с дизайн системой и GitHub с
+          библиотекой компонентов.
+        </p>
+
+        <div class="links">
+          <a class="figma" href="/articles/atoms/a_button.html"></a>
+          <a class="github" href="/articles/atoms/a_button.html"></a>
+        </div>
+
+        <h2>Составляющие</h2>
+
+        <p>
+          Этот компонент часто выводится в следующих компонентах
+        </p>
+
+        <div class="suggest">
+          <a href="#">
+            <figure class="suggestCover Q_Icon"></figure>
+            <h4>Icon</h4>
+            <p>Стили иконок.</p>
+          </a>
+        </div>
+
+        <p>
+          Этот компонент часто выводится в следующих компонентах
+        </p>
+
+        <div class="suggest">
+          <a href="#">
+            <figure class="suggestCover O_SingIn"></figure>
+            <h4>Sing in</h4>
+            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
+          </a>
+
+          <a href="#">
+            <figure class="suggestCover O_MultiselectInput"></figure>
+            <h4>Multiselect Input</h4>
+            <p>
+              Интерактивный компонент, который предназначен для управления
+              данными.
+            </p>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footerbar">
+      <div>
+        <a href="#">Контакты</a>
+        <a href="#state">Instgram</a>
+      </div>
+
+      <div>
+        <a href="#structure">ADS Code Tutorial © 2021</a>
+      </div>
+    </footer>
   </body>
 </html>

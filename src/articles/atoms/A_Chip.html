@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>ADC Code Tutorial</title>
+    <title>A_Chip</title>
   </head>
 
   <body class="article">
@@ -26,122 +27,177 @@
 
         <h1 id="initiation">Chip</h1>
         <p>
-          Чипы помогают людям вводить информацию, делать выбор, фильтровать
-          содержимое или инициировать действия. Чипы могут отображать несколько
-          интерактивных элементов вместе в одной области, таких как список
-          выбираемого времени фильма или серия контактов электронной почты.
+          Chip помогает людям выводить нужную информацию,фильтровать содержимое
+          или инициировать действия. Chip могжет отображать разные типы
+          интерактивных элементов в одной области, таких как список выбираемого
+          времени фильма или серия контактов электронной почты.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Чипс состоит из контейнера, текстового лейбла и ,иногда, из одной или
+          Chip состоит из контейнера, текстового lable и ,иногда, из одной или
           нескольких иконок. Так как выбираемая строка из списка может быть
-          длинной, мы можем задать максимальный размер контейнера чипса и
-          срезать выбранный текст. Делаем мы это для того, чтобы чипсы в инпуте
-          вставали корректно.
+          длинной, мы можем задать максимальный размер контейнера chip и срезать
+          выбранный текст. Делаем мы это для того, чтобы chip в
+          <a href="#">input</a> вставали корректно.
         </p>
-        <figure style="background-image: url('images/cover.png');"></figure>
+
+        <img
+          srcset="
+            ../../images/atoms/A_Chip/A_Chip-content-image-1.png,
+            ../../images/atoms/A_Chip/A_Chip-content-image-1@2x.png 2x,
+            ../../images/atoms/A_Chip/A_Chip-content-image-1@3x.png 3x
+          "
+          src="../../images/atoms/A_Chip/A_Chip-content-image-1.png"
+          alt="Структура чипса"
+        />
 
         <h2 id="state">Состояние компонента</h2>
         <p>
-          Управлять выбранными чипсами можно из самого инпута, если чипс имеет
-          собственную кнопку удаления, или отменять выбор через выпадающий опшн
-          лист. Состояния, когда чипс имеет функциональность в своей структуре
-          наказаны ниже
+          Управлять выбранными чипсами можно из самого <a href="#">input</a> ,
+          если chip имеет собственную кнопку удаления, или отменять выбор через
+          выпадающий <a href="#">option list</a> . Состояния chip при различных
+          условиях покаказаны ниже.
         </p>
-        <figure></figure>
-
-        <h3>Input</h3>
-
-        <p>
-          Управлять выбранными чипсами можно из самого инпута, если чипс имеет
-          собственную кнопку удаления, или отменять выбор через выпадающий опшн
-          лист. Состояния, когда чипс имеет функциональность в своей структуре
-          наказаны ниже
-        </p>
-
         <img
           srcset="
-            ../../images/atoms/A_Chip/A_Chip-content-image-1.png,
-            ../../images/atoms/A_Chip/A_Chip-content-image-1@2x.png 2x,
-            ../../images/atoms/A_Chip/A_Chip-content-image-1@3x.png 3x
+            ../../images/atoms/A_Chip/A_Chip-content-image-2.png,
+            ../../images/atoms/A_Chip/A_Chip-content-image-2@2x.png 2x,
+            ../../images/atoms/A_Chip/A_Chip-content-image-2@3x.png 3x
           "
-          src="../../images/atoms/A_Chip/A_Chip-content-image-1.png"
-          alt="Инпут в состоянии покоя"
-        />
-
-        <p>
-          Управлять выбранными чипсами можно из самого инпута, если чипс имеет
-          собственную кнопку удаления, или отменять выбор через выпадающий опшн
-          лист. Состояния, когда чипс имеет функциональность в своей структуре
-          наказаны ниже
-        </p>
-
-        <img
-          srcset="
-            ../../images/atoms/A_Chip/A_Chip-content-image-1.png,
-            ../../images/atoms/A_Chip/A_Chip-content-image-1@2x.png 2x,
-            ../../images/atoms/A_Chip/A_Chip-content-image-1@3x.png 3x
-          "
-          src="../../images/atoms/A_Chip/A_Chip-content-image-1.png"
-          alt="Инпут в состоянии покоя"
+          src="../../images/atoms/A_Chip/A_Chip-content-image-2.png"
+          alt="Структура чипса"
         />
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Управлять выбранными чипсами можно из самого инпута, если чипс имеет
-          собственную кнопку удаления, или отменять выбор через выпадающий опшн
-          лист. Состояния, когда чипс имеет функциональность в своей структуре
-          наказаны ниже
-        </p>
-        <figure></figure>
-        <p>
-          Управлять выбранными чипсами можно из самого инпута, если чипс имеет
-          собственную кнопку удаления, или отменять выбор через выпадающий опшн
-          лист. Состояния, когда чипс имеет функциональность в своей структуре
-          наказаны ниже
-        </p>
-        <figure></figure>
-        <p>
-          Управлять выбранными чипсами можно из самого инпута, если чипс имеет
-          собственную кнопку удаления, или отменять выбор через выпадающий опшн
-          лист. Состояния, когда чипс имеет функциональность в своей структуре
-          наказаны ниже
+          Для начала в папке с компонентами создаем новую папку A_Chip, в неё
+          кладем A_Chip.jsx и A_Chip.scss. Затем описываем функционал chip.
+          Получаем следующий код, который описывает все состояния disabled,
+          initial, hover.
         </p>
 
-        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
-import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
-// import Q_MenuIcon from '../../quarks/Q_MenuIcon/Q_MenuIcon.jsx'
-// import C_MenuItems from '../../collections/C_MenuItems/C_MenuItems.jsx'
-import './O_Menu.scss'
+        <p>
+          Chip содержит <a href="#">icon</a> Q_Icon cross, которая лежит в
+          отдельной папке image в файле Q_Icon.scss. В нем мы храним все иконки,
+          которые нужны для различных компоннтов, а их фон и размер задаем в
+          файле со стилем всего chip. Это мы покажем в структуре SCSS.
+        </p>
 
-export default class O_Menu extends PureComponent {
-  constructor(props) {
-    super(props)
+        <pre><code class="language-javascript">import classnames from 'classnames'
+import React, { PureComponent } from 'react'
+import './A_Chip.scss'
+
+export default class A_Chip extends PureComponent {
+constructor(props) {
+  super(props)
+}
+
+handleClick = () => {
+  const { disabled, handleClick } = this.props
+
+  if (!disabled) {
+    handleClick()
+  }
+}
+
+render() {
+  const { text, disabled } = this.props
+
+  const classes = classnames({
+    A_Chip: true,
+    disabled: disabled
+  })
+
+  return (
+  &lt;div className={classes}&gt;
+      {text}
+      &lt;div className="Q_Icon cross" onClick={this.handleClick} /&gt;
+    &lt;/div&gt;
+  )
+}
+}</code></pre>
+
+        <p>
+          Выводим получившуюся структуру в файле с примером:
+        </p>
+        <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import A_Chip from '../../components/atoms/A_Chip/A_Chip.jsx'
+import './example_4.scss'
+
+function handleClick() {
+console.log('click')
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+ReactDOM.render(
+  &lt;&gt
+    &lt;A_Chip text="Text" handleClick={handleClick} /&gt
+    &lt;A_Chip text="Text" disabled={true} handleClick={handleClick} /&gt
+  &lt;/&gt,
+  document.body.appendChild(document.createElement('div'))
+)
+})</code></pre>
+
+        <p>
+          Затем прописываем стили для A_Chip и Q_Icon cross. Не забываем описать
+          для chip состоянии disabled и hover.
+        </p>
+        <pre><code class="language-javascript">.A_Chip {
+  position: relative;
+  padding: 6px 38px 6px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #426060;
+  background-color: #b7fcfc;
+  cursor: default;
+  user-select: none;
+
+  .Q_Icon.cross {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    border-radius: 20px;
+    background-color: #d7ffff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #5be7e7;
+    }
   }
 
-  render() {
-    const { menu } = this.props
-    const { top, bottom } = menu
-    const topMenuElements = []
-    const bottomMenuElements = []
+  &.disabled {
+    color: #abd9d9;
+    background-color: #f2ffff;
+    cursor: default;
 
-    top.forEach((item, i) =&gt; {
-      topMenuElements.push(&lt;A_MenuItem {...item} /&gt;)
-    })
-
-    bottom.forEach((item, i) =&gt; {
-      bottomMenuElements.push(&lt;A_MenuItem {...item} /&gt;)
-    })
-
-    return (
-      &lt;div className="O_Menu"&gt;
-        &lt;div className="C_MenuItems"&gt;{topMenuElements}&lt;/div&gt;
-        &lt;div className="C_MenuItems"&gt;{bottomMenuElements}&lt;/div&gt;
-      &lt;/div&gt;
-    )
+    .Q_Icon.cross {
+      &:hover {
+        background-color: #d7ffff;
+        cursor: default;
+      }
+    }
   }
 }</code></pre>
+
+        <p>
+          Получаем следующий результат:
+        </p>
+
+        <img
+          srcset="
+            ../../images/atoms/A_Chip/A_Chip-content-image-3.png,
+            ../../images/atoms/A_Chip/A_Chip-content-image-3@2x.png 2x,
+            ../../images/atoms/A_Chip/A_Chip-content-image-3@3x.png 3x
+          "
+          src="../../images/atoms/A_Chip/A_Chip-content-image-3.png"
+          alt="Структура чипса"
+        />
 
         <h2 id="links">Ссылки</h2>
 
@@ -157,40 +213,31 @@ export default class O_Menu extends PureComponent {
 
         <h2>Составляющие</h2>
 
-        <h3>
+        <p>
           Этот компонент часто выводится в следующих компонентах
-        </h3>
+        </p>
 
         <div class="suggest">
           <a href="#">
-            <figure class="suggestCover A_Chip"></figure>
-            <h4>Sing in</h4>
-            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
-          </a>
-
-          <a href="#">
-            <figure class="suggestCover A_Chip"></figure>
-            <h4>Multiselect Input</h4>
-            <p>
-              Интерактивный компонент, который предназначен для управления
-              данными.
-            </p>
+            <figure class="suggestCover Q_Icon"></figure>
+            <h4>Icon</h4>
+            <p>Стили иконок.</p>
           </a>
         </div>
 
-        <h3>
+        <p>
           Этот компонент часто выводится в следующих компонентах
-        </h3>
+        </p>
 
         <div class="suggest">
           <a href="#">
-            <figure class="suggestCover A_Chip"></figure>
+            <figure class="suggestCover O_SingIn"></figure>
             <h4>Sing in</h4>
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
 
           <a href="#">
-            <figure class="suggestCover A_Chip"></figure>
+            <figure class="suggestCover O_MultiselectInput"></figure>
             <h4>Multiselect Input</h4>
             <p>
               Интерактивный компонент, который предназначен для управления
