@@ -86,31 +86,32 @@ import React, { PureComponent } from 'react'
 import './A_Button.scss'
 
 export default class A_Button extends PureComponent {
-constructor(props) {
-  super(props)
-}
-
-handleClick = () => {
-  const { disabled, handleClick } = this.props
-
-  if (!disabled) {
-    handleClick()
+  constructor(props) {
+    super(props)
   }
-}
 
-render() {
-  const { text, disabled } = this.props
+  handleClick = () => {
+    const { disabled, handleClick } = this.props
 
-  const classes = classnames({
-    A_Button: true,
-    disabled: disabled
-  })
-  return (
-    &lt;div className={classes} onClick={this.handleClick &gt;
-      {text}
-    &lt;/div&gt;
-  )
-}
+    if (!disabled) {
+      handleClick()
+    }
+  }
+
+  render() {
+    const { text, disabled } = this.props
+
+    const classes = classnames({
+      A_Button: true,
+      disabled: disabled
+    })
+
+    return (
+      &lt;div className={classes} onClick={this.handleClick &gt;
+        {text}
+      &lt;/div&gt;
+    )
+  }
 }</code></pre>
 
         <p>
@@ -122,24 +123,24 @@ import A_Button from '../../components/atoms/A_Button/A_Button.jsx'
 import './example_2.scss'
 
 function handleClick() {
-console.log('click')
+  console.log('click')
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-ReactDOM.render(
-  &lt&gt;
-    &lt;A_Button text="Привет" handleClick={handleClick} &gt;
-    &lt;A_Button text="Пока" disabled={true} handleClick={handleClick} &gt;
-  &lt&gt;,
-  document.body.appendChild(document.createElement('div'))
-)
+  ReactDOM.render(
+    &lt&gt;
+      &lt;A_Button text="Привет" handleClick={handleClick} &gt;
+      &lt;A_Button text="Пока" disabled={true} handleClick={handleClick} &gt;
+    &lt&gt;,
+    document.body.appendChild(document.createElement('div'))
+  )
 })</code></pre>
 
         <p>
           Затем прописываем стили для A_Chip. Не забываем описать для button
           состоянии disabled и hover.
         </p>
-        <pre><code class="language-javascript">.A_Button {
+        <pre><code class="language-css">.A_Button {
   position: relative;
   padding: 14px 20px;
   border-radius: 10px;
@@ -150,10 +151,11 @@ ReactDOM.render(
   cursor: pointer;
   user-select: none;
 
-  &:hover {
+  &amp;:hover {
     background-color: #5be7e7;
   }
-  &.disabled {
+
+  &amp;.disabled {
     color: #abd9d9;
     background-color: #f2ffff;
     cursor: default;
@@ -182,8 +184,8 @@ ReactDOM.render(
         </p>
 
         <div class="links">
-          <a class="figma" href="/articles/atoms/a_button.html"></a>
-          <a class="github" href="/articles/atoms/a_button.html"></a>
+          <a class="figma" href="/atoms/A_Button.html"></a>
+          <a class="github" href="/atoms/A_Button.html"></a>
         </div>
 
         <h2>Составляющие</h2>
@@ -193,7 +195,7 @@ ReactDOM.render(
         </p>
 
         <div class="suggest">
-          <a href="#">
+          <a href="../general/udf.html">
             <figure class="suggestCover Q_Icon"></figure>
             <h4>Icon</h4>
             <p>Стили иконок.</p>

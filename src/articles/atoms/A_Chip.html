@@ -89,33 +89,33 @@ import React, { PureComponent } from 'react'
 import './A_Chip.scss'
 
 export default class A_Chip extends PureComponent {
-constructor(props) {
-  super(props)
-}
-
-handleClick = () => {
-  const { disabled, handleClick } = this.props
-
-  if (!disabled) {
-    handleClick()
+  constructor(props) {
+    super(props)
   }
-}
 
-render() {
-  const { text, disabled } = this.props
+  handleClick = () => {
+    const { disabled, handleClick } = this.props
 
-  const classes = classnames({
-    A_Chip: true,
-    disabled: disabled
-  })
+    if (!disabled) {
+      handleClick()
+    }
+  }
 
-  return (
-  &lt;div className={classes}&gt;
-      {text}
-      &lt;div className="Q_Icon cross" onClick={this.handleClick} /&gt;
-    &lt;/div&gt;
-  )
-}
+  render() {
+    const { text, disabled } = this.props
+
+    const classes = classnames({
+      A_Chip: true,
+      disabled: disabled
+    })
+
+    return (
+    &lt;div className={classes}&gt;
+        {text}
+        &lt;div className="Q_Icon cross" onClick={this.handleClick} /&gt;
+      &lt;/div&gt;
+    )
+  }
 }</code></pre>
 
         <p>
@@ -127,17 +127,17 @@ import A_Chip from '../../components/atoms/A_Chip/A_Chip.jsx'
 import './example_4.scss'
 
 function handleClick() {
-console.log('click')
+  console.log('click')
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-ReactDOM.render(
-  &lt;&gt
-    &lt;A_Chip text="Text" handleClick={handleClick} /&gt
-    &lt;A_Chip text="Text" disabled={true} handleClick={handleClick} /&gt
-  &lt;/&gt,
-  document.body.appendChild(document.createElement('div'))
-)
+  ReactDOM.render(
+    &lt;&gt
+      &lt;A_Chip text="Text" handleClick={handleClick} /&gt
+      &lt;A_Chip text="Text" disabled={true} handleClick={handleClick} /&gt
+    &lt;/&gt,
+    document.body.appendChild(document.createElement('div'))
+  )
 })</code></pre>
 
         <p>
