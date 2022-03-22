@@ -1,5 +1,6 @@
 .articleCover,
-.suggestCover {
+.suggestCover,
+.teaserCover {
   background-size: cover;
   border: 0.5px solid #dedede;
   border-radius: 10px;
@@ -20,6 +21,24 @@
   }
   &.UDF {
     background-image: url('images/general/UDF/UDF-article-cover-desktop.png');
+  }
+  &.O_Select {
+    background-image: url('images/organism/O_Select/O_Select-article-cover-desktop.png');
+  }
+  &.O_SelectInput {
+    background-image: url('images/organism/O_SelectInput/O_SelectInput-article-cover-desktop.png');
+  }
+  &.O_MultiselectInput {
+    background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-article-cover-desktop.png');
+  }
+  &.A_Input {
+    background-image: url('images/atoms/A_Input/A_Input-article-cover-desktop.png');
+  }
+  &.A_OptionItem {
+    background-image: url('images/atoms/A_OptionItem/A_OptionItem-article-cover-desktop.png');
+  }
+  &.A_MenuItem {
+    background-image: url('images/atoms/A_MenuItem/A_MenuItem-article-cover-desktop.png');
   }
 
   @media (max-width: 768px) {
@@ -46,6 +65,24 @@
     &.UDF {
       background-image: url('images/general/UDF/UDF-article-cover-desktop@2x.png');
     }
+    &.O_Select {
+      background-image: url('images/organism/O_Select/O_Select-article-cover-desktop@2x.png');
+    }
+    &.O_SelectInput {
+      background-image: url('images/organism/O_SelectInput/O_SelectInput-article-cover-desktop@2x.png');
+    }
+    &.O_MultiselectInput {
+      background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-article-cover-desktop@2x.png');
+    }
+    &.A_Input {
+      background-image: url('images/atoms/A_Input/A_Input-article-cover-desktop@2x.png');
+    }
+    &.A_OptionItem {
+      background-image: url('images/atoms/A_OptionItem/A_OptionItem-article-cover-desktop@2x.png');
+    }
+    &.A_MenuItem {
+      background-image: url('images/atoms/A_MenuItem/A_MenuItem-article-cover-desktop@2x.png');
+    }
 
     @media (max-width: 768px) {
       width: 578px;
@@ -68,8 +105,8 @@
   &.O_MultiselectInput {
     background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-desktop.png');
   }
-  &.O_SingIn {
-    background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-desktop.png');
+  &.S_SingIn {
+    background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-desktop.png');
   }
 
   @media (max-width: 768px) {
@@ -86,13 +123,90 @@
     &.O_MultiselectInput {
       background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-desktop@2x.png');
     }
-    &.O_SingIn {
-      background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-desktop@2x.png');
+    &.S_SingIn {
+      background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-desktop@2x.png');
     }
 
     @media (max-width: 768px) {
       width: 280px;
       height: 170px;
+    }
+  }
+}
+
+.teaserCover {
+  width: 744px;
+  height: 386px;
+
+  &.UDF {
+    background-image: url('images/general/UDF/UDF-teaser-cover.png');
+  }
+  &.Scroll {
+    background-image: url('images/general/Scroll/Scroll-teaser-cover.png');
+  }
+  &.S_ModalAlert {
+    background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-teaser-cover.png');
+  }
+  &.S_SingIn {
+    background-image: url('images/superorganism/S_SingIn/S_SingIn-teaser-cover.png');
+  }
+  &.O_Slider {
+    background-image: url('images/organism/O_Slider/O_Slider-teaser-cover.png');
+  }
+  &.O_Select {
+    background-image: url('images/organism/O_Select/O_Select-teaser-cover.png');
+  }
+  &.O_MultiselectInput {
+    background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-teaser-cover.png');
+  }
+  &.O_Burgermenu {
+    background-image: url('images/organism/O_Burgermenu/O_Burgermenu-teaser-cover.png');
+  }
+  &.A_Input {
+    background-image: url('images/atoms/A_Input/A_Input-teaser-cover.png');
+  }
+  &.A_Chip {
+    background-image: url('images/atoms/A_Chip/A_Chip-teaser-cover.png');
+  }
+  &.A_Button {
+    background-image: url('images/atoms/A_Button/A_Button-teaser-cover.png');
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .teaserCover {
+    &.UDF {
+      background-image: url('images/general/UDF/UDF-teaser-cover@2x.png');
+    }
+    &.Scroll {
+      background-image: url('images/general/Scroll/Scroll-teaser-cover@2x.png');
+    }
+    &.S_ModalAlert {
+      background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-teaser-cover@2x.png');
+    }
+    &.S_SingIn {
+      background-image: url('images/superorganism/S_SingIn/S_SingIn-teaser-cover@2x.png');
+    }
+    &.O_Slider {
+      background-image: url('images/organism/O_Slider/O_Slider-teaser-cover@2x.png');
+    }
+    &.O_Select {
+      background-image: url('images/organism/O_Select/O_Select-teaser-cover@2x.png');
+    }
+    &.O_MultiselectInput {
+      background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-teaser-cover@2x.png');
+    }
+    &.O_Burgermenu {
+      background-image: url('images/organism/O_Burgermenu/O_Burgermenu-teaser-cover@2x.png');
+    }
+    &.A_Input {
+      background-image: url('images/atoms/A_Input/A_Input-teaser-cover@2x.png');
+    }
+    &.A_Chip {
+      background-image: url('images/atoms/A_Chip/A_Chip-teaser-cover@2x.png');
+    }
+    &.A_Button {
+      background-image: url('images/atoms/A_Button/A_Button-teaser-cover@2x.png');
     }
   }
 }

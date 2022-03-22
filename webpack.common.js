@@ -92,6 +92,48 @@ module.exports = {
       template: './src/articles/atoms/A_Chip.html',
       filename: './atoms/A_Chip.html',
       chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_Select.html',
+      filename: './organisms/O_Select.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_SelectInput.html',
+      filename: './organisms/O_SelectInput.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_MultiselectInput.html',
+      filename: './organisms/O_MultiselectInput.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_Input.html',
+      filename: './atoms/A_Input.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_OptionItem.html',
+      filename: './atoms/A_OptionItem.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_MenuItem.html',
+      filename: './atoms/A_MenuItem.html',
+      chunks: ['index']
     })
   ],
   optimization: {

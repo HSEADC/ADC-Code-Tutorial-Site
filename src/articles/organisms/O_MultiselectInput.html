@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>O_MultiselectInput</title>
+  </head>
+
+  <body class="article">
+    <menu class="menubar">
+      <a href="#">О проекте</a>
+      <a href="#">Компоненты</a>
+      <a href="#">О нас</a>
+    </menu>
+
+    <div class="contentAreaWrapper">
+      <menu class="sidebar">
+        <a href="#initiation">Введение</a>
+        <a href="#structure">Струтура компонента</a>
+        <a href="#state">Состояние компонента</a>
+        <a href="#realization">Реализация</a>
+        <a href="#links">Ссылки</a>
+      </menu>
+
+      <article>
+        <figure class="articleCover O_MultiselectInput"></figure>
+
+        <h1 id="initiation">Multiselect Input</h1>
+        <p>
+          MultiselectInput это вид компонента select, который позволяет
+          пользователю выбратьнесколько пунктов из списки выпадающей опции.
+        </p>
+        <p>
+          В основном мультиселект инпут используют в различных формах входа или
+          заполнения данных, когда нужно сделать множественный выбор при
+          заполнении данных, поиске по тегам или фильтрации.
+        </p>
+
+        <h2 id="structure">Структура компонента</h2>
+        <p>
+          Мультиселект состоит из поля инпута с предзаполненным контекстным
+          текстом, иконки шеврона, которая роворачивается во время
+          пользовательского действия, списска с опциями, строку которой
+          необходимо выбрать и в выбранном состоянии указанными чипсами.
+          Подробнее про соновную структуру инпута смори тут.
+        </p>
+
+        <h3>Chip</h3>
+        <p>
+          Основа отличия мультиселекта от обычного селекта в том, что выбранные
+          строки из опции выводяться в инпут в виде чипсов. Эти элементы
+          отображают выбранный контент и имеют иконку удаления.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-1.png,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-1@2x.png 2x,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-1@3x.png 3x
+          "
+          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-1.png"
+          alt="Структура чипса"
+        />
+
+        <img
+          srcset="
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-2.png,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-2@2x.png 2x,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-2@3x.png 3x
+          "
+          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-2.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="state">Состояние компонента</h2>
+
+        <p>
+          Исходя из структуры, мы можем выявить несколько состояний компонента с
+          данными и без них. Так как заполненный инпут отображает не строку, а
+          отдельный компонент или несколько компонентов в виде чипсов.
+          Мильтиселект изменяется следующим образом:
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4.png,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4@2x.png 2x,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4@3x.png 3x
+          "
+          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4.png"
+          alt="Структура чипса"
+        />
+        <p>
+          Затем в выбраном состоянии появляется чипс. Так как выбираемая строка
+          может быть слишком длинной, чтобы поместиться в инпут целиком, мы
+          ограничиваем максимальную длину чипса и срезаем выбранный текст.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4.png,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4@2x.png 2x,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4@3x.png 3x
+          "
+          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4.png"
+          alt="Структура чипса"
+        />
+
+        <img
+          srcset="
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-5.png,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-5@2x.png 2x,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-5@3x.png 3x
+          "
+          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-5.png"
+          alt="Структура чипса"
+        />
+
+        <p>
+          Количество строк в опции может быть большим, соответсвенно и выбранных
+          чипсов будет много. Проблема размещения этих компонентов в инпуте
+          решается таким образом.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-6.png,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-6@2x.png 2x,
+            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-6@3x.png 3x
+          "
+          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-1.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="realization">Реализация</h2>
+
+        <p>
+          Компонент должен принимать параметры: type (единичный или
+          множественный тип), placeholder, current selection, option list,
+          handleChange (коллбек изменения поля).
+        </p>
+
+        <h2 id="links">Ссылки</h2>
+
+        <p>
+          Также для тебя ссылки на Фигму с дизайн системой и GitHub с
+          библиотекой компонентов.
+        </p>
+
+        <div class="links">
+          <a class="figma" href="/articles/organism/a_button.html"></a>
+          <a class="github" href="/articles/organism/a_button.html"></a>
+        </div>
+
+        <h2>Составляющие</h2>
+
+        <p>
+          Этот компонент часто выводится в следующих компонентах
+        </p>
+
+        <div class="suggest">
+          <a href="#">
+            <figure class="suggestCover Q_Icon"></figure>
+            <h4>Icon</h4>
+            <p>Стили иконок.</p>
+          </a>
+        </div>
+
+        <p>
+          Этот компонент часто выводится в следующих компонентах
+        </p>
+
+        <div class="suggest">
+          <a href="#">
+            <figure class="suggestCover O_SingIn"></figure>
+            <h4>Sing in</h4>
+            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
+          </a>
+
+          <a href="#">
+            <figure class="suggestCover O_MultiselectInput"></figure>
+            <h4>Multiselect Input</h4>
+            <p>
+              Интерактивный компонент, который предназначен для управления
+              данными.
+            </p>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footerbar">
+      <div>
+        <a href="#">Контакты</a>
+        <a href="#state">Instgram</a>
+      </div>
+
+      <div>
+        <a href="#structure">ADS Code Tutorial © 2021</a>
+      </div>
+    </footer>
+  </body>
+</html>
