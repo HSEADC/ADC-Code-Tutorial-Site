@@ -8,9 +8,9 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="#">О проекте</a>
-      <a href="#">Компоненты</a>
-      <a href="#">О нас</a>
+      <a href="../index.html">О проекте</a>
+      <a href="../index.html">Компоненты</a>
+      <a href="../index.html">О нас</a>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -25,163 +25,129 @@
       <article>
         <figure class="articleCover A_MenuItem"></figure>
 
-        <h1 id="initiation">Chip</h1>
+        <h1 id="initiation">Menu Item</h1>
         <p>
-          Chip помогает людям выводить нужную информацию,фильтровать содержимое
-          или инициировать действия. Chip могжет отображать разные типы
-          интерактивных элементов в одной области, таких как список выбираемого
-          времени фильма или серия контактов электронной почты.
+          Чтобы собрать <a href="/organisms/O_Menu.html">menu</a> нам необходимо
+          создать интерактивный элемент который мы называем menu item.
+          Он&nbsp;также собирается в&nbsp;коллекцию и&nbsp;походят на option
+          list визуально, но&nbsp;не&nbsp;функционально. Главная задача menu
+          item выводить пункты menu, возможно иметь иконку и навигировать
+          пользователя внутри сервиса.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
+
         <p>
-          Chip состоит из контейнера, текстового lable и ,иногда, из одной или
-          нескольких иконок. Так как выбираемая строка из списка может быть
-          длинной, мы можем задать максимальный размер контейнера chip и срезать
-          выбранный текст. Делаем мы это для того, чтобы chip в
-          <a href="#">input</a> вставали корректно.
+          Menu Item может содержать в&nbsp;себе различные типы данных: иконку,
+          текст, картинку, в&nbsp;зависимости от&nbsp;назначения. В&nbsp;данном
+          примере рассматриваем вариант с&nbsp;иконкой и&nbsp;текстом. Все стили
+          создаются в&nbsp;отдельном файле, чтобы придерживаться принципа
+          проектирования компонента в&nbsp;изоляции.
         </p>
 
         <img
           srcset="
-            ../../images/atoms/A_Chip/A_Chip-content-image-1.png,
-            ../../images/atoms/A_Chip/A_Chip-content-image-1@2x.png 2x,
-            ../../images/atoms/A_Chip/A_Chip-content-image-1@3x.png 3x
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-1.png,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-1@2x.png 2x,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-1@3x.png 3x
           "
-          src="../../images/atoms/A_Chip/A_Chip-content-image-1.png"
+          src="../../images/atoms/A_MenuItem/A_MenuItem-content-image-1.png"
           alt="Структура чипса"
         />
 
         <h2 id="state">Состояние компонента</h2>
         <p>
-          Управлять выбранными чипсами можно из самого <a href="#">input</a> ,
-          если chip имеет собственную кнопку удаления, или отменять выбор через
-          выпадающий <a href="#">option list</a> . Состояния chip при различных
-          условиях покаказаны ниже.
+          Так как menu item является малой функциональной частью структуры
+          <a href="/organisms/O_Menu.html">menu</a>, в&nbsp;которую входит
+          коллекция из&nbsp;menu item, мы&nbsp;выделяем только анимацию hover,
+          при наведении на элемент списка.
         </p>
         <img
           srcset="
-            ../../images/atoms/A_Chip/A_Chip-content-image-2.png,
-            ../../images/atoms/A_Chip/A_Chip-content-image-2@2x.png 2x,
-            ../../images/atoms/A_Chip/A_Chip-content-image-2@3x.png 3x
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-2.png,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-2@2x.png 2x,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-2@3x.png 3x
           "
-          src="../../images/atoms/A_Chip/A_Chip-content-image-2.png"
+          src="../../images/atoms/A_MenuItem/A_MenuItem-content-image-2.png"
+          alt="Структура чипса"
+        />
+        <img
+          srcset="
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-3.png,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-3@2x.png 2x,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-3@3x.png 3x
+          "
+          src="../../images/atoms/A_MenuItem/A_MenuItem-content-image-3.png"
           alt="Структура чипса"
         />
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в папке с компонентами создаем новую папку A_Chip, в неё
-          кладем A_Chip.jsx и A_Chip.scss. Затем описываем функционал chip.
-          Получаем следующий код, который описывает все состояния disabled,
-          initial, hover.
-        </p>
-
-        <p>
-          Chip содержит <a href="#">icon</a> Q_Icon cross, которая лежит в
-          отдельной папке image в файле Q_Icon.scss. В нем мы храним все иконки,
-          которые нужны для различных компоннтов, а их фон и размер задаем в
-          файле со стилем всего chip. Это мы покажем в структуре SCSS.
+          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
+          A_MenuItem, в&nbsp;неё кладем A_MenuItem.jsx и&nbsp;A_MenuItem.scss.
+          Затем описываем принимаемые атрибуты и&nbsp;<a href="#">icon</a>
+          из&nbsp;папки Q_Icon.
         </p>
 
         <pre><code class="language-javascript">import classnames from 'classnames'
 import React, { PureComponent } from 'react'
-import './A_Chip.scss'
+import './A_MenuItem.scss'
 
-export default class A_Chip extends PureComponent {
+export default class A_MenuItem extends PureComponent {
   constructor(props) {
     super(props)
   }
 
-  handleClick = () => {
-    const { disabled, handleClick } = this.props
-
-    if (!disabled) {
-      handleClick()
-    }
-  }
-
   render() {
-    const { text, disabled } = this.props
+    const { text, icon, url, active } = this.props
 
     const classes = classnames({
-      A_Chip: true,
-      disabled: disabled
+      A_MenuItem: true,
+      active: active
+    })
+
+    const iconClasses = classnames({
+      Q_Icon: true,
+      [`${icon}`]: true
     })
 
     return (
-    &lt;div className={classes}&gt;
+      &lt;a className={classes} href={url}&gt;
+        &lt;div className={iconClasses}&gt;&lt;/div&gt;
         {text}
-        &lt;div className="Q_Icon cross" onClick={this.handleClick} /&gt;
-      &lt;/div&gt;
+      &lt;/a&gt;
     )
   }
 }</code></pre>
 
         <p>
-          Выводим получившуюся структуру в файле с примером:
+          Затем прописываем стили для A_MenuItem и&nbsp;Q_Icon. Для icon задаем
+          размеры контейнера и&nbsp;его позиционирование, в&nbsp;него будет
+          рендериться svg заданная в&nbsp;menu иконка.
         </p>
-        <pre><code class="language-javascript">import React from 'react'
-import ReactDOM from 'react-dom'
-import A_Chip from '../../components/atoms/A_Chip/A_Chip.jsx'
-import './example_4.scss'
 
-function handleClick() {
-  console.log('click')
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    &lt;&gt
-      &lt;A_Chip text="Text" handleClick={handleClick} /&gt
-      &lt;A_Chip text="Text" disabled={true} handleClick={handleClick} /&gt
-    &lt;/&gt,
-    document.body.appendChild(document.createElement('div'))
-  )
-})</code></pre>
-
-        <p>
-          Затем прописываем стили для A_Chip и Q_Icon cross. Не забываем описать
-          для chip состоянии disabled и hover.
-        </p>
-        <pre><code class="language-css">.A_Chip {
-  position: relative;
-  padding: 6px 38px 6px 10px;
-  border-radius: 10px;
-  font-size: 16px;
+        <pre><code class="language-css">.A_MenuItem {
+  display: flex;
+  width: 304px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  font-size: 20px;
   font-weight: 300;
   color: #426060;
-  background-color: #b7fcfc;
-  cursor: default;
-  user-select: none;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: none;
 
-  .Q_Icon.cross {
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-    border-radius: 20px;
-    background-color: #d7ffff;
+  .Q_Icon {
+    width: 35px;
+    margin-right: 20px;
+    height: 35px;
     cursor: pointer;
-
-    &:hover {
-      background-color: #5be7e7;
-    }
   }
 
-  &.disabled {
-    color: #abd9d9;
-    background-color: #f2ffff;
-    cursor: default;
-
-    .Q_Icon.cross {
-      &:hover {
-        background-color: #d7ffff;
-        cursor: default;
-      }
-    }
+  &:hover {
+    text-decoration: none;
+    background-color: #dcffff;
   }
 }</code></pre>
 
@@ -191,19 +157,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <img
           srcset="
-            ../../images/atoms/A_Chip/A_Chip-content-image-3.png,
-            ../../images/atoms/A_Chip/A_Chip-content-image-3@2x.png 2x,
-            ../../images/atoms/A_Chip/A_Chip-content-image-3@3x.png 3x
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-4.png,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-4@2x.png 2x,
+            ../../images/atoms/A_MenuItem/A_MenuItem-content-image-4@3x.png 3x
           "
-          src="../../images/atoms/A_Chip/A_Chip-content-image-3.png"
+          src="../../images/atoms/A_MenuItem/A_MenuItem-content-image-4.png"
           alt="Структура чипса"
         />
 
         <h2 id="links">Ссылки</h2>
 
         <p>
-          Также для тебя ссылки на Figma с дизайн системой и GitHub с
-          библиотекой компонентов.
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
         </p>
 
         <div class="links">
@@ -214,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>Составляющие</h2>
 
         <p>
-          Этот компонент часто выводится в следующих компонентах
+          В этот компонент часто выводится следующие компоненты.
         </p>
 
         <div class="suggest">
@@ -230,19 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
 
         <div class="suggest">
-          <a href="#">
-            <figure class="suggestCover O_SingIn"></figure>
-            <h4>Sing in</h4>
-            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
-          </a>
-
-          <a href="#">
-            <figure class="suggestCover O_MultiselectInput"></figure>
-            <h4>Multiselect Input</h4>
-            <p>
-              Интерактивный компонент, который предназначен для управления
-              данными.
-            </p>
+          <a href="/organisms/O_Menu.html">
+            <figure class="suggestCover O_Menu"></figure>
+            <h4>Menu</h4>
+            <p>Стандрартный компонент навигации.</p>
           </a>
         </div>
       </article>
@@ -250,12 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <footer class="footerbar">
       <div>
-        <a href="#">Контакты</a>
+        <a href="../index.html">Контакты</a>
         <a href="#state">Instgram</a>
       </div>
 
       <div>
-        <a href="#structure">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADS Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>

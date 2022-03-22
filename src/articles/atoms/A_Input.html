@@ -8,9 +8,9 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="#">О проекте</a>
-      <a href="#">Компоненты</a>
-      <a href="#">О нас</a>
+      <a href="../index.html">О проекте</a>
+      <a href="../index.html">Компоненты</a>
+      <a href="../index.html">О нас</a>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -27,20 +27,20 @@
 
         <h1 id="initiation">Input</h1>
         <p>
-          Текстовые поля позволяют пользователям вводить текст в
-          пользовательский интерфейс. Обычно они появляются в формах и диалогах.
-          Чаще всего в формах используется тег &ltinput&gt. Он не имеет
-          закрывающего тега. Вся информация, необходимая браузеру для обработки,
-          содержится непосредственно в теге &ltinput&gt и задается с помощью
-          различных атрибутов.
+          Текстовые поля позволяют пользователям вводить текст
+          в&nbsp;пользовательский интерфейс. Обычно они появляются в формах
+          и&nbsp;диалогах. Чаще всего в формах используется тег &ltinput&gt.
+          Он&nbsp;не имеет закрывающего тега. Вся информация, необходимая
+          браузеру для&nbsp;обработки, содержится непосредственно в теге
+          &ltinput&gt и&nbsp;задается&nbsp;с&nbsp;помощью различных атрибутов.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Input состоит из контейнера, и текста в различных состояниях. Input
-          должен выделяться и указывать на то, что пользователи могут вводить
-          информацию, а также должно быть понятно какую именно информацию нужно
-          вводить.
+          Input состоит из&nbsp;контейнера, и&nbsp;текста в&nbsp;различных
+          состояниях. Input должен выделяться и&nbsp;указывать на&nbsp;то, что
+          пользователи могут вводить информацию, а&nbsp;также должно быть
+          понятно какую именно информацию нужно вводить.
         </p>
 
         <img
@@ -56,8 +56,9 @@
         <h2 id="state">Состояние компонента</h2>
 
         <p>
-          Исходя из структуры, мы можем выявить несколько состояний компонента с
-          данными и без них. А также нелья забывать про состояние ошибки.
+          Исходя из&nbsp;структуры, мы&nbsp;можем выявить несколько состояний
+          компонента с данными и&nbsp;без них. А&nbsp;также нельзя забывать про
+          состояние ошибки.
         </p>
 
         <img
@@ -74,9 +75,12 @@
         <h2 id="realization">Реализация</h2>
 
         <p>
-          Компонент должен принимать параметры: type (единичный или
-          множественный тип), placeholder, current selection, option list,
-          handleChange (коллбек изменения поля).
+          Компонент должен принимать параметры: placeholder, onBlur, onFocus.
+          Мы&nbsp;создаем сложный компонент, который сможет может хранить
+          в&nbsp;себе массив с&nbsp;данными, напрмер с&nbsp;<a
+            href="/atoms/A_Chip.html"
+            >chip.</a
+          >
         </p>
 
         <pre><code class="language-javascript">import React, { PureComponent } from 'react'
@@ -107,9 +111,7 @@ export default class A_Input extends PureComponent {
 }</code></pre>
 
         <p>
-          Компонент должен принимать параметры: type (единичный или
-          множественный тип), placeholder, current selection, option list,
-          handleChange (коллбек изменения поля).
+          Затем прописываем стили для этого компонента.
         </p>
 
         <pre><code class="language-css">.A_InputContainer {
@@ -131,8 +133,8 @@ export default class A_Input extends PureComponent {
         <h2 id="links">Ссылки</h2>
 
         <p>
-          Также для тебя ссылки на Фигму с дизайн системой и GitHub с
-          библиотекой компонентов.
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
         </p>
 
         <div class="links">
@@ -143,24 +145,24 @@ export default class A_Input extends PureComponent {
         <h2>Составляющие</h2>
 
         <p>
-          Этот компонент часто выводится в следующих компонентах
+          В этот компонент часто выводится следующие компоненты.
         </p>
 
         <div class="suggest">
           <a href="#">
-            <figure class="suggestCover Q_Icon"></figure>
-            <h4>Icon</h4>
-            <p>Стили иконок.</p>
+            <figure class="suggestCover A_Chip"></figure>
+            <h4>Chip</h4>
+            <p>Интерактивный элемент множественного выбора.</p>
           </a>
         </div>
 
         <p>
-          Этот компонент часто выводится в следующих компонентах
+          Этот компонент часто выводится в следующих компонентах.
         </p>
 
         <div class="suggest">
           <a href="#">
-            <figure class="suggestCover O_SingIn"></figure>
+            <figure class="suggestCover S_SingIn"></figure>
             <h4>Sing in</h4>
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
@@ -179,12 +181,12 @@ export default class A_Input extends PureComponent {
 
     <footer class="footerbar">
       <div>
-        <a href="#">Контакты</a>
+        <a href="../index.html">Контакты</a>
         <a href="#state">Instgram</a>
       </div>
 
       <div>
-        <a href="#structure">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADS Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>

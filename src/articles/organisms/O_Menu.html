@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>O_Menu</title>
+  </head>
+
+  <body class="article">
+    <menu class="menubar">
+      <a href="../index.html">О проекте</a>
+      <a href="../index.html">Компоненты</a>
+      <a href="../index.html">О нас</a>
+    </menu>
+
+    <div class="contentAreaWrapper">
+      <menu class="sidebar">
+        <a href="#initiation">Введение</a>
+        <a href="#structure">Струтура компонента</a>
+        <a href="#state">Состояние компонента</a>
+        <a href="#realization">Реализация</a>
+        <a href="#links">Ссылки</a>
+      </menu>
+
+      <article>
+        <figure class="articleCover O_Menu"></figure>
+
+        <h1 id="initiation">Menu</h1>
+        <p>
+          Menu отображает список вариантов на&nbsp;временной поверхности.
+          Они&nbsp;появляются, когда пользователи взаимодействуют
+          с&nbsp;кнопкой, действием или другим элементом управления.
+        </p>
+        <p>
+          Menu должно быть легко открывать, закрывать и&nbsp;взаимодействовать.
+          Содержимое меню должно соответствовать потребностям пользователя.
+          Пункты меню должны быть легко сканировать.
+        </p>
+
+        <h2 id="structure">Структура компонента</h2>
+        <p>
+          Меню должно быть расположено относительно края экрана или браузера.
+          Обычно они появляются рядом (или перед) элементом, который их
+          генерирует. Если они находятся в&nbsp;положении, которое должно быть
+          обрезано браузером или краем экрана, меню может отображаться слева,
+          справа или над элементом, который его генерирует. Данное меню состоит
+          из&nbsp;menu item, которые собраны в&nbsp;коллекцию.
+        </p>
+
+        <h3>Menu Item</h3>
+        <p>
+          Menu item может содержать в&nbsp;себе различные типы данных: иконку,
+          текст, картинку, в&nbsp;зависимости от&nbsp;назначения. Подробнее о
+          <a href="/atoms/A_MenuItem">menu item.</a>
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_Menu/O_Menu-content-image-1.png,
+            ../../images/organism/O_Menu/O_Menu-content-image-1@2x.png 2x,
+            ../../images/organism/O_Menu/O_Menu-content-image-1@3x.png 3x
+          "
+          src="../../images/organism/O_Menu/O_Menu-content-image-1.png"
+          alt="Структура чипса"
+        />
+
+        <p>
+          Когда menu item собраны в коллекции, получаем следующий результат.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_Menu/O_Menu-content-image-2.png,
+            ../../images/organism/O_Menu/O_Menu-content-image-2@2x.png 2x,
+            ../../images/organism/O_Menu/O_Menu-content-image-2@3x.png 3x
+          "
+          src="../../images/organism/O_Menu/O_Menu-content-image-2.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="state">Состояние компонента</h2>
+
+        <p>
+          Исходя из&nbsp;структуры, мы&nbsp;можем выявить несколько состояний
+          компонента при пользовательском действии.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_Menu/O_Menu-content-image-3.png,
+            ../../images/organism/O_Menu/O_Menu-content-image-3@2x.png 2x,
+            ../../images/organism/O_Menu/O_Menu-content-image-3@3x.png 3x
+          "
+          src="../../images/organism/O_Menu/O_Menu-content-image-3.png"
+          alt="Структура чипса"
+        />
+
+        <img
+          srcset="
+            ../../images/organism/O_Menu/O_Menu-content-image-4.png,
+            ../../images/organism/O_Menu/O_Menu-content-image-4@2x.png 2x,
+            ../../images/organism/O_Menu/O_Menu-content-image-4@3x.png 3x
+          "
+          src="../../images/organism/O_Menu/O_Menu-content-image-4.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="realization">Реализация</h2>
+
+        <p>
+          Для начала создаем O_Menu.jsx. Прописывем функционал и собираем menu
+          item в коллекции.
+        </p>
+        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
+import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
+import './O_Menu.scss'
+
+export default class O_Menu extends PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const { menu } = this.props
+    const { top, bottom } = menu
+    const topMenuElements = []
+    const bottomMenuElements = []
+
+    top.forEach((item, i) => {
+      topMenuElements.push(&lt;A_MenuItem {...item} key={'top' + i} /&gt;)
+    })
+
+    bottom.forEach((item, i) => {
+      bottomMenuElements.push(&lt;A_MenuItem {...item} key={'bottom' + i} /&gt;)
+    })
+
+    return (
+      &lt;div className="O_Menu"&gt;
+        &lt;div className="C_MenuItems"v&gt;{topMenuElements}&lt;/div&gt;
+        &lt;div className="C_MenuItems"v&gt;{bottomMenuElements}&lt;/div&gt;
+      &lt;/div&gt;
+    )
+  }
+}</code></pre>
+
+        <p>
+          По принципу изоляции прописываем стили.
+        </p>
+
+        <pre><code class="language-css">.O_Menu {
+  width: 360px;
+  padding: 40px 28px;
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+
+  .C_MenuItems {
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      margin-top: 100px;
+    }
+  }
+}</code></pre>
+
+        <p>
+          В файле сборщика заполняем массивы top и botton и выводим компонент.
+        </p>
+
+        <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import O_Menu from '../../components/organisms/O_Menu/O_Menu.jsx'
+import './example_1.scss'
+
+const menu = {
+  top: [
+    {
+      text: 'Галерея',
+      icon: 'dashboard',
+      url: 'https://instagram.com'
+    },
+    {
+      text: 'Сообщения',
+      icon: 'messages',
+      url: 'https://facebook.com'
+      // active: true
+    },
+    {
+      text: 'Заметки',
+      icon: 'pages',
+      url: 'https://instagram.com'
+    },
+    {
+      text: 'Профиль',
+      icon: 'user',
+      url: 'https://facebook.com'
+    }
+  ],
+  bottom: [
+    {
+      text: 'Помощь',
+      icon: 'help',
+      url: 'https://instagram.com'
+    },
+    {
+      text: 'Настройки',
+      icon: 'settings',
+      url: 'https://facebook.com'
+    }
+  ]
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    &lt;O_Menu menu={menu} /&gt;,
+    document.body.appendChild(document.createElement('div'))
+  )
+})</code></pre>
+
+        <h2 id="links">Ссылки</h2>
+
+        <p>
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
+        </p>
+
+        <div class="links">
+          <a class="figma" href="/articles/organism/a_button.html"></a>
+          <a class="github" href="/articles/organism/a_button.html"></a>
+        </div>
+
+        <h2>Составляющие</h2>
+
+        <p>
+          В этот компонент часто выводится следующие компоненты.
+        </p>
+        <div class="suggest">
+          <a href="/atoms/A_MenuItem.html">
+            <figure class="suggestCover A_MenuItem"></figure>
+            <h4>Menu Item</h4>
+            <p>Интерактивный элемент коллекции меню.</p>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footerbar">
+      <div>
+        <a href="../index.html">Контакты</a>
+        <a href="#state">Instgram</a>
+      </div>
+
+      <div>
+        <a href="../index.html">ADS Code Tutorial © 2021</a>
+      </div>
+    </footer>
+  </body>
+</html>

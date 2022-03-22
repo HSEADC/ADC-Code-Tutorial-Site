@@ -7,9 +7,9 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="#">О проекте</a>
-      <a href="#">Компоненты</a>
-      <a href="#">О нас</a>
+      <a href="../index.html">О проекте</a>
+      <a href="../index.html">Компоненты</a>
+      <a href="../index.html">О нас</a>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -26,16 +26,18 @@
 
         <h1 id="initiation">Text Button</h1>
         <p>
-          Кнопки передают действия, которые пользователи могут применять. В
-          целом, функционал такой же как и у обычных кнопок, за исключением их
-          стилей. Проситать подробнее о <a href="#">button</a>.
+          Кнопки передают действия, которые пользователи могут применять.
+          В&nbsp;целом, функционал такой&nbsp;же как и&nbsp;у&nbsp;обычных
+          кнопок, за&nbsp;исключением их стилей. Прочитать подробнее о
+          <a href="/atoms/A_Button.html">button.</a>
         </p>
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Выше мы уже сказали, что подробную функциональность и применение
-          кнопок можно изучить в туториале <a href="#">button</a>. Ниже мы
-          покажем стили текстовых кнопок.
+          Выше мы&nbsp;уже сказали, что подробную функциональность
+          и&nbsp;применение кнопок можно изучить в&nbsp;туториале
+          <a href="/atoms/A_Button.html">button.</a> Ниже мы&nbsp;покажем стили
+          текстовых кнопок.
         </p>
 
         <pre><code class="language-javascript">.A_TextButton {
@@ -49,13 +51,13 @@ cursor: pointer;
 user-select: none;
 text-decoration: underline;
 
-&:hover {
-  color: #5be7e7;
-}
-&.disabled {
-  color: #abd9d9;
-  cursor: default;
-}
+  &:hover {
+    color: #5be7e7;
+  }
+  &.disabled {
+    color: #abd9d9;
+    cursor: default;
+  }
 }</code></pre>
 
         <p>
@@ -75,8 +77,8 @@ text-decoration: underline;
         <h2 id="links">Ссылки</h2>
 
         <p>
-          Также для тебя ссылки на Figma с дизайн системой и GitHub с
-          библиотекой компонентов.
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
         </p>
 
         <div class="links">
@@ -92,29 +94,16 @@ text-decoration: underline;
 
         <div class="suggest">
           <a href="#">
-            <figure class="suggestCover Q_Icon"></figure>
-            <h4>Icon</h4>
-            <p>Стили иконок.</p>
-          </a>
-        </div>
-
-        <p>
-          Этот компонент часто выводится в следующих компонентах
-        </p>
-
-        <div class="suggest">
-          <a href="#">
-            <figure class="suggestCover O_SingIn"></figure>
+            <figure class="suggestCover S_SingIn"></figure>
             <h4>Sing in</h4>
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
 
           <a href="#">
-            <figure class="suggestCover O_MultiselectInput"></figure>
-            <h4>Multiselect Input</h4>
+            <figure class="suggestCover S_ModalAlert"></figure>
+            <h4>Modal Alert</h4>
             <p>
-              Интерактивный компонент, который предназначен для управления
-              данными.
+              Всплывающее модальное интерактивное окно различного назначения.
             </p>
           </a>
         </div>

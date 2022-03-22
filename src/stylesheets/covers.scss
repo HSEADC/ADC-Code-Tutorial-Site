@@ -40,6 +40,9 @@
   &.A_MenuItem {
     background-image: url('images/atoms/A_MenuItem/A_MenuItem-article-cover-desktop.png');
   }
+  &.O_Menu {
+    background-image: url('images/organism/O_Menu/O_Menu-article-cover-desktop.png');
+  }
 
   @media (max-width: 768px) {
     width: 578px;
@@ -83,6 +86,9 @@
     &.A_MenuItem {
       background-image: url('images/atoms/A_MenuItem/A_MenuItem-article-cover-desktop@2x.png');
     }
+    &.O_Menu {
+      background-image: url('images/organism/O_Menu/O_Menu-article-cover-desktop@2x.png');
+    }
 
     @media (max-width: 768px) {
       width: 578px;
@@ -108,6 +114,27 @@
   &.S_SingIn {
     background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-desktop.png');
   }
+  &.S_ModalAlert {
+    background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-suggest-cover-desktop.png');
+  }
+  &.A_Chip {
+    background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop.png');
+  }
+  &.O_Menu {
+    background-image: url('images/organism/O_Menu/O_Menu-suggest-cover-desktop.png');
+  }
+  &.O_Select {
+    background-image: url('images/organism/O_Select/O_Select-suggest-cover-desktop.png');
+  }
+  &.A_OptionItem {
+    background-image: url('images/atoms/A_OptionItem/A_OptionItem-suggest-cover-desktop.png');
+  }
+  &.A_Input {
+    background-image: url('images/atoms/A_Input/A_Input-suggest-cover-desktop.png');
+  }
+  &.A_MenuItem {
+    background-image: url('images/atoms/A_MenuItem/A_MenuItem-suggest-cover-desktop.png');
+  }
 
   @media (max-width: 768px) {
     width: 280px;
@@ -125,6 +152,27 @@
     }
     &.S_SingIn {
       background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-desktop@2x.png');
+    }
+    &.S_ModalAlert {
+      background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-suggest-cover-desktop@2x.png');
+    }
+    &.A_Chip {
+      background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop@2x.png');
+    }
+    &.O_Menu {
+      background-image: url('images/organism/O_Menu/O_Menu-suggest-cover-desktop@2x.png');
+    }
+    &.O_Select {
+      background-image: url('images/organism/O_Select/O_Select-suggest-cover-desktop@2x.png');
+    }
+    &.A_OptionItem {
+      background-image: url('images/atoms/A_OptionItem/A_OptionItem-suggest-cover-desktop@2x.png');
+    }
+    &.A_Input {
+      background-image: url('images/atoms/A_Input/A_Input-suggest-cover-desktop@2x.png');
+    }
+    &.A_MenuItem {
+      background-image: url('images/atoms/A_MenuItem/A_MenuItem-suggest-cover-desktop@2x.png');
     }
 
     @media (max-width: 768px) {
@@ -159,8 +207,8 @@
   &.O_MultiselectInput {
     background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-teaser-cover.png');
   }
-  &.O_Burgermenu {
-    background-image: url('images/organism/O_Burgermenu/O_Burgermenu-teaser-cover.png');
+  &.O_Menu {
+    background-image: url('images/organism/O_Menu/O_Menu-teaser-cover.png');
   }
   &.A_Input {
     background-image: url('images/atoms/A_Input/A_Input-teaser-cover.png');
@@ -170,6 +218,18 @@
   }
   &.A_Button {
     background-image: url('images/atoms/A_Button/A_Button-teaser-cover.png');
+  }
+  &.O_SelectInput {
+    background-image: url('images/organism/O_SelectInput/O_SelectInput-teaser-cover.png');
+  }
+  &.A_OptionItem {
+    background-image: url('images/atoms/A_OptionItem/A_OptionItem-teaser-cover.png');
+  }
+  &.A_MenuItem {
+    background-image: url('images/atoms/A_MenuItem/A_MenuItem-teaser-cover.png');
+  }
+  &.Process {
+    background-image: url('images/general/Process/Process-teaser-cover.png');
   }
 }
 
@@ -196,8 +256,8 @@
     &.O_MultiselectInput {
       background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-teaser-cover@2x.png');
     }
-    &.O_Burgermenu {
-      background-image: url('images/organism/O_Burgermenu/O_Burgermenu-teaser-cover@2x.png');
+    &.O_Menu {
+      background-image: url('images/organism/O_Menu/O_Menu-teaser-cover@2x.png');
     }
     &.A_Input {
       background-image: url('images/atoms/A_Input/A_Input-teaser-cover@2x.png');
@@ -207,6 +267,18 @@
     }
     &.A_Button {
       background-image: url('images/atoms/A_Button/A_Button-teaser-cover@2x.png');
+    }
+    &.O_SelectInput {
+      background-image: url('images/organism/O_SelectInput/O_SelectInput-teaser-cover@2x.png');
+    }
+    &.A_OptionItem {
+      background-image: url('images/atoms/A_OptionItem/A_OptionItem-teaser-cover@2x.png');
+    }
+    &.A_MenuItem {
+      background-image: url('images/atoms/A_MenuItem/A_MenuItem-teaser-cover@2x.png');
+    }
+    &.Process {
+      background-image: url('images/general/Process/Process-teaser-cover@2x.png');
     }
   }
 }

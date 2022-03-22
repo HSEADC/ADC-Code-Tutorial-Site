@@ -33,6 +33,7 @@ body.article {
       position: fixed;
       width: 240px;
       font-size: 18px;
+      display: grid;
 
       a {
         display: inline-block;
@@ -59,7 +60,7 @@ body.article {
       }
 
       h1 {
-        font-size: 60px;
+        font-size: 50px;
         font-weight: bold;
       }
 

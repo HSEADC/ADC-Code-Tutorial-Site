@@ -8,9 +8,9 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="#">О проекте</a>
-      <a href="#">Компоненты</a>
-      <a href="#">О нас</a>
+      <a href="../index.html">О проекте</a>
+      <a href="../index.html">Компоненты</a>
+      <a href="../index.html">О нас</a>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -27,19 +27,20 @@
 
         <h1 id="initiation">Chip</h1>
         <p>
-          Chip помогает людям выводить нужную информацию,фильтровать содержимое
-          или инициировать действия. Chip могжет отображать разные типы
-          интерактивных элементов в одной области, таких как список выбираемого
-          времени фильма или серия контактов электронной почты.
+          Chip помогает выводить нужную информацию,фильтровать содержимое или
+          инициировать действия. Chip может отображать разные типы интерактивных
+          элементов в&nbsp;одной области, таких как список выбираемого времени
+          фильма или серия контактов электронной почты.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Chip состоит из контейнера, текстового lable и ,иногда, из одной или
-          нескольких иконок. Так как выбираемая строка из списка может быть
-          длинной, мы можем задать максимальный размер контейнера chip и срезать
-          выбранный текст. Делаем мы это для того, чтобы chip в
-          <a href="#">input</a> вставали корректно.
+          Chip состоит из&nbsp;контейнера, текстового lable и ,иногда,
+          из&nbsp;одной или нескольких иконок. Так как выбираемая строка
+          из&nbsp;списка может быть длинной, мы&nbsp;можем задать максимальный
+          размер контейнера chip и&nbsp;срезать выбранный текст. Делаем
+          мы&nbsp;это для того, чтобы chip в
+          <a href="/atoms/A_Input.html">input</a> вставали корректно.
         </p>
 
         <img
@@ -54,10 +55,9 @@
 
         <h2 id="state">Состояние компонента</h2>
         <p>
-          Управлять выбранными чипсами можно из самого <a href="#">input</a> ,
-          если chip имеет собственную кнопку удаления, или отменять выбор через
-          выпадающий <a href="#">option list</a> . Состояния chip при различных
-          условиях покаказаны ниже.
+          Управлять выбранными chip можно из&nbsp;самого
+          <a href="/atoms/A_Input.html">input</a> , если chip имеет собственную
+          кнопку удаления. Состояния chip при различных условиях показаны ниже.
         </p>
         <img
           srcset="
@@ -71,17 +71,18 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в папке с компонентами создаем новую папку A_Chip, в неё
-          кладем A_Chip.jsx и A_Chip.scss. Затем описываем функционал chip.
-          Получаем следующий код, который описывает все состояния disabled,
-          initial, hover.
+          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
+          A_Chip, в&nbsp;неё кладем A_Chip.jsx и&nbsp;A_Chip.scss. Затем
+          описываем функционал chip. Получаем следующий код, который описывает
+          все состояния disabled, initial, hover.
         </p>
 
         <p>
           Chip содержит <a href="#">icon</a> Q_Icon cross, которая лежит в
-          отдельной папке image в файле Q_Icon.scss. В нем мы храним все иконки,
-          которые нужны для различных компоннтов, а их фон и размер задаем в
-          файле со стилем всего chip. Это мы покажем в структуре SCSS.
+          отдельной папке image в&nbsp;файле Q_Icon.scss. В&nbsp;нем
+          мы&nbsp;храним все иконки, которые нужны для различных компонентов,
+          а&nbsp;их&nbsp;фон и&nbsp;размер задаем в файле со&nbsp;стилем всего
+          chip. Это мы&nbsp;покажем в&nbsp;структуре SCSS.
         </p>
 
         <pre><code class="language-javascript">import classnames from 'classnames'
@@ -141,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })</code></pre>
 
         <p>
-          Затем прописываем стили для A_Chip и Q_Icon cross. Не забываем описать
-          для chip состоянии disabled и hover.
+          Затем прописываем стили для A_Chip и&nbsp;Q_Icon cross.
+          Не&nbsp;забываем описать для chip состоянии disabled и&nbsp;hover.
         </p>
         <pre><code class="language-css">.A_Chip {
   position: relative;
@@ -202,8 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2 id="links">Ссылки</h2>
 
         <p>
-          Также для тебя ссылки на Figma с дизайн системой и GitHub с
-          библиотекой компонентов.
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
         </p>
 
         <div class="links">
@@ -214,24 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>Составляющие</h2>
 
         <p>
-          Этот компонент часто выводится в следующих компонентах
+          Этот компонент часто выводится в следующих компонентах.
         </p>
 
         <div class="suggest">
           <a href="#">
-            <figure class="suggestCover Q_Icon"></figure>
-            <h4>Icon</h4>
-            <p>Стили иконок.</p>
-          </a>
-        </div>
-
-        <p>
-          Этот компонент часто выводится в следующих компонентах
-        </p>
-
-        <div class="suggest">
-          <a href="#">
-            <figure class="suggestCover O_SingIn"></figure>
+            <figure class="suggestCover S_SingIn"></figure>
             <h4>Sing in</h4>
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
@@ -250,12 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <footer class="footerbar">
       <div>
-        <a href="#">Контакты</a>
+        <a href="../index.html">Контакты</a>
         <a href="#state">Instgram</a>
       </div>
 
       <div>
-        <a href="#structure">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADS Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>

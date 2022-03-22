@@ -8,9 +8,9 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="#">О проекте</a>
-      <a href="#">Компоненты</a>
-      <a href="#">О нас</a>
+      <a href="../index.html">О проекте</a>
+      <a href="../index.html">Компоненты</a>
+      <a href="../index.html">О нас</a>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -33,13 +33,13 @@
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Option Ittem является частью структуры option list, и может содержать
-          в себе различные типы данных: иконку, текст, картинку, в зависимости
-          от назнвчения option list. В данном примере рассматриваем стандартный
-          option item с текстовй меткой. Обычно option item имеет собственные
-          отступы и hover при наведении курсора. Все стили адаются в отдельном
-          файле, чтобы придерживаться принципа проектирования компонента в
-          изоляции.
+          Option Item является частью структуры option list, и&nbsp;может
+          содержать в&nbsp;себе различные типы данных: иконку, текст, картинку,
+          в&nbsp;зависимости от&nbsp;назначения option list. В&nbsp;данном
+          примере рассматриваем стандартный option item с&nbsp;текстовой меткой.
+          Обычно option item имеет собственные отступы и&nbsp;hover при
+          наведении курсора. Все стили создаются в&nbsp;отдельном файле, чтобы
+          придерживаться принципа проектирования компонента в изоляции.
         </p>
 
         <img
@@ -55,8 +55,9 @@
         <h2 id="state">Состояние компонента</h2>
         <p>
           Так как option item является малой функциональной частью структуры
-          select, в которую входит option list как коллекция, мы выделяем только
-          анимацию hover, при наведении на элемент списска.
+          <a href="/organisms/O_Select.html">select</a>, в&nbsp;которую входит
+          option list как коллекция, мы&nbsp;выделяем только анимацию hover, при
+          наведении на&nbsp;элемент списка.
         </p>
         <img
           srcset="
@@ -138,8 +139,8 @@ export default class A_OptionItem extends PureComponent {
         <h2 id="links">Ссылки</h2>
 
         <p>
-          Также для тебя ссылки на Figma с дизайн системой и GitHub с
-          библиотекой компонентов.
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
         </p>
 
         <div class="links">
@@ -154,30 +155,21 @@ export default class A_OptionItem extends PureComponent {
         </p>
 
         <div class="suggest">
-          <a href="#">
-            <figure class="suggestCover Q_Icon"></figure>
-            <h4>Icon</h4>
-            <p>Стили иконок.</p>
-          </a>
-        </div>
-
-        <p>
-          Этот компонент часто выводится в следующих компонентах
-        </p>
-
-        <div class="suggest">
-          <a href="#">
-            <figure class="suggestCover O_SingIn"></figure>
-            <h4>Sing in</h4>
-            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
-          </a>
-
-          <a href="#">
-            <figure class="suggestCover O_MultiselectInput"></figure>
-            <h4>Multiselect Input</h4>
+          <a href="/organisms/O_SelectInput.html">
+            <figure class="suggestCover O_Select"></figure>
+            <h4>Select</h4>
             <p>
               Интерактивный компонент, который предназначен для управления
               данными.
+            </p>
+          </a>
+
+          <a href="/organisms/O_MultiselectInput.html">
+            <figure class="suggestCover O_MultiselectInput"></figure>
+            <h4>Multiselect Input</h4>
+            <p>
+              Расширенный функционал Select, который продполагаем множественный
+              выбор.
             </p>
           </a>
         </div>
@@ -186,12 +178,12 @@ export default class A_OptionItem extends PureComponent {
 
     <footer class="footerbar">
       <div>
-        <a href="#">Контакты</a>
+        <a href="../index.html">Контакты</a>
         <a href="#state">Instgram</a>
       </div>
 
       <div>
-        <a href="#structure">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADS Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>
