@@ -9,7 +9,7 @@
   <body class="article">
     <menu class="menubar">
       <a href="../index.html">О проекте</a>
-      <a href="../index.html">Компоненты</a>
+      <a href="../index.html" href="#content">Компоненты</a>
       <a href="../index.html">О нас</a>
     </menu>
 
@@ -102,7 +102,7 @@
           но&nbsp;стили для нее прописываем в&nbsp;A_SelectIput.scss.
         </p>
 
-        <pre><code class="language-javascript">iimport React, { PureComponent } from 'react'
+        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
 import './O_Select.scss'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_OptionItem from '../../atoms/A_OptionItem/A_OptionItem.jsx'
@@ -147,22 +147,23 @@ export default class O_Select extends PureComponent {
 
   render() {
     const { placeholder } = this.props
-    const { options, showOptions, value } = this.state
-    const optionElements = []
 
-    options.forEach((option, i) => {
-      optionElements.push(
-        &lt;A_OptionItem
-          key={option.id}
-          id={option.id}
-          value={option.value}
-          onSelect={this.handleSelectOption}
-        /&gt
-      )
-    })
+    const { options, showOptions, value } = this.state
+    const optionElements = options.map((option) => (
+      &lt;A_OptionItem
+        key={option.id}
+        id={option.id}
+        value={option.value}
+        onSelect={this.handleSelectOption}
+      /&gt
+    ))
+
+    const optionCollection = (
+      &lt;div className="C_OptionsList"&gt{optionElements}&lt;/div&gt
+    )
 
     return (
-      &lt;div className="O_Select"&gt
+      &lt;div className="O_Select">
         &lt;A_Input
           placeholder={placeholder}
           value={value}
@@ -171,8 +172,7 @@ export default class O_Select extends PureComponent {
             this.setVisibleOptions(true)
           }}
         /&gt
-
-        {showOptions && optionElements}
+        {showOptions && optionCollection}
       &lt;/div&gt
     )
   }
@@ -183,12 +183,14 @@ export default class O_Select extends PureComponent {
         </p>
 
         <pre><code class="language-css">.O_Select {
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  margin: 20% auto;
   width: 610px;
+  border-radius: 10px;
 
   .C_OptionsList {
     margin-top: -15px;
-    border-radius: 10px;
-    background-color: #f4f4f4;
+    background-color: #ffff;
     padding: 40px 20px 20px 20px;
   }
 }</code></pre>

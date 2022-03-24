@@ -141,6 +141,13 @@ module.exports = {
       template: './src/articles/organisms/O_Menu.html',
       filename: './organisms/O_Menu.html',
       chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_MeatBall.html',
+      filename: './atoms/A_MeatBall.html',
+      chunks: ['index']
     })
   ],
   optimization: {

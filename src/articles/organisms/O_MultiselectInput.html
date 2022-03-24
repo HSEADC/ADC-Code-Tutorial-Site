@@ -39,22 +39,22 @@
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Мультиселект состоит из&nbsp;<a href="/atoms/A_Input.html">input</a> с
-          предзаполненным контекстным текстом placeholder, иконки шеврона,
-          которая разворачивается во&nbsp;время пользовательского действия,
-          option list,
-          <a href="/atoms/A_OptionItem.html">option item</a> которого необходимо
+          Multiselect input состоит из&nbsp;<a href="/atoms/A_Input.html"
+            >input</a
+          >
+          с предзаполненным placeholder,
+          <a href="/atoms/A_OptionItem.html">option item</a> который необходимо
           выбрать&nbsp;и, в&nbsp;выбранном состоянии,
-          <a href="/atoms/A_Chip.html">chip</a>
+          <a href="/atoms/A_Chip.html">chip.</a>
           Подробнее про основную структуру
-          <a href="/organisms/O_Select.html">select</a> смори тут.
+          <a href="/organisms/O_Select.html">select.</a>
         </p>
 
         <h3>Chip</h3>
         <p>
           Основа отличия multiselect input от&nbsp;обычного select input
-          в&nbsp;том, что выбранные строки из&nbsp;option list выводятся
-          в&nbsp;input в&nbsp;виде chip. Эти элементы отображают выбранный
+          в&nbsp;том, что&nbsp;выбранные строки из&nbsp;option list выводятся
+          в&nbsp;input в&nbsp;виде chip. Эти&nbsp;элементы отображают выбранный
           контент и&nbsp;имеют иконку удаления.
         </p>
 
@@ -82,10 +82,11 @@
 
         <p>
           Исходя из&nbsp;структуры, мы&nbsp;можем выявить несколько состояний
-          компонента с данными и&nbsp;без них. Так как заполненный инпут
-          отображает не&nbsp;строку, а отдельный компонент или несколько
-          компонентов в&nbsp;виде чипсов. Мильтиселект изменяется следующим
-          образом:
+          компонента с данными и&nbsp;без них. Так как заполненный
+          <a href="/atoms/A_Input.html">input</a> отображает не&nbsp;строку, а
+          отдельный компонент или несколько компонентов в&nbsp;виде
+          <a href="/atoms/A_Chip.html">chip</a>. Multiselect input изменяется
+          следующим образом:
         </p>
 
         <img
@@ -103,16 +104,6 @@
           целиком, мы ограничиваем максимальную длину chip и&nbsp;срезаем
           выбранный текст.
         </p>
-
-        <img
-          srcset="
-            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4.png,
-            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4@2x.png 2x,
-            ../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4@3x.png 3x
-          "
-          src="../../images/organism/O_MultiselectInput/O_MultiselectInput-content-image-4.png"
-          alt="Структура чипса"
-        />
 
         <img
           srcset="

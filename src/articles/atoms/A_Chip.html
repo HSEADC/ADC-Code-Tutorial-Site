@@ -27,7 +27,7 @@
 
         <h1 id="initiation">Chip</h1>
         <p>
-          Chip помогает выводить нужную информацию,фильтровать содержимое или
+          Chip помогает выводить нужную информацию, фильтровать содержимое или
           инициировать действия. Chip может отображать разные типы интерактивных
           элементов в&nbsp;одной области, таких как список выбираемого времени
           фильма или серия контактов электронной почты.
@@ -39,7 +39,7 @@
           из&nbsp;одной или нескольких иконок. Так как выбираемая строка
           из&nbsp;списка может быть длинной, мы&nbsp;можем задать максимальный
           размер контейнера chip и&nbsp;срезать выбранный текст. Делаем
-          мы&nbsp;это для того, чтобы chip в
+          мы&nbsp;это для того, чтобы chips в&nbsp;
           <a href="/atoms/A_Input.html">input</a> вставали корректно.
         </p>
 
@@ -72,7 +72,7 @@
         <h2 id="realization">Реализация</h2>
         <p>
           Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
-          A_Chip, в&nbsp;неё кладем A_Chip.jsx и&nbsp;A_Chip.scss. Затем
+          A_Chip, в&nbsp;неё&nbsp;кладем A_Chip.jsx и&nbsp;A_Chip.scss. Затем
           описываем функционал chip. Получаем следующий код, который описывает
           все состояния disabled, initial, hover.
         </p>
@@ -80,9 +80,9 @@
         <p>
           Chip содержит <a href="#">icon</a> Q_Icon cross, которая лежит в
           отдельной папке image в&nbsp;файле Q_Icon.scss. В&nbsp;нем
-          мы&nbsp;храним все иконки, которые нужны для различных компонентов,
-          а&nbsp;их&nbsp;фон и&nbsp;размер задаем в файле со&nbsp;стилем всего
-          chip. Это мы&nbsp;покажем в&nbsp;структуре SCSS.
+          мы&nbsp;храним все иконки, которые нужны для&nbsp;различных
+          компонентов, а&nbsp;их&nbsp;фон и&nbsp;размер задаем в файле
+          со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре SCSS.
         </p>
 
         <pre><code class="language-javascript">import classnames from 'classnames'
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
 
-          <a href="#">
+          <a href="/organisms/O_MultiselectInput.html">
             <figure class="suggestCover O_MultiselectInput"></figure>
             <h4>Multiselect Input</h4>
             <p>

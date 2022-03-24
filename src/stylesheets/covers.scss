@@ -51,6 +51,10 @@
   @media (max-width: 578px) {
     width: 374px;
     height: 235px;
+
+    &.A_Chip {
+      background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile.png');
+    }
   }
 }
 
@@ -97,6 +101,10 @@
     @media (max-width: 578px) {
       width: 374px;
       height: 235px;
+
+      &.A_Chip {
+        background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile@2x.png');
+      }
     }
   }
 }
@@ -139,6 +147,16 @@
   @media (max-width: 768px) {
     width: 280px;
     height: 170px;
+
+    &.A_Chip {
+      background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-mobile.png');
+    }
+    &.S_SingIn {
+      background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-mobile.png');
+    }
+    &.O_MultiselectInput {
+      background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-mobile.png');
+    }
   }
 }
 
@@ -178,6 +196,16 @@
     @media (max-width: 768px) {
       width: 280px;
       height: 170px;
+
+      &.A_Chip {
+        background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-mobile@2x.png');
+      }
+      &.S_SingIn {
+        background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-mobile@2x.png');
+      }
+      &.O_MultiselectInput {
+        background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-mobile@2x.png');
+      }
     }
   }
 }
