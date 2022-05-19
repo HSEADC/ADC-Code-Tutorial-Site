@@ -75,6 +75,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
+      template: './src/articles/general/isolation.html',
+      filename: './general/isolation.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
       template: './src/articles/atoms/A_Button.html',
       filename: './atoms/A_Button.html',
       chunks: ['index']
@@ -147,6 +154,13 @@ module.exports = {
       scriptLoading: 'blocking',
       template: './src/articles/atoms/A_MeatBall.html',
       filename: './atoms/A_MeatBall.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/Q_Icon.html',
+      filename: './atoms/Q_Icon.html',
       chunks: ['index']
     })
   ],

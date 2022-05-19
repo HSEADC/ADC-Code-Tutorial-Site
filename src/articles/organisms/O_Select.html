@@ -8,9 +8,47 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="../index.html">О проекте</a>
-      <a href="../index.html">Компоненты</a>
-      <a href="../index.html">О нас</a>
+      <img
+        class="logo"
+        srcset="
+          ../../images/general/Main/Logo-navigation-content-desktop.png,
+          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+        "
+        src="../../images/general/Main/Logo-navigation-content-desktop.png"
+        alt="логотип"
+      />
+
+      <div class="menu_text">
+        <a href="../index.html">Принципы</a>
+        <a href="../index.html">Фишки</a>
+        <a href="../index.html">Компоненты</a>
+        <a href="../index.html">О нас</a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -38,8 +76,7 @@
           помощью стилей. Каждый пункт создаётся с помощью элемента option,
           который должен быть вложен в контейнер &ltselect&gt.
           Если&nbsp;планируется отправлять данные списка на сервер, то требуется
-          поместить &ltselect&gt внутрь формы. Это также необходимо, когда к
-          данным списка идёт обращение через скрипты.
+          поместить &ltselect&gt внутрь формы.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
@@ -52,8 +89,9 @@
 
         <h3>Input</h3>
         <p>
-          Элемент &ltinput&gt является основным элементом формы (HTML тег
-          &ltform&gt) и определяет пользовательское поле для ввода информации.
+          Элемент <a href="/atoms/A_Input.html">input</a> является основным
+          элементом формы (HTML тег &ltform&gt) и&nbspопределяет интерактивное
+          поле для ввода информации.
         </p>
 
         <img
@@ -73,9 +111,9 @@
           видны несколько строк. Строки могут содержать один или несколько
           столбцов с&nbsp;заголовками или без них. Если options содержит больше
           строк, чем может быть отображено в&nbsp;элементе управления, появится
-          полоса прокрутки. Выбор ограничен вариантами, представленными
-          в&nbsp;списке; ввести свое значение в&nbsp;инпут невозможно. Как
-          создать список опций и только опции.
+          скролл. Выбор ограничен вариантами, представленными в&nbsp;списке, но
+          в зависимости от функциональности через input можно добавить новый
+          элемент списска.
         </p>
 
         <img
@@ -91,7 +129,7 @@
         <p>
           При единичном выборе значения из&nbsp;списка input выглядит таким
           образом. Подробнее про такой вид компонента
-          <a href="/organisms/O_SelectInput.html">iselect input.</a>
+          <a href="/organisms/O_SelectInput.html">select input.</a>
         </p>
 
         <img
@@ -137,7 +175,7 @@
           alt="Структура чипса"
         />
         <p>
-          А также состояние инпута, кога открыт option list.
+          А также состояние инпута, когда открыт option list.
         </p>
 
         <img
@@ -205,12 +243,12 @@
 
     <footer class="footerbar">
       <div>
-        <a href="../index.html">Контакты</a>
-        <a href="#state">Instgram</a>
+        <a href="#state">Telegram</a>
+        <a href="#state">VK</a>
       </div>
 
       <div>
-        <a href="../index.html">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>

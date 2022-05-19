@@ -8,9 +8,47 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="../index.html">О проекте</a>
-      <a href="../index.html">Компоненты</a>
-      <a href="../index.html">О нас</a>
+      <img
+        class="logo"
+        srcset="
+          ../../images/general/Main/Logo-navigation-content-desktop.png,
+          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+        "
+        src="../../images/general/Main/Logo-navigation-content-desktop.png"
+        alt="логотип"
+      />
+
+      <div class="menu_text">
+        <a href="../index.html">Принципы</a>
+        <a href="../index.html">Фишки</a>
+        <a href="../index.html">Компоненты</a>
+        <a href="../index.html">О нас</a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -29,13 +67,17 @@
         <p>
           Chip помогает выводить нужную информацию, фильтровать содержимое или
           инициировать действия. Chip может отображать разные типы интерактивных
-          элементов в&nbsp;одной области, таких как список выбираемого времени
-          фильма или серия контактов электронной почты.
+          элементов в&nbsp;одной области, таких как список выбираемого времени,
+          фильма или список контактов электронной почты в&nbsp;вид&nbsp;тегов.
+          Как пример, с&nbsp;помощью chip можно предоставлять контактную
+          информацию в&nbsp;удобном виде: при отправке текстовых сообщений
+          они&nbsp;будут отображаться в поле &laquo;Кому&raquo;, когда
+          пользователь начинает вводить имя контакта и выбирает нужный.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Chip состоит из&nbsp;контейнера, текстового lable и ,иногда,
+          Chip состоит из&nbsp;контейнера, текстового элемента и ,иногда,
           из&nbsp;одной или нескольких иконок. Так как выбираемая строка
           из&nbsp;списка может быть длинной, мы&nbsp;можем задать максимальный
           размер контейнера chip и&nbsp;срезать выбранный текст. Делаем
@@ -55,9 +97,22 @@
 
         <h2 id="state">Состояние компонента</h2>
         <p>
-          Управлять выбранными chip можно из&nbsp;самого
-          <a href="/atoms/A_Input.html">input</a> , если chip имеет собственную
-          кнопку удаления. Состояния chip при различных условиях показаны ниже.
+          Chip может быть удаляемым и&nbsp;неудаляемым. Зависит это
+          от&nbsp;того, каую функциональность должен иметь.
+        </p>
+        <img
+          srcset="
+            ../../images/atoms/A_Chip/A_Chip-content-image-4.png,
+            ../../images/atoms/A_Chip/A_Chip-content-image-4@2x.png 2x,
+            ../../images/atoms/A_Chip/A_Chip-content-image-4@3x.png 3x
+          "
+          src="../../images/atoms/A_Chip/A_Chip-content-image-4.png"
+          alt="Структура чипса"
+        />
+        <p>
+          В нашем случае нужен удвляемый chip с иконкой крестика. Также
+          управлять chip можно снимая выделение с элемента списска из option
+          list. Состояния такого chip при различных показаны ниже.
         </p>
         <img
           srcset="
@@ -71,18 +126,18 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
-          A_Chip, в&nbsp;неё&nbsp;кладем A_Chip.jsx и&nbsp;A_Chip.scss. Затем
-          описываем функционал chip. Получаем следующий код, который описывает
-          все состояния disabled, initial, hover.
+          Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем
+          файлы A_Chip.jsx и&nbsp;A_Chip.scss. Затем описываем функционал chip.
+          Получаем следующий код, который описывает все состояния disabled,
+          initial, hover и&nbsp;выводит в chip иконку удаления.
         </p>
 
         <p>
-          Chip содержит <a href="#">icon</a> Q_Icon cross, которая лежит в
-          отдельной папке image в&nbsp;файле Q_Icon.scss. В&nbsp;нем
-          мы&nbsp;храним все иконки, которые нужны для&nbsp;различных
+          Chip содержит <a href="/atoms/Q_Icon.html">icon</a> Q_Icon cross,
+          которая лежит в отдельной папке image в&nbsp;файле Q_Icon.scss.
+          В&nbsp;нем мы&nbsp;храним все иконки, которые нужны для&nbsp;различных
           компонентов, а&nbsp;их&nbsp;фон и&nbsp;размер задаем в файле
-          со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре SCSS.
+          со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре CSS.
         </p>
 
         <pre><code class="language-javascript">import classnames from 'classnames'
@@ -120,12 +175,53 @@ export default class A_Chip extends PureComponent {
 }</code></pre>
 
         <p>
-          Выводим получившуюся структуру в файле с примером:
+          Затем, в файле A_Chip.scss прописываем стили для A_Chip и&nbsp;Q_Icon
+          cross. Не&nbsp;забываем описать для chip состоянии disabled
+          и&nbsp;hover.
+        </p>
+        <pre><code class="language-css">.A_Chip {
+position: relative;
+padding: 6px 38px 6px 10px;
+border-radius: 10px;
+font-size: 16px;
+font-weight: 300;
+color: #426060;
+background-color: #b7fcfc;
+cursor: default;
+user-select: none;
+}
+.A_Chip .Q_Icon.cross {
+position: absolute;
+top: 6px;
+right: 10px;
+width: 20px;
+height: 20px;
+margin-left: 8px;
+border-radius: 20px;
+background-color: #d7ffff;
+cursor: pointer;
+}
+.A_Chip .Q_Icon.cross:hover {
+background-color: #5be7e7;
+}
+.A_Chip.disabled {
+color: #abd9d9;
+background-color: #f2ffff;
+cursor: default;
+}
+.A_Chip.disabled .Q_Icon.cross:hover {
+background-color: #d7ffff;
+cursor: default;
+}</code></pre>
+
+        <p>
+          Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
+          теперь его&nbsp;нужно отрендерить. Выведи получившийся компонент
+          согласно своей структуре проекта. Ты можешь увидеть как это делаем мы,
+          а также посмотреть получившийся <a href="#">chip</a>.
         </p>
         <pre><code class="language-javascript">import React from 'react'
 import ReactDOM from 'react-dom'
-import A_Chip from '../../components/atoms/A_Chip/A_Chip.jsx'
-import './example_4.scss'
 
 function handleClick() {
   console.log('click')
@@ -133,61 +229,15 @@ function handleClick() {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    &lt;&gt
       &lt;A_Chip text="Text" handleClick={handleClick} /&gt
       &lt;A_Chip text="Text" disabled={true} handleClick={handleClick} /&gt
-    &lt;/&gt,
     document.body.appendChild(document.createElement('div'))
   )
 })</code></pre>
 
         <p>
-          Затем прописываем стили для A_Chip и&nbsp;Q_Icon cross.
-          Не&nbsp;забываем описать для chip состоянии disabled и&nbsp;hover.
-        </p>
-        <pre><code class="language-css">.A_Chip {
-  position: relative;
-  padding: 6px 38px 6px 10px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 300;
-  color: #426060;
-  background-color: #b7fcfc;
-  cursor: default;
-  user-select: none;
-
-  .Q_Icon.cross {
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-    border-radius: 20px;
-    background-color: #d7ffff;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #5be7e7;
-    }
-  }
-
-  &.disabled {
-    color: #abd9d9;
-    background-color: #f2ffff;
-    cursor: default;
-
-    .Q_Icon.cross {
-      &:hover {
-        background-color: #d7ffff;
-        cursor: default;
-      }
-    }
-  }
-}</code></pre>
-
-        <p>
-          Получаем следующий результат:
+          Получаем следующий результат, который отображает два компонента chip
+          во всех состояниях.
         </p>
 
         <img
@@ -239,12 +289,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <footer class="footerbar">
       <div>
-        <a href="../index.html">Контакты</a>
-        <a href="#state">Instgram</a>
+        <a href="#state">Telegram</a>
+        <a href="#state">VK</a>
       </div>
 
       <div>
-        <a href="../index.html">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>

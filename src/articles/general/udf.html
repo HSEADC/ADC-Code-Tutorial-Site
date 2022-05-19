@@ -7,64 +7,86 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="../index.html">О проекте</a>
-      <a href="../index.html">Компоненты</a>
-      <a href="../index.html">О нас</a>
+      <img
+        class="logo"
+        srcset="
+          ../../images/general/Main/Logo-navigation-content-desktop.png,
+          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+        "
+        src="../../images/general/Main/Logo-navigation-content-desktop.png"
+        alt="логотип"
+      />
+
+      <div class="menu_text">
+        <a href="../index.html">Принципы</a>
+        <a href="../index.html">Фишки</a>
+        <a href="../index.html">Компоненты</a>
+        <a href="../index.html">О нас</a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
     </menu>
 
     <div class="contentAreaWrapper">
       <menu class="sidebar">
         <a href="#initiation">Введение</a>
         <a href="#realization">Пример</a>
-        <a href="#links">Ссылки</a>
+        <a href="#conclution">Заключение</a>
+        <a href="#links">Компоненты</a>
       </menu>
 
       <article>
         <figure class="articleCover UDF"></figure>
 
-        <h1 id="initiation">Проектирование компонентов в&nbsp;изоляции</h1>
+        <h1 id="initiation">Принципы Universal Design Framework</h1>
         <p>
-          Это подход основывается на&nbsp;применении компонентно-ориентированого
-          программирования. Попросту говоря, разработка, основанная на
-          компонентах, представляет собой проектирование приложений посредством
-          создания слабо связанных друг с&nbsp;другом независимых блоков кода. У
-          каждого из&nbsp;них есть интерфейс, предназначенный для организации
-          взаимодействия с&nbsp;другими частями системы. Множество компонентов,
-          объединённых друг с&nbsp;другом посредством композиции, формируют
-          модульное приложение.
+          Этот принцип основывается на особой сиситеме наименования компонентов
+          и в дизайне и в коде. Также используем особую систему префиксов для
+          того, чтобы быстро ориетироваться к какому структурному слою
+          принадлежит компонент. Такой подход упрощает поиск нужного компонента
+          в папке проекта или в дзайн системе, упрощает процесс его изоляции.
         </p>
         <p>
-          В&nbsp;данном примере мы&nbsp;рассмотриваем особый принцип верстки
-          простого компонента
-          <a href="/atoms/A_Chip.html">chip</a> в&nbsp;изоляции.
+          В&nbsp;этом туториале мы&nbsp;расскажем о&nbsp;системе сквозного
+          наименования компонентов по&nbsp;принципам UDF на&nbsp;примере
+          <a href="/atoms/A_Button.html">button</a>. Подробнее о&nbsp;UDF
+          ты&nbsp;можешь прочитать в&nbsp;книге
+          <a href="/atoms/A_Button.html">Данилы Тимофеева</a>.
         </p>
 
         <h2 id="realization">Пример</h2>
         <p>
-          Для начала создаем кнопку.
+          Мы&nbsp;ведем структруную и&nbsp;последовательную работу
+          проектирования компонентов, поэтому начинаем с&nbsp;дизайна
+          комопнента. Для начала определяем какая функиональность планируется
+          и&nbsp;по&nbsp;системе UDF выбираем префикс. Кнопка предствляет
+          из&nbsp;себя текстовую метку и&nbsp;ее&nbsp;обводку. Внутри себя
+          не&nbsp;содержит каких-либо компонентов поэтому мы&nbsp;называем ее
+          А_Buttom.
         </p>
-
-        <pre><code class="language-javascript">&lt;div class=”button”&gt;&lt;/div&gt;</code></pre>
-
-        <p>
-          CSS код у этой кнопки выглядит так.
-        </p>
-
-        <pre><code class="language-javascript">.button {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #d7ffff;
-  background-image: url(“cross.svg”);
-  background-size: 8px 8px;
-  background-position: center;
-}</code></pre>
-
-        <p>
-          Мы&nbsp;имеем div с&nbsp;классом button и&nbsp;определенными
-          параметрами, выглядит он так.
-        </p>
-
         <img
           srcset="
             ../../images/general/UDF/UDF-content-image-1.png,
@@ -74,51 +96,16 @@
           src="../../images/general/UDF/UDF-content-image-1.png"
           alt="Структура чипса"
         />
-
         <p>
-          Затем, эту кнопку мы&nbsp;хотим вывести в&nbsp;другом компоненте,
-          например в&nbsp;chip. HTML код чипса выглядит так. Про
-          <a href="/atoms/A_Chip.html">chip</a> можно изучить в&nbsp;этом
-          туториале.
+          Как только кнопка содана в&nbsp;Figma или любом другом инструменте
+          для&nbsp;проектирования интерфейсов, мы&nbsp;можем переносить
+          ее&nbsp;в&nbsp;папку проекта, сохраняя сквозной нейминг.
         </p>
-
-        <pre><code class="language-css">&lt;div class=”chip”&gt;
-  Something
-  &lt;div class=”button”&gt;&lt;/div&gt;
-&lt;/div&gt;
-}</code></pre>
-
         <p>
-          Дилемма заключается в&nbsp;том, что мы&nbsp;можем CSS код положить
-          и&nbsp;в&nbsp;тот компонент и&nbsp;в&nbsp;другой. Следуя принципу
-          проектирования компонентов в&nbsp;изоляции, малый компонент
-          не&nbsp;должен ничего знать о&nbsp;среде, которая на&nbsp;него влияет.
-          Код о&nbsp;приобретённых свойствах малого компонента помещается
-          в&nbsp;больший компонент.
+          В&nbsp;папке проекта мы&nbsp;содаем два файла, html и&nbsp;css,
+          называем их&nbsp;соответственно.Затем создаем кнопку с&nbsp;классом
+          A_Button. Вот&nbsp;так&nbsp;выглядит структура файлов.
         </p>
-
-        <pre><code class="language-css">.chip {
-  position: relative;
-  height: 32px;
-  padding: 0 32px 0 12px;
-  border-radius: 16px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 32px;
-  background: #D3FFFF;
-  }
-
-    .chip .button {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-}</code></pre>
-
-        <p>
-          Теперь мы имеем div с классом chip, в котором есть текст и div с нашей
-          кнопкой.
-        </p>
-
         <img
           srcset="
             ../../images/general/UDF/UDF-content-image-2.png,
@@ -128,52 +115,22 @@
           src="../../images/general/UDF/UDF-content-image-2.png"
           alt="Структура чипса"
         />
-
+        <pre><code class="language-css">&lt;a class=”A_Button” href="#"&gt;Подписаться&lt;/a&gt;</code></pre>
         <p>
-          Следуя этому принципу и далее, мы создадим список из этих элементов.
+          Затем задаем стили для кнопки с классом A_Button.
         </p>
-
-        <pre><code class="language-javascript">&lt;div class=”chip”&gt;
-  Something
-  &lt;div class=”button”&lt&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=”chips”&gt;
- &lt;div class=”chip”&gt;
-  Something
-  &lt;div class=”button”&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=”chip”&gt;
-  Something
-  &lt;div class=”button”>&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=”chip”&gt;
-  Something
-  &lt;div class=”button”>&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-        <p>
-          CSS код будет выглядеть так.
-        </p>
-
-        <pre><code class="language-css">.chips {
-display: flex;
-padding: 16px;
-background: #FFFFFF;
-box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.11);
-border-radius: 10px;
-}
-
-.chips .chip {
-margin: 0 8px 8px 0;
+        <pre><code class="language-javascript">.A_Button {
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #B7FCFC;
+    cursor: pointer;
+    user-select: none;
 }</code></pre>
 
-        <p>
-          Получаем следуюший результат:
-        </p>
+        <p>Получаем следующий результат в виде кнопки.</p>
 
         <img
           srcset="
@@ -181,21 +138,22 @@ margin: 0 8px 8px 0;
             ../../images/general/UDF/UDF-content-image-3@2x.png 2x,
             ../../images/general/UDF/UDF-content-image-3@3x.png 3x
           "
-          src="../../images/atoms/A_Chip/A_Chip-content-image-3.png"
+          src="../../images/general/UDF/UDF-content-image-3.png"
           alt="Структура чипса"
         />
-
-        <h2 id="links">Ссылки</h2>
-
-        <div class="links">
-          <a class="figma" href="/articles/atoms/a_button.html"></a>
-          <a class="github" href="/articles/atoms/a_button.html"></a>
-        </div>
-
-        <h2>Составляющие</h2>
-
+        <h2 id="conclution">Заключение</h2>
         <p>
-          Этот компонент часто выводится в следующих компонентах
+          Этот принцип помогает нам структурировать компоненты, быстро
+          их&nbsp;находить. Это особенно важно, когда проектирование компонентов
+          ведётся изолированно. Подробнее о&nbsp;принципе изоляции
+          ты&nbsp;можешь прочитать в&nbsp;этом уроке
+          <a href="/atoms/A_Chip.html">Проектирование в&nbsp;изоляции</a>.
+        </p>
+
+        <h2>Компоненты</h2>
+        <p>
+          Продолжи изучать комопненты с новыми знаниями о принципе структурного
+          наименования компонентов по UDF.
         </p>
 
         <div class="suggest">
@@ -219,12 +177,12 @@ margin: 0 8px 8px 0;
 
     <footer class="footerbar">
       <div>
-        <a href="../index.html">Контакты</a>
-        <a href="#state">Instgram</a>
+        <a href="#state">Telegram</a>
+        <a href="#state">VK</a>
       </div>
 
       <div>
-        <a href="../index.html">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>

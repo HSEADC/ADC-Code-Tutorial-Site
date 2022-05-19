@@ -1,5 +1,6 @@
 body.main {
   font-family: 'Inter', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 
   a {
     text-decoration: none;
@@ -9,19 +10,19 @@ body.main {
 
   h1 {
     font-size: 40px;
-    font-weight: bold;
-    width: 468px;
+    font-weight: 600;
+    width: 600px;
+    line-height: 110%;
   }
 
   p {
     font-size: 24px;
     color: var(--black);
-    line-height: 140%;
+    line-height: 150%;
   }
 
   h1 + p {
     margin-top: 20px;
-    line-height: 140%;
   }
   p + h1 {
     margin-top: 60px;
@@ -31,67 +32,180 @@ body.main {
     margin-top: 20px;
   }
 
-  #opacity {
-    opacity: 40%;
-    cursor: initial;
+  p + a {
+    margin-top: 20px;
   }
 
-  h1#crutch {
-    text-align: left;
-    width: auto;
+  .information_bbe,
+  .information_isolation,
+  .information_udf,
+  .skroll,
+  .slider,
+  .menuburger,
+  .select {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
   }
 
-  #center {
-    width: 624px;
-    text-align: center;
+  .text_information {
+    width: 600px;
   }
 
-  #left {
-    width: 468px;
-    text-align: left;
+  .principles_image_content {
+    margin-top: -110px;
+  }
 
-    a {
-      color: var(--pink);
-      text-decoration: underline;
-    }
+  .button_information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background: #ff0aa9;
+    border-radius: 26px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300;
+    width: 344px;
+  }
+
+  .blur1,
+  .blur2,
+  .blur3,
+  .blur4 {
+    position: absolute;
+    border-radius: 360px;
+    filter: blur(70px);
+    z-index: 1;
   }
 
   .header {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
-    #cover {
+    .cover {
       width: 100%;
+      position: relative;
     }
 
-    #center {
-      font-size: 24px;
+    .nav1 {
+      margin-top: -279px;
+      width: 390px;
+      margin-left: 456px;
+      position: absolute;
+    }
+
+    .nav2 {
+      margin-top: -330px;
+      width: 390px;
+      margin-left: 862px;
+      position: absolute;
+    }
+    .nav3 {
+      margin-top: -506px;
       width: 470px;
-      text-align: center;
-      line-height: 140%;
-      margin: -190px auto;
+      margin-left: 1082px;
+      position: absolute;
+    }
+    .nav4 {
+      margin-top: -419px;
+      width: 390px;
+      margin-left: 1413px;
+      position: absolute;
     }
 
-    .navigation {
+    .menubar {
+      z-index: 1;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      padding: 0px 40px;
       align-items: center;
-      margin-top: 350px;
+      width: 100%;
+      height: 58px;
+      font-size: 18px;
+      font-weight: 300;
+      border-bottom: solid 1px var(--light);
+      background-color: var(--white);
+
+      a {
+        margin-right: 10px;
+        color: var(--black);
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          color: var(--pink);
+        }
+      }
+
+      .media_logo {
+        width: 30px;
+      }
     }
   }
 
-  .information {
-    .thesis {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 120px;
+  .principles {
+    position: relative;
+
+    .principles_tittle {
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
 
-    .block {
-      margin: 110px 180px;
-      display: flex;
-      justify-content: space-around;
+    .information_bbe {
+      margin-top: -110px;
     }
+
+    .information_isolation {
+      margin-top: 100px;
+
+      .text_information {
+        margin-left: 170px;
+        margin-top: 250px;
+        z-index: 2;
+      }
+    }
+
+    .information_udf {
+      margin-top: 200px;
+    }
+
+    .blur1 {
+      background-color: #79ff39;
+      width: 400px;
+      height: 400px;
+      margin-left: 640px;
+      margin-top: 90px;
+    }
+
+    .blur2 {
+      background-color: #3dffff;
+      width: 800px;
+      height: 800px;
+      margin-left: -530px;
+      margin-top: 190px;
+    }
+
+    .blur3 {
+      background-color: #ff0aa9;
+      width: 1000px;
+      height: 1000px;
+    }
+
+    .blur4 {
+      background-color: #79ff39;
+      width: 400px;
+      height: 400px;
+      margin-left: 640px;
+      margin-top: 90px;
+    }
+  }
+
+  .features {
+    position: relative;
   }
 
   .content {
@@ -135,8 +249,17 @@ body.main {
   }
 
   .about {
-    width: 993px;
-    margin: 0 auto;
+    overflow-x: hidden;
+
+    img {
+      position: absolute;
+      margin-top: -340px;
+      width: 100%;
+    }
+    .about_text {
+      width: 910px;
+      margin: 750px auto;
+    }
   }
 
   .footerbar a {

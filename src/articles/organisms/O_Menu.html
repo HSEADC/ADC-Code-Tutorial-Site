@@ -8,9 +8,47 @@
 
   <body class="article">
     <menu class="menubar">
-      <a href="../index.html">О проекте</a>
-      <a href="../index.html">Компоненты</a>
-      <a href="../index.html">О нас</a>
+      <img
+        class="logo"
+        srcset="
+          ../../images/general/Main/Logo-navigation-content-desktop.png,
+          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+        "
+        src="../../images/general/Main/Logo-navigation-content-desktop.png"
+        alt="логотип"
+      />
+
+      <div class="menu_text">
+        <a href="../index.html">Принципы</a>
+        <a href="../index.html">Фишки</a>
+        <a href="../index.html">Компоненты</a>
+        <a href="../index.html">О нас</a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
     </menu>
 
     <div class="contentAreaWrapper">
@@ -25,23 +63,24 @@
       <article>
         <figure class="articleCover O_Menu"></figure>
 
-        <h1 id="initiation">Menu</h1>
+        <h1 id="initiation">SideBarMenu</h1>
         <p>
-          Menu отображает список вариантов на&nbsp;временной поверхности.
-          Они&nbsp;появляются, когда пользователи взаимодействуют
-          с&nbsp;кнопкой, действием или другим элементом управления.
+          Menu отображает список вариантов доступныз переходов на страницы.
+          Он&nbsp;появляются, когда пользователи взаимодействуют с&nbsp;кнопкой,
+          действием или другим элементом управления.
         </p>
         <p>
           Menu должно быть легко открывать, закрывать и&nbsp;взаимодействовать.
           Содержимое меню должно соответствовать потребностям пользователя.
-          Пункты меню должны быть легко сканировать.
+          Пункты меню должно быть легко считывать и понимать, на какой имеено
+          странице находится пользователь.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
           Меню должно быть расположено относительно края экрана или браузера.
-          Обычно они появляются рядом (или перед) элементом, который их
-          генерирует. Если они находятся в&nbsp;положении, которое должно быть
+          Обычно оно появляются рядом (или перед) элементом, который их
+          генерирует. Если оно находятся в&nbsp;положении, которое должно быть
           обрезано браузером или краем экрана, меню может отображаться слева,
           справа или над элементом, который его генерирует. Данное меню состоит
           из&nbsp;menu item, которые собраны в&nbsp;коллекцию.
@@ -148,29 +187,28 @@ export default class O_Menu extends PureComponent {
         </p>
 
         <pre><code class="language-css">.O_Menu {
-  width: 360px;
-  padding: 40px 28px;
-  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
-  border-radius: 10px;
-
-  .C_MenuItems {
-    display: flex;
-    flex-direction: column;
-
-    &:last-child {
-      margin-top: 100px;
-    }
-  }
+   width: 360px;
+   padding: 40px 28px;
+   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+   border-radius: 10px;
+}
+ .O_Menu .C_MenuItems {
+   display: flex;
+   flex-direction: column;
+}
+ .O_Menu .C_MenuItems:last-child {
+   margin-top: 100px;
 }</code></pre>
 
         <p>
           В файле сборщика заполняем массивы top и botton и выводим компонент.
+          Ты можшь посмотреть как выглядит рабочий комопнент
+          <a href="/atoms/A_MenuItem">menu.</a>
         </p>
 
         <pre><code class="language-javascript">import React from 'react'
 import ReactDOM from 'react-dom'
 import O_Menu from '../../components/organisms/O_Menu/O_Menu.jsx'
-import './example_1.scss'
 
 const menu = {
   top: [
@@ -216,6 +254,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(document.createElement('div'))
   )
 })</code></pre>
+
+        <p>
+          Получаем следующий результат:
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_Menu/O_Menu-content-image-2.png,
+            ../../images/organism/O_Menu/O_Menu-content-image-2@2x.png 2x,
+            ../../images/organism/O_Menu/O_Menu-content-image-2@3x.png 3x
+          "
+          src="../../images/organism/O_Menu/O_Menu-content-image-2.png"
+          alt="Структура чипса"
+        />
 
         <h2 id="links">Ссылки</h2>
 

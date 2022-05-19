@@ -10,6 +10,9 @@
   width: 744px;
   height: 386px;
 
+  &.Q_Icon {
+    background-image: url('images/quark/Q_Icon/Q_Icon-article-cover-desktop.png');
+  }
   &.A_Chip {
     background-image: url('images/atoms/A_Chip/A_Chip-article-cover-desktop.png');
   }
@@ -21,6 +24,9 @@
   }
   &.UDF {
     background-image: url('images/general/UDF/UDF-article-cover-desktop.png');
+  }
+  &.Isolation {
+    background-image: url('images/general/Isolation/Isolation-article-cover-desktop.png');
   }
   &.O_Select {
     background-image: url('images/organism/O_Select/O_Select-article-cover-desktop.png');
@@ -60,6 +66,9 @@
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .articleCover {
+    &.Q_Icon {
+      background-image: url('images/quark/Q_Icon/Q_Icon-article-cover-desktop@2x.png');
+    }
     &.A_Chip {
       background-image: url('images/atoms/A_Chip/A_Chip-article-cover-desktop@2x.png');
     }
@@ -71,6 +80,9 @@
     }
     &.UDF {
       background-image: url('images/general/UDF/UDF-article-cover-desktop@2x.png');
+    }
+    &.Isolation {
+      background-image: url('images/general/Isolation/Isolation-article-cover-desktop@2x.png');
     }
     &.O_Select {
       background-image: url('images/organism/O_Select/O_Select-article-cover-desktop@2x.png');
@@ -259,6 +271,9 @@
   &.Process {
     background-image: url('images/general/Process/Process-teaser-cover.png');
   }
+  &.Q_Icon {
+    background-image: url('images/quark/Q_Icon/Q_Icon-teaser-cover.png');
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -307,6 +322,9 @@
     }
     &.Process {
       background-image: url('images/general/Process/Process-teaser-cover@2x.png');
+    }
+    &.Q_Icon {
+      background-image: url('images/quark/Q_Icon/Q_Icon-teaser-cover@2x.png');
     }
   }
 }
