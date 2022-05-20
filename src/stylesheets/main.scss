@@ -36,6 +36,13 @@ body.main {
     margin-top: 20px;
   }
 
+  .nav_1,
+  .nav_2,
+  .nav_3,
+  .nav_4 {
+    position: absolute;
+  }
+
   .information_bbe,
   .information_isolation,
   .information_udf,
@@ -43,9 +50,9 @@ body.main {
   .slider,
   .menuburger,
   .select {
-    display: flex;
-    justify-content: center;
     position: relative;
+    display: flex;
+    justify-content: space-evenly;
     z-index: 2;
   }
 
@@ -68,26 +75,34 @@ body.main {
     color: #ffffff;
     font-size: 20px;
     font-weight: 300;
-    width: 344px;
+    width: 259px;
   }
 
-  .blur1,
-  .blur2,
-  .blur3,
-  .blur4,
-  .blur5,
-  .blur6,
-  .blur7,
-  .blur8,
-  .blur9,
-  .blur10,
-  .blur11,
-  .blur12,
-  .blur13 {
+  .blur_1,
+  .blur_2,
+  .blur_3,
+  .blur_4,
+  .blur_5,
+  .blur_6,
+  .blur_7,
+  .blur_8,
+  .blur_9,
+  .blur_10,
+  .blur_11,
+  .blur_12,
+  .blur_13 {
     position: absolute;
-    border-radius: 360px;
+    border-radius: 500px;
     filter: blur(70px);
     z-index: 1;
+  }
+
+  .blob_1,
+  .blob_2,
+  .blob_3,
+  .blob_4,
+  .blob_5 {
+    position: absolute;
   }
 
   .header {
@@ -97,33 +112,30 @@ body.main {
 
     .cover {
       width: 100%;
-      position: relative;
     }
 
-    .nav1 {
+    .nav_1 {
       margin-top: -279px;
       width: 390px;
       margin-left: 456px;
-      position: absolute;
     }
 
-    .nav2 {
+    .nav_2 {
       margin-top: -330px;
       width: 390px;
       margin-left: 862px;
-      position: absolute;
     }
-    .nav3 {
+
+    .nav_3 {
       margin-top: -506px;
       width: 470px;
       margin-left: 1082px;
-      position: absolute;
     }
-    .nav4 {
+
+    .nav_4 {
       margin-top: -419px;
       width: 390px;
       margin-left: 1413px;
-      position: absolute;
     }
 
     .menubar {
@@ -157,29 +169,30 @@ body.main {
   }
 
   .principles {
-    position: relative;
-
     .principles_tittle {
       position: relative;
-      z-index: 2;
       width: 100%;
+      z-index: 2;
+    }
+
+    img {
+      z-index: 2;
     }
 
     .information_bbe {
       margin-top: -110px;
+
+      .button_information {
+        width: 354px;
+      }
     }
 
     .information_isolation {
       margin-top: 100px;
-      position: relative;
 
       .text_information {
-        margin-left: 170px;
+        margin-left: 80px;
         margin-top: 250px;
-      }
-
-      img {
-        z-index: 2;
       }
     }
 
@@ -188,7 +201,7 @@ body.main {
       margin-top: 200px;
     }
 
-    .blur1 {
+    .blur_1 {
       background-color: #79ff39;
       width: 400px;
       height: 400px;
@@ -196,7 +209,7 @@ body.main {
       margin-top: 90px;
     }
 
-    .blur2 {
+    .blur_2 {
       background-color: #3dffff;
       width: 800px;
       height: 800px;
@@ -204,14 +217,15 @@ body.main {
       margin-top: 190px;
     }
 
-    .blur3 {
+    .blur_3 {
       background-color: #ff0aa9;
-      width: 1000px;
-      height: 1000px;
-      margin-left: 2300px;
+      width: 1253px;
+      height: 1253px;
+      margin-left: 2650px;
+      margin-top: -270px;
     }
 
-    .blur4 {
+    .blur_4 {
       background-color: #79ff39;
       width: 400px;
       height: 400px;
@@ -219,18 +233,26 @@ body.main {
       margin-top: 460px;
     }
 
-    .blur5 {
+    .blur_5 {
       background-color: #3dffff;
       width: 400px;
       height: 400px;
-      margin-left: -1390px;
-      margin-top: 330px;
+      margin-left: -1730px;
+      margin-top: 260px;
+    }
+
+    .blob_1 {
+      margin-left: 1620px;
+      margin-top: 470px;
+      height: 500px;
     }
   }
+
   .features {
     img {
       z-index: 2;
     }
+
     .features_title {
       position: relative;
       width: 100%;
@@ -239,40 +261,43 @@ body.main {
     }
 
     .skroll {
-      margin-top: 120px;
+      margin-top: 190px;
+
+      .blob_2 {
+        margin-top: 410px;
+      }
     }
 
     .slider {
-      display: flex;
-      justify-content: space-evenly;
-      margin-top: 120px;
+      margin-top: 440px;
 
-      img {
-        margin-left: -186px;
+      .features_content_images {
+        margin-left: -306px;
         margin-top: -402px;
       }
     }
 
     .menuburger {
       margin-top: 330px;
-      display: flex;
-      justify-content: space-evenly;
     }
 
     .select {
-      margin-top: 120px;
-      display: flex;
-      justify-content: space-evenly;
+      margin-top: 180px;
+
+      .blob_3 {
+        margin-left: -1100px;
+        margin-top: -340px;
+      }
     }
 
-    .blur6 {
+    .blur_6 {
       background-color: #ff0aa9;
       width: 400px;
       height: 400px;
       margin-top: -10px;
     }
 
-    .blur7 {
+    .blur_7 {
       background-color: #79ff39;
       width: 700px;
       height: 700px;
@@ -280,7 +305,7 @@ body.main {
       margin-left: 1000px;
     }
 
-    .blur8 {
+    .blur_8 {
       background-color: #3dffff;
       width: 500px;
       height: 500px;
@@ -288,14 +313,15 @@ body.main {
       margin-left: -1620px;
     }
 
-    .blur9 {
+    .blur_9 {
       background-color: #ff0aa9;
       width: 500px;
       height: 500px;
       margin-left: 1180px;
+      margin-top: -130px;
     }
 
-    .blur10 {
+    .blur_10 {
       background-color: #3dffff;
       width: 500px;
       height: 500px;
@@ -304,21 +330,20 @@ body.main {
   }
 
   .content_title {
-    width: 100%;
-
     img {
       position: relative;
       z-index: 2;
+      width: 100%;
     }
 
-    .blur11 {
+    .blur_11 {
       margin-top: 260px;
       background-color: #79ff39;
       width: 400px;
       height: 400px;
       margin-left: 240px;
     }
-    .blur12 {
+    .blur_12 {
       margin-top: 260px;
       background-color: #ff0aa9;
       width: 1000px;
@@ -370,24 +395,22 @@ body.main {
   }
 
   .about {
-    margin-top: 300px;
-    .blur13 {
-      background-color: #3dffff;
-      width: 600px;
-      height: 600px;
-      margin-left: 880px;
-      margin-top: -60px;
-    }
-
     img {
       position: relative;
-      margin-top: -340px;
       width: 100%;
       z-index: 2;
     }
     .about_text {
       width: 910px;
       margin: 0 auto;
+    }
+
+    .blur_13 {
+      background-color: #3dffff;
+      width: 600px;
+      height: 600px;
+      margin-left: 880px;
+      margin-top: -60px;
     }
   }
 
