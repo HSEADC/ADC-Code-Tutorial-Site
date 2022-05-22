@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>O_Slider</title>
+  </head>
+
+  <body class="article">
+    <menu class="menubar">
+      <img
+        class="logo"
+        srcset="
+          ../../images/general/Main/Logo-navigation-content-desktop.png,
+          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+        "
+        src="../../images/general/Main/Logo-navigation-content-desktop.png"
+        alt="логотип"
+      />
+
+      <div class="menu_text">
+        <a href="../index.html">Принципы</a>
+        <a href="../index.html">Фишки</a>
+        <a href="../index.html">Компоненты</a>
+        <a href="../index.html">О нас</a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
+    </menu>
+
+    <div class="contentAreaWrapper">
+      <menu class="sidebar">
+        <a href="#initiation">Введение</a>
+        <a href="#structure">Струтура компонента</a>
+        <a href="#state">Состояние компонента</a>
+        <a href="#realization">Реализация</a>
+        <a href="#links">Ссылки</a>
+      </menu>
+
+      <article>
+        <figure class="articleCover O_SliderComments"></figure>
+
+        <h1 id="initiation">Slider Comments</h1>
+        <p>
+          Слайлер с комментариями это тот же слайдер, но вместо фотографий
+          используем текстовую информацию. Обычно так виуализируют на сайтах
+          комментарии или какую либо информацию. Прочитать подробнее о slider.
+        </p>
+
+        <h2 id="structure">Структура компонента</h2>
+        <p>
+          Структура компонента так же похожа на структуру slider. Однако вместо
+          фотогрфий представлены парагрфы с заголовками. Расположение элементов
+          управления также отличается. Но не меняются компоненты управления.
+          Видимое состояние так же опирается на meatballs.Вот как выглядит этот
+          слайдер.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_SliderComments/O_SliderComments-content-image-1.png,
+            ../../images/organism/O_SliderComments/O_SliderComments-content-image-1@2x.png 2x,
+            ../../images/organism/O_SliderComments/O_SliderComments-content-image-1@3x.png 3x
+          "
+          src="../../images/organism/O_SliderComments/O_SliderComments-content-image-1.png"
+          alt="Структура слайдера"
+        />
+
+        <h2 id="realization">Реализация</h2>
+        <p>
+          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
+          O_SliderComments, в&nbsp;неё кладём файлы jsx и&nbsp;css,
+          в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем
+          описываем функционал слайдера с компонентами. Получаем следующий код.
+        </p>
+
+        <pre><code class="language-javascript">import React, { Component } from 'react'
+import Q_MeatBall from '../../quarks/Q_MeatBall/Q_MeatBall.jsx'
+import './O_SliderComments.scss'
+import '../../quarks/Q_Icon.scss'
+
+const SLIDE_WIDTH = 600
+
+export default class O_SliderComments extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      slides: props.slides,
+      activeIndex: 0
+    }
+  }
+
+  updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = this.state.slides.length - 1
+    } else if (newIndex >= this.state.slides.length) {
+      newIndex = 0
+    }
+
+    this.setState((prevState) => ({
+      ...prevState,
+      activeIndex: newIndex
+    }))
+  }
+
+  render() {
+    const { activeIndex, slides } = this.state
+
+    return (
+      &lt;div className="O_SliderComment"&gt;
+        &lt;div className="W_SliderCommentContent"&gt;
+          &lt;div
+            className="Q_Icon arrow-left"
+            onClick={() => this.updateIndex(activeIndex - 1)}
+          &gt;&lt;/div&gt;
+
+          &lt;div className="W_SliderCommentOpenFrame">
+            &lt;div
+              className="C_SliderCommentRail"
+              style={{
+                transform: `translateX(-${activeIndex * SLIDE_WIDTH}px)`
+              }}
+            &gt;
+              {slides.map(({ title, content }) => (
+                &lt;div key={title} className="W_SliderCommentText"&gt;
+                  &lt;h3&gt;{title}&lt;/h3&gt;
+                  &lt;p&gt;{content}&lt;/p&gt;
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div
+            className="Q_Icon arrow-right"
+            onClick={() => this.updateIndex(activeIndex + 1)}
+          >&lt;/div>
+        &lt;/div>
+
+        &lt;div className="W_SliderCommentsStatus">
+          {slides.map((img, index) => (
+            &lt;Q_MeatBall key={index} selected={index === activeIndex} /&gt;
+          ))}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    )
+  }
+}</code></pre>
+
+        <p>
+          Вместо картинок выводим текстовую информацию. Заполняем массив и
+          выводим компонент в файле сборщика. Выглядит он&nbsp;у&nbsp;нас так.
+        </p>
+
+        <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import O_SliderComments from '../../components/organisms/O_SliderComments/O_SliderComments.jsx'
+import './example_10.scss'
+
+const slides = [
+  {
+    title: 'Авокадо',
+    content:
+      'Завтрак с авокадо - самый вкусный завтрак.
+      Кто не любит этот фрукт, тот просто не ел его правильно!
+      Мое любимое авокадо, которое помогает мне не хандрить.'
+  },
+  {
+  title: 'Киви',
+  content:
+    'Фрукт этот это просто кладезь витаминов и микроэлементов,
+    содержит в себе и кальций и магний и железо и калий,
+    так же богат витаминами такими как йод, фосфор
+    и цинк, а так же витамины группы В,C, PP, E и A.'
+  }
+]
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(&lt;O_SliderComments slides={slides} /&gt;, document.body)
+})
+</code></pre>
+        <p>
+          Теперь задаём стили для компонента. Код выглядит так.
+        </p>
+        <pre><code class="language-css">.O_SliderComment {
+  margin: 10% auto;
+  position: relative;
+  width: 740px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+ .O_SliderComment .W_SliderCommentContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ .O_SliderComment .W_SliderCommentOpenFrame {
+  width: 600px;
+  display: flex;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+ .O_SliderComment .C_SliderCommentRail {
+  display: flex;
+  transition: transform 0.3s;
+}
+ .O_SliderComment .W_SliderCommentText {
+  width: 600px;
+  text-align: center;
+  color: #495151;
+}
+ .O_SliderComment .W_SliderCommentText p {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 200;
+}
+ .O_SliderComment .W_SliderCommentText h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+ .O_SliderComment .W_SliderCommentsStatus {
+  display: flex;
+  margin: 20px auto;
+}
+ .O_SliderComment .Q_Icon {
+  width: 35px;
+  height: 35px;
+}</code></pre>
+        <p>
+          Получаем следующий результат:
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_SliderComments/O_SliderComments-content-image-1.png,
+            ../../images/organism/O_SliderComments/O_SliderComments-content-image-1@2x.png 2x,
+            ../../images/organism/O_SliderComments/O_SliderComments-content-image-1@3x.png 3x
+          "
+          src="../../images/organism/O_SliderComments/O_SliderComments-content-image-1.png"
+          alt="Структура слайдера"
+        />
+
+        <h2 id="links">Ссылки</h2>
+
+        <p>
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
+        </p>
+
+        <div class="links">
+          <a class="figma" href="/atoms/A_Button.html"></a>
+          <a class="github" href="/atoms/A_Button.html"></a>
+        </div>
+
+        <h2>Составляющие</h2>
+
+        <p>
+          В этот компонент часто выводятся следующие компоненты.
+        </p>
+
+        <div class="suggest">
+          <a href="/atoms/A_MeatBall.html">
+            <figure class="suggestCover A_MeatBall"></figure>
+            <h4>MeatBall</h4>
+            <p>Точки индикотора видимого элемента слайдера.</p>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footerbar">
+      <div>
+        <a href="#state">Telegram</a>
+        <a href="#state">VK</a>
+      </div>
+
+      <div>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
+      </div>
+    </footer>
+  </body>
+</html>

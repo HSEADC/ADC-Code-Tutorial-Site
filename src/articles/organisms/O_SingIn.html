@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>SingIn</title>
+  </head>
+
+  <body class="article">
+    <menu class="menubar">
+      <img
+        class="logo"
+        srcset="
+          ../../images/general/Main/Logo-navigation-content-desktop.png,
+          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+        "
+        src="../../images/general/Main/Logo-navigation-content-desktop.png"
+        alt="логотип"
+      />
+
+      <div class="menu_text">
+        <a href="../index.html">Принципы</a>
+        <a href="../index.html">Фишки</a>
+        <a href="../index.html">Компоненты</a>
+        <a href="../index.html">О нас</a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
+    </menu>
+
+    <div class="contentAreaWrapper">
+      <menu class="sidebar">
+        <a href="#initiation">Введение</a>
+        <a href="#structure">Струтура компонента</a>
+        <a href="#state">Состояние компонента</a>
+        <a href="#realization">Реализация</a>
+        <a href="#links">Ссылки</a>
+      </menu>
+
+      <article>
+        <figure class="articleCover O_SingIn"></figure>
+
+        <h1 id="initiation">SingIn</h1>
+        <p>
+          SingIn – это основа любого пользовательского приложния. Как в alert
+          проектируем sing in как наполнение для большего компонента popup. Мы
+          решили показать как можно использовать компоненты вместе.
+        </p>
+
+        <h2 id="structure">Структура компонента</h2>
+        <p>
+          В основном компонент состоит из двух input и кнопки входа (опционально
+          кнопок может быть две, для входа и для перехода к окну регистрации). В
+          нашем случае мы естественно переиспользуем уже созданные компоненты,
+          можешь про них почитать подробнее. Вот как структурно выглядит sing in
+          самостоятельно, без оболочки из popup.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-1.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-1@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-1@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-1.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="state">Состояние компонента</h2>
+        <p>
+          При проектировании этого компонента нужно учитывать состояния эементов
+          из которых он состояит. Мы подробно рассказываем и сосояних input и
+          button в этих туториалах.
+        </p>
+
+        <p>
+          Также к состояниям отнсится и неактивность кнопки в случае, когда одно
+          или несколько полей для ввода данных не заполнено.
+        </p>
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-2.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-2@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-2@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-2.png"
+          alt="Структура чипса"
+        />
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-3.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-3@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-3@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-3.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="realization">Реализация</h2>
+        <p>
+          Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем
+          файлы O_SingIn.jsx и&nbsp;O_SingIn.scss. Затем описываем функционал.
+          Необходимо принимать при на жатии на кнопку введенные данные, в нашем
+          случае мы выводим их в console. Получаем следующий код.
+        </p>
+
+        <pre><code class="language-javascript">import React, { Component } from 'react'
+import A_Input from '../../atoms/A_Input/A_Input.jsx'
+import A_Button from '../../atoms/A_Button/A_Button.jsx'
+import './O_Login.scss'
+export default class O_Login extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      login: '',
+      password: ''
+    }
+
+    this.handleLoginChange = this.handleLoginChange.bind(this)
+    this.handlePasswordChange = this.handlePasswordChange.bind(this)
+    this.handleButtonClick = this.handleButtonClick.bind(this)
+  }
+
+  handleLoginChange(e) {
+    const value = e.target.value
+    this.setState((prevState) => ({
+      ...prevState,
+      login: value
+    }))
+  }
+
+  handlePasswordChange(e) {
+    const value = e.target.value
+    this.setState((prevState) => ({
+      ...prevState,
+      password: value
+    }))
+  }
+
+  handleButtonClick() {
+    console.log('login: ', this.state.login)
+    console.log('password: ', this.state.password)
+  }
+
+  canClickButton() {
+    const { login, password } = this.state
+    return login && password
+  }
+
+  render() {
+    const { login, password } = this.state
+
+    return (
+      &lt;div className="W_LoginContainer"&gt;
+        &lt;A_Input
+          placeholder="Логин"
+          value={login}
+          onChange={this.handleLoginChange}
+        /&gt;
+        &lt;A_Input
+          placeholder="Пароль"
+          value={password}
+          onChange={this.handlePasswordChange}
+        /&gt;
+        &lt;A_Button
+          text="Войти"
+          handleClick={this.handleButtonClick}
+          disabled={!this.canClickButton()}
+        /&gt;
+      &lt;/div>
+    )
+  }
+}</code></pre>
+
+        <p>
+          Затем, в файле O_SingIn.scss прописываем стили для O_SingIn.
+        </p>
+        <pre><code class="language-css">.W_LoginContainer {
+  width: 570px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+ .W_LoginContainer .A_InputContainer {
+  width: 570px;
+  background-color: #f4f4f4;
+  box-shadow: none;
+}
+ .W_LoginContainer .A_InputContainer .A_Input {
+  background-color: #f4f4f4;
+}
+ </code></pre>
+
+        <p>
+          Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
+          теперь его&nbsp;нужно отрендерить. Можешь вывести компонент в своем
+          файде сборщика, но не забудь про обертку popup. Вот как это делаем мы,
+          а также посмотри получившийся <a href="#">sing in</a>.
+        </p>
+        <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import S_Popup from '../../components/superorganisms/S_Popup/S_Popup.jsx'
+import O_Login from '../../components/organisms/O_Login/O_Login.jsx'
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+      &ltS_Popup popupButtonText="Войти в систему" popupTitle="Вход в систему"&gt;
+        &ltO_Login /&gt;
+      &lt/S_Popup&gt;,
+    document.body
+  )
+})
+</code></pre>
+
+        <p>
+          Получаем следующий результат.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-5.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-5@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-5@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-5.png"
+          alt="Структура чипса"
+        />
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-4.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-4@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-4@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-4.png"
+          alt="Структура чипса"
+        />
+
+        <h2 id="links">Ссылки</h2>
+
+        <p>
+          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
+          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
+        </p>
+
+        <div class="links">
+          <a class="figma" href="/articles/atoms/a_button.html"></a>
+          <a class="github" href="/articles/atoms/a_button.html"></a>
+        </div>
+
+        <h2>Составляющие</h2>
+
+        <p>
+          Этот компонент часто выводится в следующих компонентах.
+        </p>
+
+        <div class="suggest">
+          <a href="#">
+            <figure class="suggestCover A_Input"></figure>
+            <h4>Sing in</h4>
+            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
+          </a>
+
+          <a href="/atoms/A_Input.html">
+            <figure class="suggestCover O_MultiselectInput"></figure>
+            <h4>Input</h4>
+            <p>
+              Функциональный элемент взяимодействия с&nbsp;интерфейсом.
+            </p>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footerbar">
+      <div>
+        <a href="#state">Telegram</a>
+        <a href="#state">VK</a>
+      </div>
+
+      <div>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
+      </div>
+    </footer>
+  </body>
+</html>

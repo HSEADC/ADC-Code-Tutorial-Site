@@ -49,6 +49,30 @@
   &.O_Menu {
     background-image: url('images/organism/O_Menu/O_Menu-article-cover-desktop.png');
   }
+  &.A_MeatBall {
+    background-image: url('images/atoms/A_MeatBall/A_MeatBall-article-cover-desktop.png');
+  }
+  &.O_Slider {
+    background-image: url('images/organism/O_Slider/O_Slider-article-cover-desktop.png');
+  }
+  &.M_SliderController {
+    background-image: url('images/molecules/M_SliderController/M_SliderController-article-cover-desktop.png');
+  }
+  &.O_SliderComments {
+    background-image: url('images/organism/O_SliderComments/O_SliderComments-article-cover-desktop.png');
+  }
+  &.S_Popup {
+    background-image: url('images/superorganism/S_Popup/S_Popup-article-cover-desktop.png');
+  }
+  &.O_BurgerMenu {
+    background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-article-cover-desktop.png');
+  }
+  &.O_ModalAlert {
+    background-image: url('images/organism/O_ModalAlert/O_ModalAlert-article-cover-desktop.png');
+  }
+  &.O_SingIn {
+    background-image: url('images/organism/O_SingIn/O_SingIn-article-cover-desktop.png');
+  }
 
   @media (max-width: 768px) {
     width: 578px;
@@ -105,6 +129,30 @@
     &.O_Menu {
       background-image: url('images/organism/O_Menu/O_Menu-article-cover-desktop@2x.png');
     }
+    &.A_MeatBall {
+      background-image: url('images/atoms/A_MeatBall/A_MeatBall-article-cover-desktop@2x.png');
+    }
+    &.O_Slider {
+      background-image: url('images/organism/O_Slider/O_Slider-article-cover-desktop@2x.png');
+    }
+    &.M_SliderController {
+      background-image: url('images/molecules/M_SliderController/M_SliderController-article-cover-desktop@2x.png');
+    }
+    &.O_SliderComments {
+      background-image: url('images/organism/O_SliderComments/O_SliderComments-article-cover-desktop@2x.png');
+    }
+    &.S_Popup {
+      background-image: url('images/superorganism/S_Popup/S_Popup-article-cover-desktop@2x.png');
+    }
+    &.O_BurgerMenu {
+      background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-article-cover-desktop@2x.png');
+    }
+    &.O_ModalAlert {
+      background-image: url('images/organism/O_ModalAlert/O_ModalAlert-article-cover-desktop@2x.png');
+    }
+    &.O_SingIn {
+      background-image: url('images/organism/O_SingIn/O_SingIn-article-cover-desktop@2x.png');
+    }
 
     @media (max-width: 768px) {
       width: 578px;
@@ -131,11 +179,11 @@
   &.O_MultiselectInput {
     background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-desktop.png');
   }
-  &.S_SingIn {
-    background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-desktop.png');
+  &.O_SingIn {
+    background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-desktop.png');
   }
-  &.S_ModalAlert {
-    background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-suggest-cover-desktop.png');
+  &.O_ModalAlert {
+    background-image: url('images/organism/O_ModalAlert/O_ModalAlert-suggest-cover-desktop.png');
   }
   &.A_Chip {
     background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop.png');
@@ -146,6 +194,9 @@
   &.O_Select {
     background-image: url('images/organism/O_Select/O_Select-suggest-cover-desktop.png');
   }
+  &.O_Slider {
+    background-image: url('images/organism/O_Slider/O_Slider-suggest-cover-desktop.png');
+  }
   &.A_OptionItem {
     background-image: url('images/atoms/A_OptionItem/A_OptionItem-suggest-cover-desktop.png');
   }
@@ -155,6 +206,30 @@
   &.A_MenuItem {
     background-image: url('images/atoms/A_MenuItem/A_MenuItem-suggest-cover-desktop.png');
   }
+  &.A_MeatBall {
+    background-image: url('images/atoms/A_MeatBall/A_MeatBall-suggest-cover-desktop.png');
+  }
+  &.O_Slider {
+    background-image: url('images/organism/O_Slider/O_Slider-suggest-cover-desktop.png');
+  }
+  &.M_SliderController {
+    background-image: url('images/molecules/M_SliderController/M_SliderController-suggest-cover-desktop.png');
+  }
+  &.O_SliderComments {
+    background-image: url('images/organism/O_SliderComments/O_SliderComments-suggest-cover-desktop.png');
+  }
+  &.S_Popup {
+    background-image: url('images/superorganism/S_Popup/S_Popup-suggest-cover-desktop.png');
+  }
+  &.O_BurgerMenu {
+    background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-suggest-cover-desktop.png');
+  }
+  &.A_TextButton {
+    background-image: url('images/atoms/A_TextButton/A_TextButton-suggest-cover-desktop.png');
+  }
+  &.A_Button {
+    background-image: url('images/atoms/A_Button/A_Button-suggest-cover-desktop.png');
+  }
 
   @media (max-width: 768px) {
     width: 280px;
@@ -163,8 +238,8 @@
     &.A_Chip {
       background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-mobile.png');
     }
-    &.S_SingIn {
-      background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-mobile.png');
+    &.O_SingIn {
+      background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-mobile.png');
     }
     &.O_MultiselectInput {
       background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-mobile.png');
@@ -180,11 +255,11 @@
     &.O_MultiselectInput {
       background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-desktop@2x.png');
     }
-    &.S_SingIn {
-      background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-desktop@2x.png');
+    &.O_SingIn {
+      background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-desktop@2x.png');
     }
-    &.S_ModalAlert {
-      background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-suggest-cover-desktop@2x.png');
+    &.O_ModalAlert {
+      background-image: url('images/organism/O_ModalAlert/O_ModalAlert-suggest-cover-desktop@2x.png');
     }
     &.A_Chip {
       background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-desktop@2x.png');
@@ -195,6 +270,9 @@
     &.O_Select {
       background-image: url('images/organism/O_Select/O_Select-suggest-cover-desktop@2x.png');
     }
+    &.O_Slider {
+      background-image: url('images/organism/O_Slider/O_Slider-suggest-cover-desktop@2x.png');
+    }
     &.A_OptionItem {
       background-image: url('images/atoms/A_OptionItem/A_OptionItem-suggest-cover-desktop@2x.png');
     }
@@ -204,6 +282,27 @@
     &.A_MenuItem {
       background-image: url('images/atoms/A_MenuItem/A_MenuItem-suggest-cover-desktop@2x.png');
     }
+    &.A_MeatBall {
+      background-image: url('images/atoms/A_MeatBall/A_MeatBall-suggest-cover-desktop@2x.png');
+    }
+    &.O_Slider {
+      background-image: url('images/organism/O_Slider/O_Slider-suggest-cover-desktop@2x.png');
+    }
+    &.M_SliderController {
+      background-image: url('images/molecules/M_SliderController/M_SliderController-suggest-cover-desktop@2x.png');
+    }
+    &.O_SliderComments {
+      background-image: url('images/organism/O_SliderComments/O_SliderComments-suggest-cover-desktop@2x.png');
+    }
+    &.S_Popup {
+      background-image: url('images/superorganism/S_Popup/S_Popup-suggest-cover-desktop@2x.png');
+    }
+    &.A_TextButton {
+      background-image: url('images/atoms/A_TextButton/A_TextButton-suggest-cover-desktop@2x.png');
+    }
+    &.A_Button {
+      background-image: url('images/atoms/A_Button/A_Button-suggest-cover-desktop@2x.png');
+    }
 
     @media (max-width: 768px) {
       width: 280px;
@@ -212,8 +311,8 @@
       &.A_Chip {
         background-image: url('images/atoms/A_Chip/A_Chip-suggest-cover-mobile@2x.png');
       }
-      &.S_SingIn {
-        background-image: url('images/superorganism/S_SingIn/S_SingIn-suggest-cover-mobile@2x.png');
+      &.O_SingIn {
+        background-image: url('images/organism/O_SingIn/O_SingIn-suggest-cover-mobile@2x.png');
       }
       &.O_MultiselectInput {
         background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-mobile@2x.png');
@@ -232,11 +331,11 @@
   &.Scroll {
     background-image: url('images/general/Scroll/Scroll-teaser-cover.png');
   }
-  &.S_ModalAlert {
-    background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-teaser-cover.png');
+  &.O_ModalAlert {
+    background-image: url('images/organism/O_ModalAlert/O_ModalAlert-teaser-cover.png');
   }
-  &.S_SingIn {
-    background-image: url('images/superorganism/S_SingIn/S_SingIn-teaser-cover.png');
+  &.O_SingIn {
+    background-image: url('images/organism/O_SingIn/O_SingIn-teaser-cover.png');
   }
   &.O_Slider {
     background-image: url('images/organism/O_Slider/O_Slider-teaser-cover.png');
@@ -259,6 +358,9 @@
   &.A_Button {
     background-image: url('images/atoms/A_Button/A_Button-teaser-cover.png');
   }
+  &.A_TextButton {
+    background-image: url('images/atoms/A_TextButton/A_TextButton-teaser-cover.png');
+  }
   &.O_SelectInput {
     background-image: url('images/organism/O_SelectInput/O_SelectInput-teaser-cover.png');
   }
@@ -274,6 +376,18 @@
   &.Q_Icon {
     background-image: url('images/quark/Q_Icon/Q_Icon-teaser-cover.png');
   }
+  &.A_MeatBall {
+    background-image: url('images/atoms/A_MeatBall/A_MeatBall-teaser-cover.png');
+  }
+  &.M_SliderController {
+    background-image: url('images/molecules/M_SliderController/M_SliderController-teaser-cover.png');
+  }
+  &.O_SliderComments {
+    background-image: url('images/organism/O_SliderComments/O_SliderComments-teaser-cover.png');
+  }
+  &.S_Popup {
+    background-image: url('images/superorganism/S_Popup/S_Popup-teaser-cover.png');
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -284,11 +398,11 @@
     &.Scroll {
       background-image: url('images/general/Scroll/Scroll-teaser-cover@2x.png');
     }
-    &.S_ModalAlert {
-      background-image: url('images/superorganism/S_ModalAlert/S_ModalAlert-teaser-cover@2x.png');
+    &.O_ModalAlert {
+      background-image: url('images/organism/O_ModalAlert/O_ModalAlert-teaser-cover@2x.png');
     }
-    &.S_SingIn {
-      background-image: url('images/superorganism/S_SingIn/S_SingIn-teaser-cover@2x.png');
+    &.O_SingIn {
+      background-image: url('images/organism/O_SingIn/O_SingIn-teaser-cover@2x.png');
     }
     &.O_Slider {
       background-image: url('images/organism/O_Slider/O_Slider-teaser-cover@2x.png');
@@ -311,6 +425,9 @@
     &.A_Button {
       background-image: url('images/atoms/A_Button/A_Button-teaser-cover@2x.png');
     }
+    &.A_TextButton {
+      background-image: url('images/atoms/A_TextButton/A_TextButton-teaser-cover@2x.png');
+    }
     &.O_SelectInput {
       background-image: url('images/organism/O_SelectInput/O_SelectInput-teaser-cover@2x.png');
     }
@@ -325,6 +442,18 @@
     }
     &.Q_Icon {
       background-image: url('images/quark/Q_Icon/Q_Icon-teaser-cover@2x.png');
+    }
+    &.A_MeatBall {
+      background-image: url('images/atoms/A_MeatBall/A_MeatBall-teaser-cover@2x.png');
+    }
+    &.M_SliderController {
+      background-image: url('images/molecules/M_SliderController/M_SliderController-teaser-cover@2x.png');
+    }
+    &.O_SliderComments {
+      background-image: url('images/organism/O_SliderComments/O_SliderComments-teaser-cover@2x.png');
+    }
+    &.S_Popup {
+      background-image: url('images/superorganism/S_Popup/S_Popup-teaser-cover@2x.png');
     }
   }
 }

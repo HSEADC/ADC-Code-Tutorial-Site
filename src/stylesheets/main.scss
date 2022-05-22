@@ -263,6 +263,12 @@ body.main {
     .skroll {
       margin-top: 190px;
 
+      .button_information {
+        background-color: #b9b9b9;
+        pointer-events: none;
+        cursor: default;
+      }
+
       .blob_2 {
         margin-top: 410px;
       }
