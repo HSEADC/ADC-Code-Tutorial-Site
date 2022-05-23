@@ -8,25 +8,26 @@
 
   <body class="article">
     <menu class="menubar">
-      <img
-        class="logo"
-        srcset="
-          ../../images/general/Main/Logo-navigation-content-desktop.png,
-          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-        "
-        src="../../images/general/Main/Logo-navigation-content-desktop.png"
-        alt="логотип"
-      />
-
+      <a href="../index.html">
+        <img
+          class="logo"
+          srcset="
+            ../../images/general/Main/Logo-navigation-content-desktop.png,
+            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+          "
+          src="../../images/general/Main/Logo-navigation-content-desktop.png"
+          alt="логотип"
+        />
+      </a>
       <div class="menu_text">
-        <a href="../index.html">Принципы</a>
-        <a href="../index.html">Фишки</a>
-        <a href="../index.html">Компоненты</a>
-        <a href="../index.html">О нас</a>
+        <a href="../index.html#principles">Принципы</a>
+        <a href="../index.html#features">Фишки</a>
+        <a href="../index.html#components">Компоненты</a>
+        <a href="../index.html#about">О нас</a>
       </div>
       <div class="media">
-        <a href="#">
+        <a href="https://vk.com/adc_code_tutorial">
           <img
             class="media_logo"
             srcset="
@@ -37,6 +38,8 @@
             src="../../images/general/Main/VK-navigation-content-desktop.png"
             alt="вк"
           />
+        </a>
+        <a href="https://t.me/adc_code_tutorial">
           <img
             class="media_logo"
             srcset="
@@ -67,9 +70,9 @@
         <p>
           Кнопки передают действия, которые пользователи могут применять.
           Они&nbsp;обычно размещаются по&nbsp;всему пользовательскому интерфейсу
-          в&nbsp;таких местах, как: диалоги, формы, карты, панели инструментов.
+          в&nbsp;таких местах как: диалоги, формы, карты, панели инструментов.
           Кнопки&nbsp;должны указывать на&nbsp;то, что они&nbsp;могут
-          инициировать действие, их&nbsp;состояние должно быть четким,
+          инициировать действие, их&nbsp;состояние должно быть чётким,
           а&nbsp;также их&nbsp;должно быть легко найти среди других элементов
           интерфейса.
         </p>
@@ -115,7 +118,7 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
+          Для начала в&nbsp;папке с&nbsp;компонентами создаём новую папку
           A_Button, в&nbsp;неё кладём файлы jsx и&nbsp;css, в&nbsp;которых будем
           создавать и&nbsp;стилизовать компонент. Затем описываем функционал
           button. Получаем следующий код, который описывает все состояния
@@ -181,9 +184,9 @@ export default class A_Button extends PureComponent {
 
         <p>
           Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
-          теперь его&nbsp;нужно отрендерить. Выведи получившийся компонент
-          согласно своей структуре проекта. Ты можешь увидеть как это делаем мы,
-          а также посмотреть получившийся <a href="#">button</a>.
+          теперь его&nbsp;нужно отрендерить. Попробуй теперь этот компонент
+          вывести согласно своей структуре проекта. Ты можешь увидеть как это
+          делаем мы, а также посмотреть получившийся <a href="#">button</a>.
         </p>
 
         <pre><code class="language-javascript">import React from 'react'
@@ -237,14 +240,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
 
         <div class="suggest">
-          <a href="#">
-            <figure class="suggestCover S_SingIn"></figure>
+          <a href="/organisms/O_SingIn.html">
+            <figure class="suggestCover O_SingIn"></figure>
             <h4>Sing in</h4>
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
 
-          <a href="#">
-            <figure class="suggestCover S_ModalAlert"></figure>
+          <a href="/organisms/O_ModalAlert.html">
+            <figure class="suggestCover O_ModalAlert"></figure>
             <h4>Modal Alert</h4>
             <p>
               Всплывающее модальное интерактивное окно различного назначения.
@@ -256,8 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <footer class="footerbar">
       <div>
-        <a href="#state">Telegram</a>
-        <a href="#state">VK</a>
+        <a href="https://t.me/adc_code_tutorial">Telegram</a>
+        <a href="https://vk.com/adc_code_tutorial">VK</a>
       </div>
 
       <div>
