@@ -73,10 +73,47 @@
         <h2 id="structure">Структура компонента</h2>
         <p>
           В основном компонент состоит из двух input и кнопки входа (опционально
-          кнопок может быть две, для входа и для перехода к окну регистрации). В
-          нашем случае мы естественно переиспользуем уже созданные компоненты,
-          можешь про них почитать подробнее. Вот как структурно выглядит sing in
-          самостоятельно, без оболочки из popup.
+          кнопок может быть две, для входа и для перехода к окну регистрации).
+        </p>
+        <h3>Input</h3>
+        <p>
+          Элемент <a href="/atoms/A_Input.html">input</a> является основным
+          элементом формы (HTML тег &ltform&gt) и&nbspопределяет интерактивное
+          поле для ввода информации.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-6.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-6@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-6@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-6.png"
+          alt="Структура чипса"
+        />
+
+        <h3>Button</h3>
+        <p>
+          Кнопки передают действия, которые пользователи могут
+          применять.Кнопки&nbsp;должны указывать на&nbsp;то, что они&nbsp;могут
+          инициировать действие, их&nbsp;состояние должно быть чётким,
+          а&nbsp;также их&nbsp;должно быть легко найти среди других элементов
+          интерфейса. Подробнее про кнопки
+          <a href="/atoms/A_Button.html">button</a>.
+        </p>
+
+        <img
+          srcset="
+            ../../images/organism/O_SingIn/O_SingIn-content-image-5.png,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-5@2x.png 2x,
+            ../../images/organism/O_SingIn/O_SingIn-content-image-5@3x.png 3x
+          "
+          src="../../images/organism/O_SingIn/O_SingIn-content-image-5.png"
+          alt="Структура чипса"
+        />
+
+        <p>
+          Вот как выглядит sing in у нас.
         </p>
 
         <img
@@ -92,13 +129,12 @@
         <h2 id="state">Состояние компонента</h2>
         <p>
           При проектировании этого компонента нужно учитывать состояния эементов
-          из которых он состояит. Мы подробно рассказываем и сосояних input и
-          button в этих туториалах.
+          из которых он состояит.
         </p>
 
         <p>
-          Также к состояниям отнсится и неактивность кнопки в случае, когда одно
-          или несколько полей для ввода данных не заполнено.
+          Также к состояниям относится и неактивность кнопки в случае, когда
+          одно или несколько полей для ввода данных не заполнено.
         </p>
         <img
           srcset="
@@ -122,9 +158,9 @@
         <h2 id="realization">Реализация</h2>
         <p>
           Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем
-          файлы O_SingIn.jsx и&nbsp;O_SingIn.scss. Затем описываем функционал.
+          файлы O_SingIn.jsx и&nbsp;O_SingIn.css. Затем описываем функционал.
           Необходимо принимать при на жатии на кнопку введенные данные, в нашем
-          случае мы выводим их в console. Получаем следующий код.
+          случае выводим их в console. Получаем следующий код.
         </p>
 
         <pre><code class="language-javascript">import React, { Component } from 'react'
@@ -196,7 +232,7 @@ export default class O_Login extends Component {
 }</code></pre>
 
         <p>
-          Затем, в файле O_SingIn.scss прописываем стили для O_SingIn.
+          Затем, в файле O_SingIn.css прописываем стили для O_SingIn.
         </p>
         <pre><code class="language-css">.W_LoginContainer {
   width: 570px;
@@ -219,8 +255,8 @@ export default class O_Login extends Component {
         <p>
           Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
           теперь его&nbsp;нужно отрендерить. Можешь вывести компонент в своем
-          файде сборщика, но не забудь про обертку popup. Вот как это делаем мы,
-          а также посмотри получившийся <a href="#">sing in</a>.
+          файде сборщика, но не забудь про обертку popup. Вот как это делаем мы
+          <a href="#">sing in</a>.
         </p>
         <pre><code class="language-javascript">import React from 'react'
 import ReactDOM from 'react-dom'
@@ -275,17 +311,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>Составляющие</h2>
 
         <p>
-          Этот компонент часто выводится в следующих компонентах.
+          В этот компонент часто выводятся следующие компоненты.
         </p>
 
         <div class="suggest">
-          <a href="#">
+          <a href="/atoms/A_Input.html">
             <figure class="suggestCover A_Input"></figure>
             <h4>Sing in</h4>
             <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
           </a>
 
-          <a href="/atoms/A_Input.html">
+          <a href="/organisms/O_MultiselectInput.html">
             <figure class="suggestCover O_MultiselectInput"></figure>
             <h4>Input</h4>
             <p>
@@ -298,8 +334,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <footer class="footerbar">
       <div>
-        <a href="#state">Telegram</a>
-        <a href="#state">VK</a>
+        <a href="https://t.me/adc_code_tutorial">Telegram</a>
+        <a href="https://vk.com/adc_code_tutorial">VK</a>
       </div>
 
       <div>

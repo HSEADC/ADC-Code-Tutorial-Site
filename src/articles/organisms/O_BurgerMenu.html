@@ -3,30 +3,31 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>BurgerMenu</title>
+    <title>Burger Menu</title>
   </head>
 
   <body class="article">
     <menu class="menubar">
-      <img
-        class="logo"
-        srcset="
-          ../../images/general/Main/Logo-navigation-content-desktop.png,
-          ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-          ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-        "
-        src="../../images/general/Main/Logo-navigation-content-desktop.png"
-        alt="логотип"
-      />
-
+      <a href="../index.html">
+        <img
+          class="logo"
+          srcset="
+            ../../images/general/Main/Logo-navigation-content-desktop.png,
+            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+          "
+          src="../../images/general/Main/Logo-navigation-content-desktop.png"
+          alt="логотип"
+        />
+      </a>
       <div class="menu_text">
-        <a href="../index.html">Принципы</a>
-        <a href="../index.html">Фишки</a>
-        <a href="../index.html">Компоненты</a>
-        <a href="../index.html">О нас</a>
+        <a href="../index.html#principles">Принципы</a>
+        <a href="../index.html#features">Фишки</a>
+        <a href="../index.html#components">Компоненты</a>
+        <a href="../index.html#about">О нас</a>
       </div>
       <div class="media">
-        <a href="#">
+        <a href="https://vk.com/adc_code_tutorial">
           <img
             class="media_logo"
             srcset="
@@ -37,6 +38,8 @@
             src="../../images/general/Main/VK-navigation-content-desktop.png"
             alt="вк"
           />
+        </a>
+        <a href="https://t.me/adc_code_tutorial">
           <img
             class="media_logo"
             srcset="
@@ -65,15 +68,17 @@
 
         <h1 id="initiation">Burger Menu</h1>
         <p>
-          Бургер меню один из самых популярных видов навигации. Мы уже
-          рассказывали о sitebar menu и в целом основное отличие этих
-          компонентов в анимации отурытия и закрытия. Можешь подробнее прочитать
-          про основные свойства этого компонента.
+          Бургер меню один из&nbsp;самых популярных видов навигации. Мы&nbsp;уже
+          рассказывали о&nbsp; <a href="/organisms/O_Menu.html">sidebar menu</a>
+          и&nbsp;в&nbsp;целом основное отличие этих компонентов в&nbsp;анимации
+          открытия и&nbsp;закрытия. Можешь подробнее прочитать про основные
+          свойства этого компонента.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
-          Этот компонент помимо основной структуры с menu item содержит также
+          Этот компонент помимо основной структуры с
+          <a href="/atoms/A_MenuItem.html">menu item menu</a> содержит также
           функциональные иконки открытия и закрытия компонента. Вот как это
           выглядит.
         </p>
@@ -89,7 +94,7 @@
         />
 
         <p>
-          После нажатия н бургер появляется все меню, оно может полностью
+          После нажатия на бургер появляется всё меню, оно может полностью
           перекрывать экран или только его часть.
         </p>
 
@@ -255,7 +260,7 @@ export default class O_Menu extends PureComponent {
         <h2>Составляющие</h2>
 
         <p>
-          В этот компонент часто выводится следующие компоненты.
+          В этот компонент часто выводятся следующие компоненты.
         </p>
         <div class="suggest">
           <a href="/atoms/A_MenuItem.html">
@@ -274,12 +279,12 @@ export default class O_Menu extends PureComponent {
 
     <footer class="footerbar">
       <div>
-        <a href="../index.html">Контакты</a>
-        <a href="#state">Instgram</a>
+        <a href="https://t.me/adc_code_tutorial">Telegram</a>
+        <a href="https://vk.com/adc_code_tutorial">VK</a>
       </div>
 
       <div>
-        <a href="../index.html">ADS Code Tutorial © 2021</a>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
       </div>
     </footer>
   </body>
