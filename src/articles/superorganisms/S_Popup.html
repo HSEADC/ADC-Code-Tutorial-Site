@@ -103,13 +103,15 @@
           со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре CSS.
         </p>
 
-        <pre><code class="language-javascript">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { Component } from 'react'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
-import './S_Popup.scss'
-import '../../quarks/Q_Icon.scss'
+import './S_Popup.css'
+import '../../quarks/Q_Icon.css'
+
 export default class S_Popup extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       showPopup: false
     }
@@ -135,25 +137,28 @@ export default class S_Popup extends Component {
   render() {
     const { showPopup } = this.state
     const { popupButtonText, popupTitle, children } = this.props
+
     return (
-        &lt;div className="S_Popup"&gt;
-          &lt;A_Button text={popupButtonText} handleClick={this.openPopup} /&gt;
+      &lt;div className="S_Popup"&gt;
+        &lt;A_Button text={popupButtonText} handleClick={this.openPopup} /&gt;
+
         {showPopup && (
-            &lt;div className="W_PopupBackground"&gt;
-              &lt;div className="W_PopupBox"&gt;
-                &lt;div className="W_PopupBoxHeader"&gt;
-                  &lt;h3&gt;{popupTitle}  &lt;/h3>
-                  &lt;div className="Q_Icon close" onClick={this.closePopup}&gt;  &lt;/div&gt;
-                &lt;/div&gt;
-              {children}
+          &lt;div className="W_PopupBackground"&gt;
+            &lt;div className="W_PopupBox"&gt;
+              &lt;div className="W_PopupBoxHeader"&gt;
+                &lt;h3&gt;{popupTitle}&lt;/h3>
+                &lt;div className="Q_Icon close" onClick={this.closePopup}&gt;&lt;/div&gt;
               &lt;/div&gt;
+
+              {children}
             &lt;/div&gt;
+          &lt;/div&gt;
         )}
-         &lt;/div&gt;
-      )
-    }
+
+       &lt;/div&gt;
+    )
   }
-</code></pre>
+}</code></pre>
 
         <p>
           Затем, в файле S_Popup.css прописываем стили для всех структур popup,
@@ -223,11 +228,10 @@ export default class S_Popup extends Component {
         <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import S_Popup from '../../components/superorganisms/S_Popup/S_Popup.jsx'
-import './example_13.scss'
 
 document.addEventListener('DOMContentLoaded', () =&gt; {
   ReactDOM.render(
-    &lt;S_Popup popupButtonText="Открыть попап" popupTitle="Заголовок"&gt;&lt;/S_Popup&gt;,
+    &lt;S_Popup popupButtonText="Открыть попап" popupTitle="Заголовок" /&gt;,
     document.body
   )
 })</code></pre>

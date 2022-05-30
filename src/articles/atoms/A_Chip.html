@@ -98,9 +98,9 @@
           со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре CSS.
         </p>
 
-        <pre><code class="language-javascript">import classnames from 'classnames'
+        <pre><code class="language-js">import classnames from 'classnames'
 import React, { PureComponent } from 'react'
-import './A_Chip.scss'
+import './A_Chip.css'
 
 export default class A_Chip extends PureComponent {
   constructor(props) {
@@ -124,7 +124,7 @@ export default class A_Chip extends PureComponent {
     })
 
     return (
-    &lt;div className={classes}&gt;
+      &lt;div className={classes}&gt;
         {text}
         &lt;div className="Q_Icon cross" onClick={this.handleClick} /&gt;
       &lt;/div&gt;
@@ -148,6 +148,7 @@ export default class A_Chip extends PureComponent {
   cursor: default;
   user-select: none;
 }
+
 .A_Chip .Q_Icon.cross {
   position: absolute;
   top: 6px;
@@ -159,14 +160,17 @@ export default class A_Chip extends PureComponent {
   background-color: #d7ffff;
   cursor: pointer;
 }
+
 .A_Chip .Q_Icon.cross:hover {
   background-color: #5be7e7;
 }
+
 .A_Chip.disabled {
   color: #abd9d9;
   background-color: #f2ffff;
   cursor: default;
 }
+
 .A_Chip.disabled .Q_Icon.cross:hover {
   background-color: #d7ffff;
   cursor: default;
@@ -183,18 +187,20 @@ export default class A_Chip extends PureComponent {
             >chip</a
           >.
         </p>
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 
-function handleClick() {
+handleClick = () =&gt; {
   console.log('click')
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
+    &lt;div&gt;
       &lt;A_Chip text="Text" handleClick={handleClick} /&gt;
       &lt;A_Chip text="Text" disabled={true} handleClick={handleClick} /&gt
-    document.body.appendChild(document.createElement('div'))
+    &lt/div&gt;,
+    document.body
   )
 })</code></pre>
 

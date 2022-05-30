@@ -80,9 +80,9 @@
           disabled, initial, hover.
         </p>
 
-        <pre><code class="language-javascript">import classnames from 'classnames'
+        <pre><code class="language-js">import classnames from 'classnames'
 import React, { PureComponent } from 'react'
-import './A_Button.scss'
+import './A_Button.css'
 
 export default class A_Button extends PureComponent {
   constructor(props) {
@@ -106,7 +106,7 @@ export default class A_Button extends PureComponent {
     })
 
     return (
-      &lt;div className={classes} onClick={this.handleClick &gt;
+      &lt;div className={classes} onClick={this.handleClick}&gt;
         {text}
       &lt;/div&gt;
     )
@@ -128,10 +128,12 @@ export default class A_Button extends PureComponent {
   cursor: pointer;
   user-select: none;
 }
- .A_Button:hover {
+
+.A_Button:hover {
   background-color: #5be7e7;
 }
- .A_Button.disabled {
+
+.A_Button.disabled {
   color: #abd9d9;
   background-color: #f2ffff;
   cursor: default;
@@ -149,21 +151,21 @@ export default class A_Button extends PureComponent {
           >.
         </p>
 
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
-import A_Button from '../../components/atoms/A_Button/A_Button.jsx
+import A_Button from '../../components/atoms/A_Button/A_Button.jsx'
 
-function handleClick() {
+handleClick = () =&gt; {
   console.log('click')
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    &lt;&gt;
-      &lt;A_Button text="Привет" handleClick={handleClick} &gt;
-      &lt;A_Button text="Пока" disabled={true} handleClick={handleClick} &gt;
-    &lt&gt;,
-    document.body.appendChild(document.createElement('div'))
+    &lt;div&gt;
+      &lt;A_Button text="Привет" handleClick={handleClick}&gt;
+      &lt;A_Button text="Пока" disabled={true} handleClick={handleClick}&gt;
+    &lt/div&gt;,
+    document.body
   )
 })</code></pre>
 

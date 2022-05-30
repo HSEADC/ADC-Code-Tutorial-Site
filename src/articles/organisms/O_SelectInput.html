@@ -39,9 +39,8 @@
           option list&nbsp;и,&nbsp;в&nbsp;зависимости от&nbsp;функционала,
           иконки chevrone, которая анимируется во&nbsp;время пользовательского
           действия. Этот пример не&nbsp;содержит chevrone, так как option list
-          открывается при нажатии на&nbsp;<a href="/atoms/A_Input.html"
-            >input.</a
-          >
+          открывается при нажатии на&nbsp;<a href="/atoms/A_Input.html">input</a
+          >.
         </p>
 
         <h3>Placeholder</h3>
@@ -97,10 +96,10 @@
           но&nbsp;стили для нее прописываем в&nbsp;A_SelectIput.scss.
         </p>
 
-        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
-import './O_Select.scss'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_OptionItem from '../../atoms/A_OptionItem/A_OptionItem.jsx'
+import './O_Select.css'
 
 export default class O_Select extends PureComponent {
   constructor(props) {
@@ -154,11 +153,11 @@ export default class O_Select extends PureComponent {
     ))
 
     const optionCollection = (
-      &lt;div className="C_OptionsList"&gt{optionElements}&lt;/div&gt
+      &lt;div className="C_OptionsList"&gt{optionElements}&lt;/div&gt;
     )
 
     return (
-      &lt;div className="O_Select">
+      &lt;div className="O_Select"&gt;
         &lt;A_Input
           placeholder={placeholder}
           value={value}
@@ -166,9 +165,10 @@ export default class O_Select extends PureComponent {
           onFocus={() => {
             this.setVisibleOptions(true)
           }}
-        /&gt
+        /&gt;
+
         {showOptions && optionCollection}
-      &lt;/div&gt
+      &lt;/div&gt;
     )
   }
 }</code></pre>
@@ -183,6 +183,7 @@ export default class O_Select extends PureComponent {
   width: 610px;
   border-radius: 10px;
 }
+
 .O_Select .C_OptionsList {
   margin-top: -15px;
   background-color: #fff f;

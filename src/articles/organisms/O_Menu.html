@@ -49,7 +49,7 @@
         <p>
           Menu item может содержать в&nbsp;себе различные типы данных: иконку,
           текст, картинку, в&nbsp;зависимости от&nbsp;назначения. Подробнее о
-          <a href="/atoms/A_MenuItem">menu item.</a>
+          <a href="/atoms/A_MenuItem.html">menu item</a>.
         </p>
 
         <img
@@ -111,7 +111,7 @@
         </p>
         <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
-import './O_Menu.scss'
+import './O_Menu.css'
 
 export default class O_Menu extends PureComponent {
   constructor(props) {
@@ -146,17 +146,19 @@ export default class O_Menu extends PureComponent {
         </p>
 
         <pre><code class="language-css">.O_Menu {
-   width: 360px;
-   padding: 40px 28px;
-   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
-   border-radius: 10px;
+  width: 360px;
+  padding: 40px 28px;
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
 }
- .O_Menu .C_MenuItems {
-   display: flex;
-   flex-direction: column;
+
+.O_Menu .C_MenuItems {
+  display: flex;
+  flex-direction: column;
 }
- .O_Menu .C_MenuItems:last-child {
-   margin-top: 100px;
+
+.O_Menu .C_MenuItems:last-child {
+  margin-top: 100px;
 }</code></pre>
 
         <p>
@@ -172,35 +174,35 @@ const menu = {
     {
       text: 'Галерея',
       icon: 'dashboard',
-      url: 'https://instagram.com'
+      url: 'https://codetutorial.adc.ac'
     },
     {
       text: 'Сообщения',
       icon: 'messages',
-      url: 'https://facebook.com'
+      url: 'https://codetutorial.adc.ac'
       // active: true
     },
     {
       text: 'Заметки',
       icon: 'pages',
-      url: 'https://instagram.com'
+      url: 'https://codetutorial.adc.ac'
     },
     {
       text: 'Профиль',
       icon: 'user',
-      url: 'https://facebook.com'
+      url: 'https://codetutorial.adc.ac'
     }
   ],
   bottom: [
     {
       text: 'Помощь',
       icon: 'help',
-      url: 'https://instagram.com'
+      url: 'https://codetutorial.adc.ac'
     },
     {
       text: 'Настройки',
       icon: 'settings',
-      url: 'https://facebook.com'
+      url: 'https://codetutorial.adc.ac'
     }
   ]
 }

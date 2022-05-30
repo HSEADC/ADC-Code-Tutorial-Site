@@ -26,7 +26,7 @@
           Слайлер с&nbsp;комментариями это тот&nbsp;же слайдер, но&nbsp;вместо
           фотографий используем текстовую информацию. Обычно так визуализируют
           на&nbsp;сайтах комментарии или какую либо информацию. Прочитать
-          подробнее о&nbsp; <a href="/organisms/O_Slider.html">slider</a>.
+          подробнее о&nbsp;<a href="/organisms/O_Slider.html">slider</a>.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
@@ -55,16 +55,18 @@
           описываем функционал слайдера с компонентами. Получаем следующий код.
         </p>
 
-        <pre><code class="language-javascript">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { Component } from 'react'
 import Q_MeatBall from '../../quarks/Q_MeatBall/Q_MeatBall.jsx'
-import './O_SliderComments.scss'
-import '../../quarks/Q_Icon.scss'
+import './O_SliderComments.css'
+import '../../quarks/Q_Icon.css'
 
+// Remove this
 const SLIDE_WIDTH = 600
 
 export default class O_SliderComments extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       slides: props.slides,
       activeIndex: 0
@@ -90,18 +92,10 @@ export default class O_SliderComments extends Component {
     return (
       &lt;div className="O_SliderComment"&gt;
         &lt;div className="W_SliderCommentContent"&gt;
-          &lt;div
-            className="Q_Icon arrow-left"
-            onClick={() => this.updateIndex(activeIndex - 1)}
-          &gt;&lt;/div&gt;
+          &lt;div className="Q_Icon arrow-left" onClick={() => this.updateIndex(activeIndex - 1)}&gt;&lt;/div&gt;
 
           &lt;div className="W_SliderCommentOpenFrame">
-            &lt;div
-              className="C_SliderCommentRail"
-              style={{
-                transform: `translateX(-${activeIndex * SLIDE_WIDTH}px)`
-              }}
-            &gt;
+            &lt;div className="C_SliderCommentRail" style={{ transform: `translateX(-${activeIndex * SLIDE_WIDTH}px)` }}&gt;
               {slides.map(({ title, content }) => (
                 &lt;div key={title} className="W_SliderCommentText"&gt;
                   &lt;h3&gt;{title}&lt;/h3&gt;
@@ -111,13 +105,10 @@ export default class O_SliderComments extends Component {
             &lt;/div&gt;
           &lt;/div&gt;
 
-          &lt;div
-            className="Q_Icon arrow-right"
-            onClick={() => this.updateIndex(activeIndex + 1)}
-          >&lt;/div>
+          &lt;div className="Q_Icon arrow-right" onClick={() => this.updateIndex(activeIndex + 1)}&gt;&lt;/div&gt;
         &lt;/div>
 
-        &lt;div className="W_SliderCommentsStatus">
+        &lt;div className="W_SliderCommentsStatus"&gt;
           {slides.map((img, index) => (
             &lt;Q_MeatBall key={index} selected={index === activeIndex} /&gt;
           ))}
@@ -218,9 +209,11 @@ const slides = [
 ]
 
 document.addEventListener('DOMContentLoaded', () =&gt; {
-  ReactDOM.render(&lt;O_SliderComments slides={slides} /&gt;, document.body)
-})
-</code></pre>
+  ReactDOM.render(
+    &lt;O_SliderComments slides={slides} /&gt;,
+    document.body
+  )
+})</code></pre>
 
         <p>
           Получаем следующий результат:

@@ -34,9 +34,9 @@
         <p>
           Этот компонент помимо основной структуры с&nbsp;<a
             href="/atoms/A_MenuItem.html"
-            >menu item menu</a
+            >menu item</a
           >
-          содержит также функциональные иконки открытия и&nbsp;закрытия
+          menu содержит также функциональные иконки открытия и&nbsp;закрытия
           компонента. Вот как это выглядит.
         </p>
 
@@ -96,6 +96,7 @@ import './O_Menu.scss'
 export default class O_Menu extends PureComponent {
   constructor(props) {
     super(props)
+    
     this.state = {
       showMenu: false
     }
@@ -191,14 +192,14 @@ export default class O_Menu extends PureComponent {
 }</code></pre>
 
         <p>
-          В файле сборщика заполняем массивы top и botton и выводим компонент.
-          Ты можшь посмотреть как мы эмы это делаем в туториале про sitebar
-          menu. А так выглядит рабочий комопнент
+          В файле сборщика заполняем массивы top и bottom и выводим компонент.
+          Ты можшь посмотреть как мы это делаем в туториале про sidebar menu. А
+          так выглядит рабочий компонент
           <a
             target="_blank"
             href="https://codetutorial-system.adc.ac/example_1/example_1.html"
-            >burgermenu.</a
-          >
+            >burger menu</a
+          >.
         </p>
 
         <img

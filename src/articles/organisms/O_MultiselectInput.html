@@ -137,15 +137,16 @@
           option list мы переносим ее в масссив с chip.
         </p>
 
-        <pre><code class="language-javascript">iimport React, { Component } from 'react'
-import './O_MultiselectInput.scss'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_Chip from '../../atoms/A_Chip/A_Chip.jsx'
 import A_OptionItem from '../../atoms/A_OptionItem/A_OptionItem.jsx'
+import './O_MultiselectInput.css'
 
-export default class O_MultiselectInput extends Component {
+export default class O_MultiselectInput extends PureComponent {
   constructor(props) {
     super(props)
+
     this.state = {
       selectedOptions: [],
       disabled: props.disabled,
@@ -156,6 +157,7 @@ export default class O_MultiselectInput extends Component {
 
   handleSelectOption = (id) => {
     const selectedOption = this.state.options.find((elem) => elem.id === id)
+
     if (!selectedOption) {
       return
     }
@@ -175,6 +177,7 @@ export default class O_MultiselectInput extends Component {
     const unselectedOption = this.state.selectedOptions.find(
       (elem) => elem.id === id
     )
+
     if (!unselectedOption) {
       return
     }
@@ -200,10 +203,11 @@ export default class O_MultiselectInput extends Component {
       showOptions: visible
     }))
   }
-&lt;div className={classes}&gt;
+
   render() {
     const { selectedOptions, options, showOptions } = this.state
     const { placeholder } = this.props
+
     const optionElements = options.map((option) => (
       &lt;A_OptionItem
         key={option.id}
@@ -236,6 +240,7 @@ export default class O_MultiselectInput extends Component {
         &gt;
           {chips}
         &lt;/A_Input&gt;
+
         {showOptions && optionCollection}
       &lt;/div&gt;
     )
@@ -244,7 +249,7 @@ export default class O_MultiselectInput extends Component {
 
         <p>
           Затем прописываем стили для multiselect input и&nbsp;задаем среду
-          для&nbsp;остальных комопнентов, которые используем. Подробнеее про
+          для&nbsp;остальных комопнентов, которые используем. Подробнее про
           <a href="/general/isolation.html"> проектирование в&nbsp;изоляции</a>
           можешь прочитать тут.
         </p>
@@ -284,7 +289,7 @@ export default class O_MultiselectInput extends Component {
           >.
         </p>
 
-        <pre><code class="language-js">iimport React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import O_MultiselectInput from '../../components/organisms/O_MultiselectInput/O_MultiselectInput.jsx'
 

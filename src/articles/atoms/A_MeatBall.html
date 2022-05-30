@@ -30,10 +30,9 @@
           в&nbsp;интерактивных галереях картинок или комментариев. Про эти
           компоненты мы также рассказываем, можешь их почитать:
           <a href="/organisms/O_Slider.html">slider</a> и&nbsp;<a
-            href="/organisms/O_SliderCommentslider.html"
+            href="/organisms/O_SliderComments.html"
             >comment slider</a
-          >
-          .
+          >.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
@@ -83,8 +82,8 @@
           изоляции, поэтому ниже покажем тебе как мы&nbsp;создаем один meatball.
         </p>
 
-        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
-import './Q_MeatBall.scss'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
+import './Q_MeatBall.css'
 
 export default class Q_MeatBall extends PureComponent {
   constructor(props) {
@@ -108,6 +107,7 @@ export default class Q_MeatBall extends PureComponent {
   border-radius: 100%;
   margin-left: 6px;
 }
+
 .Q_MeatBall_selected {
   background-color: #5be7e7;
 }</code></pre>

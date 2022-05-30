@@ -83,8 +83,8 @@
           заявленной функциональности атрибуты.
         </p>
 
-        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
-import './A_OptionItem.scss'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
+import './A_OptionItem.css'
 
 export default class A_OptionItem extends PureComponent {
   constructor(props) {
@@ -93,6 +93,7 @@ export default class A_OptionItem extends PureComponent {
 
   render() {
     const { id, value, onSelect } = this.props
+
     return (
       &lt;div className="A_OptionItem" onClick={() => onSelect(id, value)}&gt;
         {value}
@@ -106,16 +107,16 @@ export default class A_OptionItem extends PureComponent {
         </p>
 
         <pre><code class="language-css">.A_OptionItem {
-   padding: 11px 20px 10px;
-   font-family: 'Inter', Helvetica, Arial, sans-serif;
-   font-size: 20px;
-   color: #426060;
-   font-weight: 300;
-   border-radius: 6px;
+  padding: 11px 20px 10px;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #426060;
+  font-weight: 300;
+  border-radius: 6px;
 }
 
 .A_OptionItem:hover {
-   background-color: #5be7e7;
+  background-color: #5be7e7;
 }</code></pre>
 
         <p>
@@ -132,7 +133,6 @@ export default class A_OptionItem extends PureComponent {
         <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import A_OptionItem from '../../components/atoms/A_OptionItem/A_OptionItem.jsx'
-import './example_9.scss'
 
 document.addEventListener('DOMContentLoaded', () =&gt; {
   ReactDOM.render(

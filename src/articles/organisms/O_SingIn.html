@@ -124,10 +124,12 @@
         <pre><code class="language-js">import React, { Component } from 'react'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
-import './O_Login.scss'
+import './O_Login.css'
+
 export default class O_Login extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       login: '',
       password: ''
@@ -140,6 +142,7 @@ export default class O_Login extends Component {
 
   handleLoginChange(e) {
     const value = e.target.value
+
     this.setState((prevState) => ({
       ...prevState,
       login: value
@@ -148,6 +151,7 @@ export default class O_Login extends Component {
 
   handlePasswordChange(e) {
     const value = e.target.value
+
     this.setState((prevState) => ({
       ...prevState,
       password: value
@@ -174,11 +178,13 @@ export default class O_Login extends Component {
           value={login}
           onChange={this.handleLoginChange}
         /&gt;
+
         &lt;A_Input
           placeholder="Пароль"
           value={password}
           onChange={this.handlePasswordChange}
         /&gt;
+
         &lt;A_Button
           text="Войти"
           handleClick={this.handleButtonClick}
@@ -228,9 +234,9 @@ import O_Login from '../../components/organisms/O_Login/O_Login.jsx'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-      &ltS_Popup popupButtonText="Войти в систему" popupTitle="Вход в систему"&gt;
-        &ltO_Login /&gt;
-      &lt/S_Popup&gt;,
+    &ltS_Popup popupButtonText="Войти в систему" popupTitle="Вход в систему"&gt;
+      &ltO_Login /&gt;
+    &lt/S_Popup&gt;,
     document.body
   )
 })

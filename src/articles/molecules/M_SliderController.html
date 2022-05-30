@@ -76,11 +76,11 @@
           в&nbsp;коллекцию.
         </p>
 
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import Q_MeatBall from '../../quarks/Q_MeatBall/Q_MeatBall.jsx'
-import './M_SliderControllers.scss'
+import './M_SliderControllers.css'
 
-export default class M_SliderControllers extends React.Component {
+export default class M_SliderControllers extends PureComponent {
   constructor(props) {
     super(props)
   }
@@ -90,19 +90,15 @@ export default class M_SliderControllers extends React.Component {
 
     return (
       &lt;div className="M_SliderController"&gt;
-        &lt;div
-          className="Q_Icon arrow-left"
-          onClick={() => handleChangeIndex(activeIndex - 1)}
-        &gt;&lt;/div&gt;
+        &lt;div className="Q_Icon arrow-left" onClick={() => handleChangeIndex(activeIndex - 1)}&gt;&lt;/div&gt;
+
         &lt;div className="С_MeatBalls"&gt;
           {imageUrls.map((img, index) => (
             &lt;Q_MeatBall key={index} selected={index === activeIndex} /&gt;
           ))}
         &lt;/div&gt;
-        &lt;div&gt;
-          className="Q_Icon arrow-right"
-          onClick={() => handleChangeIndex(activeIndex + 1)}
-        &gt;&lt;/div&gt;
+
+        &lt;div className="Q_Icon arrow-right" onClick={() => handleChangeIndex(activeIndex + 1)}&gt;&lt;/div&gt;
       &lt;/div&gt;
     )
   }
@@ -119,14 +115,15 @@ export default class M_SliderControllers extends React.Component {
   margin: 20px auto;
   align-items: center;
 }
- .M_SliderController .С_MeatBalls {
+
+.M_SliderController .С_MeatBalls {
   display: flex;
 }
- .M_SliderController .Q_Icon {
+
+.M_SliderController .Q_Icon {
   width: 35px;
   height: 35px;
-}
- </code></pre>
+}</code></pre>
 
         <p>
           Получаем следующий результат. Так как этот компонент не&nbsp;является

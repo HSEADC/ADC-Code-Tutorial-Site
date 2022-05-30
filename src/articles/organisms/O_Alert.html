@@ -38,7 +38,7 @@
           Alert состоит из&nbsp;текста сообщения и&nbsp;кнопки целевого
           действия. Мы&nbsp;просто оборачиваем эти два элемента в&nbsp;обертку
           и&nbsp;выводим в&nbsp;контейнер
-          <a href="/superorganisms/s_Popup.html">popup</a>.
+          <a href="/superorganisms/S_Popup.html">popup</a>.
         </p>
 
         <h3>Button</h3>
@@ -64,7 +64,7 @@
         <p>
           Вот так выглядит alert с&nbsp;заполненной информацией. В&nbsp;данном
           примере заголовок и&nbsp;иконка закрытия относятся к&nbsp;компоненту
-          <a href="/superorganisms/s_Popup.html">popup</a>, поэтому
+          <a href="/superorganisms/S_Popup.html">popup</a>, поэтому
           мы&nbsp;их&nbsp;не выделяем.
         </p>
 
@@ -87,13 +87,14 @@
         <h2 id="realization">Реализация</h2>
         <p>
           Так как вся механика закрытия и&nbsp;открытия компонента прописана
-          в&nbsp;<a href="/superorganisms/s_Popup.html">popup</a>, в&nbsp;alert
+          в&nbsp;<a href="/superorganisms/S_Popup.html">popup</a>, в&nbsp;alert
           мы&nbsp;только прописываем функцию нажатия на&nbsp;кнопку.
         </p>
 
         <pre><code class="language-js">import React, { Component } from 'react'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
-import './O_Alert.scss'
+import './O_Alert.css'
+
 export default class O_Alert extends Component {
   constructor(props) {
     super(props)
@@ -131,7 +132,8 @@ export default class O_Alert extends Component {
   align-items: flex-start;
   justify-content: space-around;
 }
- .O_Alert .A_AlertContent {
+
+.O_Alert .A_AlertContent {
   line-height: 140%;
   font-weight: 200;
   font-size: 16px;
@@ -161,9 +163,9 @@ const content =
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-      &lt;S_Popup popupButtonText="Открыть попап" popupTitle="Информация о подписке"&gt;
-        &lt;O_Alert content={content} /&gt;,
-      &lt;/S_Popup&gt;,
+    &lt;S_Popup popupButtonText="Открыть попап" popupTitle="Информация о подписке"&gt;
+      &lt;O_Alert content={content} /&gt;
+    &lt;/S_Popup&gt;,
     document.body.appendChild(document.createElement('div'))
   )
 })
