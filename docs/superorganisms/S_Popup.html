@@ -1,0 +1,105 @@
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta name="viewport" content="width=device-width,initial-scale=1"/> <meta charset="utf-8"/> <title>A_Chip</title> <link href="../index.css?2967fabfa2224ce5fca4" rel="stylesheet"></head> <body class="article"> <menu class="menubar"> <a href="../index.html"> <img class="logo" srcset="../images/e6dd8078c0b977e8198c.png, ../images/f5a2eda1cb7e2fef775f.png 2x, ../images/c4532ea7317722dbd3a2.png 3x" src="../images/e6dd8078c0b977e8198c.png" alt="логотип"/> </a> <div class="menu_text"> <a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a> </div> <div class="media"> <a target="blank" href="https://vk.com/adc_code_tutorial"> <img class="media_logo" srcset="../images/89a37502849261e73aa4.png, ../images/ebfe645e3b5450b75e83.png 2x, ../images/591579389ef3bafd0cdc.png 3x" src="../images/89a37502849261e73aa4.png" alt="вк"/> </a> <a target="blank" href="https://t.me/adc_code_tutorial"> <img class="media_logo" srcset="../images/89dbf3e9df143a1665c7.png, ../images/dcb81caa2a9f192e8a74.png 2x, ../images/e4dd14c54ec93c30117f.png 3x" src="../images/89dbf3e9df143a1665c7.png" alt="телеграм"/> </a> </div> </menu> <div class="contentAreaWrapper"> <menu class="sidebar"> <a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a> </menu> <article> <figure class="articleCover S_Popup"></figure> <h1 id="initiation">Popup</h1> <p> Popup мы&nbsp;называем всплывающее модальное окно, с&nbsp;которым пользователь должен обязательно как либо провзаимодействовать. Он&nbsp;может его или закрыть или сделать действие, которое предлагает в&nbsp;popup. Этот компонент выступает в&nbsp;роли обертки в&nbsp;которую мы&nbsp;заворачиваем такие компоненты как <a href="/organisms/O_Alert.html">alert</a> и <a href="/organisms/O_SingIn.html">sing in</a>. </p> <h2 id="structure">Структура компонента</h2> <p> Popup состоит из&nbsp;поля, которое перекрывает экран и&nbsp;самой модальной области с&nbsp;контентом. Еще используем для примера кнопку, которая собственно и&nbsp;вызывает popup. Вот как это выглядит. </p> <p> На экране мы видим кнопку <a href="/atoms/A_Button.html">button</a> при нажатии на которую появляется popup. </p> <img srcset="../images/eb15070513fa24439e4d.png, ../images/9e4de71da3e7a24de28f.png 2x, ../images/aa9ca2bc222ca1c9398a.png 3x" src="../images/eb15070513fa24439e4d.png" alt="Структура чипса"/> <p> Внутри popup состоит из&nbsp;header, в&nbsp;него входит заголовок и&nbsp;кнопка закрытия окна в&nbsp;виде <a href="/quarks/Q_Icon.html">icon</a>, а&nbsp;также пустая область в&nbsp;которую передаем необходимый контент. </p> <img srcset="../images/e91853e86f04823e7135.png, ../images/4fafe694cfd15254eb68.png 2x, ../images/6f7003c707e598d1dca2.png 3x" src="../images/e91853e86f04823e7135.png" alt="Структура чипса"/> <h2 id="state">Состояние компонента</h2> <p> Popup или закрыт или открыт. Мы&nbsp;добавляем кнопку только для того, чтобы показать принцип работы popup, так он&nbsp;может вызываться при любом пользовательском действии и&nbsp;как информационное окно и&nbsp;как функциональное. </p> <img srcset="../images/d2727275e7bcd0998993.png, ../images/3c3101203abf09a34c3d.png 2x, ../images/7b3860e560642b8c6666.png 3x" src="../images/d2727275e7bcd0998993.png" alt="Структура чипса"/> <h2 id="realization">Реализация</h2> <p> Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем файлы S_Popup.jsx и&nbsp;S_Popup.css. Затем описываем функционал popup и его структуру. Получаем следующий код. </p> <p> Popup содержит <a href="/quarks/Q_Icon.html">icon</a> Q_Icon close, которая лежит в отдельной папке image в&nbsp;файле Q_Icon.css. В&nbsp;нем мы&nbsp;храним все иконки, которые нужны для&nbsp;различных компонентов, а&nbsp;их&nbsp;фон и&nbsp;размер задаем в файле со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре CSS. </p> <pre><code class="language-javascript">import React, { Component } from 'react'
+import A_Button from '../../atoms/A_Button/A_Button.jsx'
+import './S_Popup.scss'
+import '../../quarks/Q_Icon.scss'
+export default class S_Popup extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showPopup: false
+    }
+
+    this.openPopup = this.openPopup.bind(this)
+    this.closePopup = this.closePopup.bind(this)
+  }
+
+  openPopup() {
+    this.setState((prevState) => ({
+      ...prevState,
+      showPopup: true
+    }))
+  }
+
+  closePopup() {
+    this.setState((prevState) => ({
+      ...prevState,
+      showPopup: false
+    }))
+  }
+
+  render() {
+    const { showPopup } = this.state
+    const { popupButtonText, popupTitle, children } = this.props
+    return (
+        &lt;div className="S_Popup"&gt;
+          &lt;A_Button text={popupButtonText} handleClick={this.openPopup} /&gt;
+        {showPopup && (
+            &lt;div className="W_PopupBackground"&gt;
+              &lt;div className="W_PopupBox"&gt;
+                &lt;div className="W_PopupBoxHeader"&gt;
+                  &lt;h3&gt;{popupTitle}  &lt;/h3>
+                  &lt;div className="Q_Icon close" onClick={this.closePopup}&gt;  &lt;/div&gt;
+                &lt;/div&gt;
+              {children}
+              &lt;/div&gt;
+            &lt;/div&gt;
+        )}
+        &lt;/div&gt;
+    )
+  }
+}
+</code></pre> <p> Затем, в файле S_Popup.css прописываем стили для всех структур popup, в основном это обертки, которые помогают правильно выстроить структуру не перегружая ее компонентами. </p> <pre><code class="language-css">.S_Popup {
+  position: relative;
+  width: 200px;
+  margin: 20% auto;
+}
+ .S_Popup .W_PopupBackground {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .S_Popup .W_PopupBox {
+  width: 610px;
+  height: 298px;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+}
+ .S_Popup .W_PopupBoxHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+ .S_Popup .W_PopupBoxHeader h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #495151;
+}
+ .S_Popup .W_PopupBoxHeader .Q_Icon.close {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}</code></pre> <p> Мы&nbsp;создали компонет, но&nbsp;описали только его функционал, теперь его&nbsp;нужно отрендерить. Можешь вывести получившийся компонент согласно своей структуре проекта. Ты можешь увидеть как это делаем мы, а также посмотреть получившийся <a href="#">popup</a>. </p> <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import S_Popup from '../../components/superorganisms/S_Popup/S_Popup.jsx'
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+      &lt;S_Popup
+      popupButtonText="Открыть"
+      popupTitle="Заголовок"
+    &gt;  &lt;/S_Popup&gt;,
+    document.body
+  )
+})</code></pre> <p> Получаем следующий результат </p> <img srcset="../images/e91853e86f04823e7135.png, ../images/4fafe694cfd15254eb68.png 2x, ../images/6f7003c707e598d1dca2.png 3x" src="../images/e91853e86f04823e7135.png" alt="Структура чипса"/> <h2 id="links">Ссылки</h2> <p> Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов. </p> <div class="links"> <a class="figma" href="/articles/atoms/a_button.html"></a> <a class="github" href="/articles/atoms/a_button.html"></a> </div> <h2>Составляющие</h2> <p> В этот компонент часто выводятся следующие компоненты. </p> <div class="suggest"> <a href="/organisms/O_SingIn.html"> <figure class="suggestCover O_SingIn"></figure> <h4>Sing in</h4> <p>Стандартная форма входа в какое-либо приложение или сервис.</p> </a> <a href="/organisms/O_MultiselectInput.html"> <figure class="suggestCover O_MultiselectInput"></figure> <h4>Multiselect Input</h4> <p> Интерактивный компонент, который предназначен для управления данными. </p> </a> </div> </article> </div> <footer class="footerbar"> <div> <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a> </div> <div> <a href="../index.html">ADC Code Tutorial © 2021</a> </div> </footer> <script src="../index.js?2967fabfa2224ce5fca4"></script></body> </html> 

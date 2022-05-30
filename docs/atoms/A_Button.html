@@ -1,0 +1,66 @@
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta name="viewport" content="width=device-width,initial-scale=1"/> <meta charset="utf-8"/> <title>A_Button</title> <link href="../index.css?2967fabfa2224ce5fca4" rel="stylesheet"></head> <body class="article"> <menu class="menubar"> <a href="../index.html"> <img class="logo" srcset="../images/e6dd8078c0b977e8198c.png, ../images/f5a2eda1cb7e2fef775f.png 2x, ../images/c4532ea7317722dbd3a2.png 3x" src="../images/e6dd8078c0b977e8198c.png" alt="логотип"/> </a> <div class="menu_text"> <a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a> </div> <div class="media"> <a target="blank" href="https://vk.com/adc_code_tutorial"> <img class="media_logo" srcset="../images/89a37502849261e73aa4.png, ../images/ebfe645e3b5450b75e83.png 2x, ../images/591579389ef3bafd0cdc.png 3x" src="../images/89a37502849261e73aa4.png" alt="вк"/> </a> <a target="blank" href="https://t.me/adc_code_tutorial"> <img class="media_logo" srcset="../images/89dbf3e9df143a1665c7.png, ../images/dcb81caa2a9f192e8a74.png 2x, ../images/e4dd14c54ec93c30117f.png 3x" src="../images/89dbf3e9df143a1665c7.png" alt="телеграм"/> </a> </div> </menu> <div class="contentAreaWrapper"> <menu class="sidebar"> <a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a> </menu> <article> <figure class="articleCover A_Button"></figure> <h1 id="initiation">Button</h1> <p> Кнопки передают действия, которые пользователи могут применять. Они&nbsp;обычно размещаются по&nbsp;всему пользовательскому интерфейсу в&nbsp;таких местах как: диалоги, формы, карты, панели инструментов. Кнопки&nbsp;должны указывать на&nbsp;то, что они&nbsp;могут инициировать действие, их&nbsp;состояние должно быть чётким, а&nbsp;также их&nbsp;должно быть легко найти среди других элементов интерфейса. </p> <h2 id="structure">Структура компонента</h2> <p> Текстовые кнопки используют текстовые метки, которые описывают действие, которое произойдет, если пользователь нажмет кнопку. Если&nbsp;текстовая метка не&nbsp;используется, должен присутствовать значок, обозначающий, что делает кнопка. </p> <img srcset="../images/4bf62a1104b43b03c262.png, ../images/305bc4c293d81efeb4a3.png 2x, ../images/e9e4fc174c7fff2612bf.png 3x" src="../images/4bf62a1104b43b03c262.png" alt="Структура кнопки"/> <h2 id="state">Состояние компонента</h2> <p> Кнопки обычно помещаются в&nbsp;контейнеры, такие как карточки или диалоги. По&nbsp;мере того, как родительский контейнер масштабируется для&nbsp;адаптации к&nbsp;различным размерам экрана, размер, положение и&nbsp;выравнивание кнопки в контейнере также могут меняться. Кнопки могут быть выровнены влево, вправо или по&nbsp;центру по&nbsp;мере масштабирования родительского контейнера. Также кнопки имеют состояния, они стандартные и&nbsp;их&nbsp;всегда нужно учитывать при проектировании интерфейсов. </p> <img srcset="../images/49de848d0383d7bbd94b.png, ../images/97fa1da8bc85a80c2349.png 2x, ../images/9d8beacb7864a56ba774.png 3x" src="../images/49de848d0383d7bbd94b.png" alt="Состояния кнопки"/> <h2 id="realization">Реализация</h2> <p> Для начала в&nbsp;папке с&nbsp;компонентами создаём новую папку A_Button, в&nbsp;неё кладём файлы jsx и&nbsp;css, в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем описываем функционал button. Получаем следующий код, который описывает все состояния disabled, initial, hover. </p> <pre><code class="language-javascript">import classnames from 'classnames'
+import React, { PureComponent } from 'react'
+import './A_Button.scss'
+
+export default class A_Button extends PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  handleClick = () => {
+    const { disabled, handleClick } = this.props
+
+    if (!disabled) {
+      handleClick()
+    }
+  }
+
+  render() {
+    const { text, disabled } = this.props
+
+    const classes = classnames({
+      A_Button: true,
+      disabled: disabled
+    })
+
+    return (
+      &lt;div className={classes} onClick={this.handleClick &gt;
+        {text}
+      &lt;/div&gt;
+    )
+  }
+}</code></pre> <p> Затем прописываем стили для A_Button. Не&nbsp;забываем описать для button состоянии disabled и&nbsp;hover. </p> <pre><code class="language-css">.A_Button {
+  position: relative;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #426060;
+  background-color: #b7fcfc;
+  cursor: pointer;
+  user-select: none;
+}
+ .A_Button:hover {
+  background-color: #5be7e7;
+}
+ .A_Button.disabled {
+  color: #abd9d9;
+  background-color: #f2ffff;
+  cursor: default;
+}</code></pre> <p> Мы&nbsp;создали компонет, но&nbsp;описали только его функционал, теперь его&nbsp;нужно отрендерить. Попробуй теперь этот компонент вывести согласно своей структуре проекта. Ты можешь увидеть как это делаем мы, а также посмотреть получившийся <a href="#">button</a>. </p> <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import A_Button from '../../components/atoms/A_Button/A_Button.jsx
+
+function handleClick() {
+  console.log('click')
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    &lt;&gt;
+      &lt;A_Button text="Привет" handleClick={handleClick} &gt;
+      &lt;A_Button text="Пока" disabled={true} handleClick={handleClick} &gt;
+    &lt&gt;,
+    document.body.appendChild(document.createElement('div'))
+  )
+})</code></pre> <p> Получаем следующий результат: </p> <img srcset="../images/4daed9a5a3b5e11ba367.png, ../images/621893f5eb883fd33e1d.png 2x, ../images/b5c74d65c44297b3392e.png 3x" src="../images/4daed9a5a3b5e11ba367.png" alt="Результат"/> <h2 id="links">Ссылки</h2> <p> Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов. </p> <div class="links"> <a class="figma" href="/atoms/A_Button.html"></a> <a class="github" href="/atoms/A_Button.html"></a> </div> <h2>Составляющие</h2> <p> Этот компонент часто выводится в следующих компонентах </p> <div class="suggest"> <a href="/organisms/O_SingIn.html"> <figure class="suggestCover O_SingIn"></figure> <h4>Sing in</h4> <p>Стандартная форма входа в какое-либо приложение или сервис.</p> </a> <a href="/organisms/O_ModalAlert.html"> <figure class="suggestCover O_ModalAlert"></figure> <h4>Modal Alert</h4> <p> Всплывающее модальное интерактивное окно различного назначения. </p> </a> </div> </article> </div> <footer class="footerbar"> <div> <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a> </div> <div> <a href="../index.html">ADC Code Tutorial © 2021</a> </div> </footer> <script src="../index.js?2967fabfa2224ce5fca4"></script></body> </html> 

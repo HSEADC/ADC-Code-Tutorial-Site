@@ -1,0 +1,96 @@
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta name="viewport" content="width=device-width,initial-scale=1"/> <meta charset="utf-8"/> <title>SingIn</title> <link href="../index.css?2967fabfa2224ce5fca4" rel="stylesheet"></head> <body class="article"> <menu class="menubar"> <a href="../index.html"> <img class="logo" srcset="../images/e6dd8078c0b977e8198c.png, ../images/f5a2eda1cb7e2fef775f.png 2x, ../images/c4532ea7317722dbd3a2.png 3x" src="../images/e6dd8078c0b977e8198c.png" alt="логотип"/> </a> <div class="menu_text"> <a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a> </div> <div class="media"> <a target="blank" href="https://vk.com/adc_code_tutorial"> <img class="media_logo" srcset="../images/89a37502849261e73aa4.png, ../images/ebfe645e3b5450b75e83.png 2x, ../images/591579389ef3bafd0cdc.png 3x" src="../images/89a37502849261e73aa4.png" alt="вк"/> </a> <a target="blank" href="https://t.me/adc_code_tutorial"> <img class="media_logo" srcset="../images/89dbf3e9df143a1665c7.png, ../images/dcb81caa2a9f192e8a74.png 2x, ../images/e4dd14c54ec93c30117f.png 3x" src="../images/89dbf3e9df143a1665c7.png" alt="телеграм"/> </a> </div> </menu> <div class="contentAreaWrapper"> <menu class="sidebar"> <a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a> </menu> <article> <figure class="articleCover O_SingIn"></figure> <h1 id="initiation">SingIn</h1> <p> SingIn – это основа любого пользовательского приложния. Как в alert проектируем sing in как наполнение для большего компонента popup. Мы решили показать как можно использовать компоненты вместе. </p> <h2 id="structure">Структура компонента</h2> <p> В основном компонент состоит из двух input и кнопки входа (опционально кнопок может быть две, для входа и для перехода к окну регистрации). </p> <h3>Input</h3> <p> Элемент <a href="/atoms/A_Input.html">input</a> является основным элементом формы (HTML тег &ltform&gt) и&nbspопределяет интерактивное поле для ввода информации. </p> <img srcset="../images/7315850d311faa8632e8.png, ../images/576a2546f58f433b22bf.png 2x, ../images/05f4d1e10b9a2d0482a8.png 3x" src="../images/7315850d311faa8632e8.png" alt="Структура чипса"/> <h3>Button</h3> <p> Кнопки передают действия, которые пользователи могут применять.Кнопки&nbsp;должны указывать на&nbsp;то, что они&nbsp;могут инициировать действие, их&nbsp;состояние должно быть чётким, а&nbsp;также их&nbsp;должно быть легко найти среди других элементов интерфейса. Подробнее про кнопки <a href="/atoms/A_Button.html">button</a>. </p> <img srcset="../images/5438cb26482df92fc581.png, ../images/6d099a9e2755277b5469.png 2x, ../images/128b96c8b5f9d67feeeb.png 3x" src="../images/5438cb26482df92fc581.png" alt="Структура чипса"/> <p> Вот как выглядит sing in у нас. </p> <img srcset="../images/06571a26905ce04fdbef.png, ../images/d9171e829365ddd4cfbe.png 2x, ../images/37bf6bfbb94da47f6bf6.png 3x" src="../images/06571a26905ce04fdbef.png" alt="Структура чипса"/> <h2 id="state">Состояние компонента</h2> <p> При проектировании этого компонента нужно учитывать состояния эементов из которых он состояит. </p> <p> Также к состояниям относится и неактивность кнопки в случае, когда одно или несколько полей для ввода данных не заполнено. </p> <img srcset="../images/ba5d3ea3b31a17d5c854.png, ../images/645bc23793bcc84dc985.png 2x, ../images/5bb2384931bb1262db84.png 3x" src="../images/ba5d3ea3b31a17d5c854.png" alt="Структура чипса"/> <img srcset="../images/4e65c010a649eb25358b.png, ../images/0dda92a96bca6bfa393e.png 2x, ../images/1595549a42641587ccab.png 3x" src="../images/4e65c010a649eb25358b.png" alt="Структура чипса"/> <h2 id="realization">Реализация</h2> <p> Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем файлы O_SingIn.jsx и&nbsp;O_SingIn.css. Затем описываем функционал. Необходимо принимать при на жатии на кнопку введенные данные, в нашем случае выводим их в console. Получаем следующий код. </p> <pre><code class="language-javascript">import React, { Component } from 'react'
+import A_Input from '../../atoms/A_Input/A_Input.jsx'
+import A_Button from '../../atoms/A_Button/A_Button.jsx'
+import './O_Login.scss'
+export default class O_Login extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      login: '',
+      password: ''
+    }
+
+    this.handleLoginChange = this.handleLoginChange.bind(this)
+    this.handlePasswordChange = this.handlePasswordChange.bind(this)
+    this.handleButtonClick = this.handleButtonClick.bind(this)
+  }
+
+  handleLoginChange(e) {
+    const value = e.target.value
+    this.setState((prevState) => ({
+      ...prevState,
+      login: value
+    }))
+  }
+
+  handlePasswordChange(e) {
+    const value = e.target.value
+    this.setState((prevState) => ({
+      ...prevState,
+      password: value
+    }))
+  }
+
+  handleButtonClick() {
+    console.log('login: ', this.state.login)
+    console.log('password: ', this.state.password)
+  }
+
+  canClickButton() {
+    const { login, password } = this.state
+    return login && password
+  }
+
+  render() {
+    const { login, password } = this.state
+
+    return (
+      &lt;div className="W_LoginContainer"&gt;
+        &lt;A_Input
+          placeholder="Логин"
+          value={login}
+          onChange={this.handleLoginChange}
+        /&gt;
+        &lt;A_Input
+          placeholder="Пароль"
+          value={password}
+          onChange={this.handlePasswordChange}
+        /&gt;
+        &lt;A_Button
+          text="Войти"
+          handleClick={this.handleButtonClick}
+          disabled={!this.canClickButton()}
+        /&gt;
+      &lt;/div>
+    )
+  }
+}</code></pre> <p> Затем, в файле O_SingIn.css прописываем стили для O_SingIn. </p> <pre><code class="language-css">.W_LoginContainer {
+  width: 570px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+ .W_LoginContainer .A_InputContainer {
+  width: 570px;
+  background-color: #f4f4f4;
+  box-shadow: none;
+}
+ .W_LoginContainer .A_InputContainer .A_Input {
+  background-color: #f4f4f4;
+}
+ </code></pre> <p> Мы&nbsp;создали компонет, но&nbsp;описали только его функционал, теперь его&nbsp;нужно отрендерить. Можешь вывести компонент в своем файде сборщика, но не забудь про обертку popup. Вот как это делаем мы <a href="#">sing in</a>. </p> <pre><code class="language-javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import S_Popup from '../../components/superorganisms/S_Popup/S_Popup.jsx'
+import O_Login from '../../components/organisms/O_Login/O_Login.jsx'
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+      &ltS_Popup popupButtonText="Войти в систему" popupTitle="Вход в систему"&gt;
+        &ltO_Login /&gt;
+      &lt/S_Popup&gt;,
+    document.body
+  )
+})
+</code></pre> <p> Получаем следующий результат. </p> <img srcset="../images/5438cb26482df92fc581.png, ../images/6d099a9e2755277b5469.png 2x, ../images/128b96c8b5f9d67feeeb.png 3x" src="../images/5438cb26482df92fc581.png" alt="Структура чипса"/> <img srcset="../images/2866cc6a5305783f2803.png, ../images/f631c40602e54f2ec2c0.png 2x, ../images/3dba4bcb0fbd793a500c.png 3x" src="../images/2866cc6a5305783f2803.png" alt="Структура чипса"/> <h2 id="links">Ссылки</h2> <p> Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов. </p> <div class="links"> <a class="figma" href="/articles/atoms/a_button.html"></a> <a class="github" href="/articles/atoms/a_button.html"></a> </div> <h2>Составляющие</h2> <p> В этот компонент часто выводятся следующие компоненты. </p> <div class="suggest"> <a href="/atoms/A_Input.html"> <figure class="suggestCover A_Input"></figure> <h4>Sing in</h4> <p>Стандартная форма входа в какое-либо приложение или сервис.</p> </a> <a href="/organisms/O_MultiselectInput.html"> <figure class="suggestCover O_MultiselectInput"></figure> <h4>Input</h4> <p> Функциональный элемент взяимодействия с&nbsp;интерфейсом. </p> </a> </div> </article> </div> <footer class="footerbar"> <div> <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a> </div> <div> <a href="../index.html">ADC Code Tutorial © 2021</a> </div> </footer> <script src="../index.js?2967fabfa2224ce5fca4"></script></body> </html> 
