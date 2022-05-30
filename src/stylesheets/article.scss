@@ -24,36 +24,6 @@ body.article {
     font-size: 16px;
   }
 
-  .menubar {
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 40px;
-    align-items: center;
-    width: 100%;
-    height: 58px;
-    font-size: 18px;
-    font-weight: 300;
-    border-bottom: solid 1px var(--light);
-    background-color: var(--white);
-
-    a {
-      margin-right: 10px;
-      color: var(--black);
-      text-decoration: none;
-      font-weight: 500;
-
-      &:hover {
-        color: var(--pink);
-      }
-    }
-
-    .media_logo {
-      width: 30px;
-    }
-  }
-
   .contentAreaWrapper {
     position: relative;
     width: 996px;
