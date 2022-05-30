@@ -287,6 +287,18 @@ module.exports = {
         location: 'links',
         template_filename: '*',
         priority: 'replace'
+      },
+      {
+        path: path.join(__dirname, './src/partials/analytics.html'),
+        location: 'analytics',
+        template_filename: '*',
+        priority: 'replace'
+      },
+      {
+        path: path.join(__dirname, './src/partials/metatags.html'),
+        location: 'metatags',
+        template_filename: '*',
+        priority: 'replace'
       }
     ])
   ],
