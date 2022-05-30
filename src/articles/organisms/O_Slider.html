@@ -151,13 +151,13 @@ export default class O_Slider extends Component {
   }
 
   updateIndex = (newIndex) => {
-    if (newIndex < 0) {
+    if (newIndex &lt; 0) {
       newIndex = this.state.imageUrls.length - 1
-    } else if (newIndex >= this.state.imageUrls.length) {
+    } else if (newIndex &gt;= this.state.imageUrls.length) {
       newIndex = 0
     }
 
-    this.setState((prevState) => ({
+    this.setState((prevState) =&gt; ({
       ...prevState,
       activeIndex: newIndex
     }))

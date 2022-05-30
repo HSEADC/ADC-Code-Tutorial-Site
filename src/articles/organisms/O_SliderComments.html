@@ -117,13 +117,13 @@ export default class O_SliderComments extends Component {
   }
 
   updateIndex = (newIndex) => {
-    if (newIndex < 0) {
+    if (newIndex &lt; 0) {
       newIndex = this.state.slides.length - 1
-    } else if (newIndex >= this.state.slides.length) {
+    } else if (newIndex &gt;= this.state.slides.length) {
       newIndex = 0
     }
 
-    this.setState((prevState) => ({
+    this.setState((prevState) =&gt; ({
       ...prevState,
       activeIndex: newIndex
     }))

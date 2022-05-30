@@ -101,12 +101,12 @@ export default class O_ScrollMenu extends PureComponent {
     const menuElements = []
 
     top.forEach((item, i) => {
-      menuElements.push(<A_MenuItem {...item} key={'top' + i} />)
+      menuElements.push(&lt;A_MenuItem {...item} key={'top' + i} /&gt;)
     })
 
     return (
         &lt;div className="O_ScrollMenu"&gt;
-          &lt;div className="C_MenuItems">{menuElements}  &lt;/div&gt;
+          &lt;div className="C_MenuItems">{menuElements} &lt;/div&gt;
         &lt;/div&gt;
     )
   }

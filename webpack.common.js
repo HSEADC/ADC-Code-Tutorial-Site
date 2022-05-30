@@ -58,22 +58,21 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
+
+    // Index
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/index.html',
       filename: './index.html',
       chunks: ['index']
     }),
+
+    // // General
     new HtmlWebpackPlugin({
       hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/general/udf.html',
-      filename: './general/udf.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/general/isolation.html',
       filename: './general/isolation.html',
@@ -81,6 +80,35 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/general/scroll.html',
+      filename: './general/scroll.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/general/udf.html',
+      filename: './general/udf.html',
+      chunks: ['index']
+    }),
+
+    // Quarks
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/quarks/Q_Icon.html',
+      filename: './quarks/Q_Icon.html',
+      chunks: ['index']
+    }),
+
+    // Atoms
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/atoms/A_Button.html',
       filename: './atoms/A_Button.html',
@@ -88,13 +116,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/atoms/A_TextButton.html',
-      filename: './atoms/A_TextButton.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/atoms/A_Chip.html',
       filename: './atoms/A_Chip.html',
@@ -102,27 +124,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_Select.html',
-      filename: './organisms/O_Select.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_SelectInput.html',
-      filename: './organisms/O_SelectInput.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_MultiselectInput.html',
-      filename: './organisms/O_MultiselectInput.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/atoms/A_Input.html',
       filename: './atoms/A_Input.html',
@@ -130,27 +132,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/atoms/A_OptionItem.html',
-      filename: './atoms/A_OptionItem.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/atoms/A_MenuItem.html',
-      filename: './atoms/A_MenuItem.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_Menu.html',
-      filename: './organisms/O_Menu.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/atoms/A_MeatBall.html',
       filename: './atoms/A_MeatBall.html',
@@ -158,41 +140,43 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
       scriptLoading: 'blocking',
-      template: './src/articles/atoms/Q_Icon.html',
-      filename: './atoms/Q_Icon.html',
+      template: './src/articles/atoms/A_MenuItem.html',
+      filename: './atoms/A_MenuItem.html',
       chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_OptionItem.html',
+      filename: './atoms/A_OptionItem.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/atoms/A_TextButton.html',
+      filename: './atoms/A_TextButton.html',
+      chunks: ['index']
+    }),
+
+    // Molecules
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/molecules/M_SliderController.html',
       filename: './molecules/M_SliderController.html',
       chunks: ['index']
     }),
+
+    // Organisms
     new HtmlWebpackPlugin({
       hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_Slider.html',
-      filename: './organisms/O_Slider.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_SliderComments.html',
-      filename: './organisms/O_SliderComments.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/articles/organisms/O_SingIn.html',
-      filename: './organisms/O_SingIn.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/organisms/O_Alert.html',
       filename: './organisms/O_Alert.html',
@@ -200,6 +184,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
       scriptLoading: 'blocking',
       template: './src/articles/organisms/O_BurgerMenu.html',
       filename: './organisms/O_BurgerMenu.html',
@@ -207,16 +192,68 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
       scriptLoading: 'blocking',
-      template: './src/articles/superorganisms/S_Popup.html',
-      filename: './superorganisms/S_Popup.html',
+      template: './src/articles/organisms/O_Menu.html',
+      filename: './organisms/O_Menu.html',
       chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       hash: true,
+      minify: false,
       scriptLoading: 'blocking',
-      template: './src/articles/general/scroll.html',
-      filename: './general/scroll.html',
+      template: './src/articles/organisms/O_MultiselectInput.html',
+      filename: './organisms/O_MultiselectInput.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_Select.html',
+      filename: './organisms/O_Select.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_SelectInput.html',
+      filename: './organisms/O_SelectInput.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_SingIn.html',
+      filename: './organisms/O_SingIn.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_Slider.html',
+      filename: './organisms/O_Slider.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/organisms/O_SliderComments.html',
+      filename: './organisms/O_SliderComments.html',
+      chunks: ['index']
+    }),
+
+    // Superorganisms
+    new HtmlWebpackPlugin({
+      hash: true,
+      minify: false,
+      scriptLoading: 'blocking',
+      template: './src/articles/superorganisms/S_Popup.html',
+      filename: './superorganisms/S_Popup.html',
       chunks: ['index']
     })
   ],
