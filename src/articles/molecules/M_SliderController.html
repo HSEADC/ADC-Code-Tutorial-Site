@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>M_SliderController</title>
+    <title>Компонент M_SliderController | ADC Code Tutorial</title>
   </head>
 
   <body class="article">
-    <menu class="menubar">
-      <a href="../index.html">
-        <img
-          class="logo"
-          srcset="
-            ../../images/general/Main/Logo-navigation-content-desktop.png,
-            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-          "
-          src="../../images/general/Main/Logo-navigation-content-desktop.png"
-          alt="логотип"
-        />
-      </a>
-      <div class="menu_text">
-        <a href="../index.html#principles">Принципы</a>
-        <a href="../index.html#features">Фишки</a>
-        <a href="../index.html#components">Компоненты</a>
-        <a href="../index.html#about">О нас</a>
-      </div>
-      <div class="media">
-        <a target="blank" href="https://vk.com/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/VK-navigation-content-desktop.png,
-              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/VK-navigation-content-desktop.png"
-            alt="вк"
-          />
-        </a>
-        <a target="blank" href="https://t.me/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/Telegram-navigation-content-desktop.png,
-              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
-            alt="телеграм"
-          />
-        </a>
-      </div>
-    </menu>
+    <menubar></menubar>
 
     <div class="contentAreaWrapper">
       <menu class="sidebar">
@@ -121,11 +76,11 @@
           в&nbsp;коллекцию.
         </p>
 
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import Q_MeatBall from '../../quarks/Q_MeatBall/Q_MeatBall.jsx'
-import './M_SliderControllers.scss'
+import './M_SliderControllers.css'
 
-export default class M_SliderControllers extends React.Component {
+export default class M_SliderControllers extends PureComponent {
   constructor(props) {
     super(props)
   }
@@ -135,19 +90,15 @@ export default class M_SliderControllers extends React.Component {
 
     return (
       &lt;div className="M_SliderController"&gt;
-        &lt;div
-          className="Q_Icon arrow-left"
-          onClick={() => handleChangeIndex(activeIndex - 1)}
-        &gt;&lt;/div&gt;
+        &lt;div className="Q_Icon arrow-left" onClick={() => handleChangeIndex(activeIndex - 1)}&gt;&lt;/div&gt;
+
         &lt;div className="С_MeatBalls"&gt;
           {imageUrls.map((img, index) => (
             &lt;Q_MeatBall key={index} selected={index === activeIndex} /&gt;
           ))}
         &lt;/div&gt;
-        &lt;div&gt;
-          className="Q_Icon arrow-right"
-          onClick={() => handleChangeIndex(activeIndex + 1)}
-        &gt;&lt;/div&gt;
+
+        &lt;div className="Q_Icon arrow-right" onClick={() => handleChangeIndex(activeIndex + 1)}&gt;&lt;/div&gt;
       &lt;/div&gt;
     )
   }
@@ -164,14 +115,15 @@ export default class M_SliderControllers extends React.Component {
   margin: 20px auto;
   align-items: center;
 }
- .M_SliderController .С_MeatBalls {
+
+.M_SliderController .С_MeatBalls {
   display: flex;
 }
- .M_SliderController .Q_Icon {
+
+.M_SliderController .Q_Icon {
   width: 35px;
   height: 35px;
-}
- </code></pre>
+}</code></pre>
 
         <p>
           Получаем следующий результат. Так как этот компонент не&nbsp;является
@@ -189,17 +141,7 @@ export default class M_SliderControllers extends React.Component {
           alt="Структура контроллера"
         />
 
-        <h2 id="links">Ссылки</h2>
-
-        <p>
-          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
-          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
-        </p>
-
-        <div class="links">
-          <a class="figma" href="/atoms/A_Button.html"></a>
-          <a class="github" href="/atoms/A_Button.html"></a>
-        </div>
+        <links></links>
 
         <h2>Составляющие</h2>
 
@@ -241,15 +183,6 @@ export default class M_SliderControllers extends React.Component {
       </article>
     </div>
 
-    <footer class="footerbar">
-      <div>
-        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
-        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
-      </div>
-
-      <div>
-        <a href="../index.html">ADC Code Tutorial © 2021</a>
-      </div>
-    </footer>
+    <footerbar></footerbar>
   </body>
 </html>

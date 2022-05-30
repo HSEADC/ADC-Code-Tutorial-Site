@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta name="viewport" content="width=device-width,initial-scale=1"/> <meta charset="utf-8"/> <title>O_Slider</title> <link href="../index.css?6359722c1ede33767fd0" rel="stylesheet"></head> <body class="article"> <menu class="menubar"> <a href="../index.html"> <img class="logo" srcset="../images/e6dd8078c0b977e8198c.png, ../images/f5a2eda1cb7e2fef775f.png 2x, ../images/c4532ea7317722dbd3a2.png 3x" src="../images/e6dd8078c0b977e8198c.png" alt="логотип"/> </a> <div class="menu_text"> <a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a> </div> <div class="media"> <a target="blank" href="https://vk.com/adc_code_tutorial"> <img class="media_logo" srcset="../images/89a37502849261e73aa4.png, ../images/ebfe645e3b5450b75e83.png 2x, ../images/591579389ef3bafd0cdc.png 3x" src="../images/89a37502849261e73aa4.png" alt="вк"/> </a> <a target="blank" href="https://t.me/adc_code_tutorial"> <img class="media_logo" srcset="../images/89dbf3e9df143a1665c7.png, ../images/dcb81caa2a9f192e8a74.png 2x, ../images/e4dd14c54ec93c30117f.png 3x" src="../images/89dbf3e9df143a1665c7.png" alt="телеграм"/> </a> </div> </menu> <div class="contentAreaWrapper"> <menu class="sidebar"> <a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a> </menu> <article> <figure class="articleCover O_Slider"></figure> <h1 id="initiation">Slider</h1> <p> Слайдер&nbsp;&mdash; это анимированный элемент интерфейса, используемый для&nbsp;отображения видео и&nbsp;изображений на&nbsp;веб-сайте. Как и&nbsp;слайд-шоу, слайдеры изображений показывают по&nbsp;одному видео или изображению за&nbsp;раз. Содержимое меняется, когда пользователь нажимают на&nbsp;контроллеры, чтобы увидеть следующий слайд. </p> <h2 id="structure">Структура компонента</h2> <p> Компонент состоит из&nbsp;фрейма, в&nbsp;котором будут отражаться нужные элементы, они в&nbsp;свою очередь объединены в&nbsp;группу rail, именно их&nbsp;пользователь и&nbsp;будет перелистывать, а&nbsp;также из&nbsp;контроллеров управления. В&nbsp;контроллеры входят кнопки и&nbsp;коллекция из&nbsp;meatball. Количество точек индикатора (meatball) равно количеству элементов в&nbsp;rail. Именно для этого и&nbsp;нужны meatballs, чтобы показывать на&nbsp;каком слайде находится пользователь и&nbsp;как много элементов находится в&nbsp;slider. </p> <h3>Slider Controller</h3> <p> Slider Controller это функциональный элемент индикации и&nbsp;переключения картинок или любой другой информации в&nbsp;слайдере. Подробнее про <a href="/molecules/M_SliderController.html">slider controller</a>. </p> <img srcset="../images/099f6bd290d7ce1407df.png, ../images/c9bd20486d68dbd55cd5.png 2x, ../images/8fff6c078e06596eb229.png 3x" src="../images/099f6bd290d7ce1407df.png" alt="Структура слайдера"/> <p> Вот как выглядит слйдер у нас. </p> <img srcset="../images/498ea98981f438356d31.png, ../images/d18c29a1d13be955e3f7.png 2x, ../images/4aa7361b381ddca4fab1.png 3x" src="../images/498ea98981f438356d31.png" alt="Структура слайдера"/> <h2 id="state">Состояние компонента</h2> <p> В&nbsp;основном видимое состояние меняется только у&nbsp;meatball, когда пользователь перелистывает слайды. Фон у&nbsp;meatball или&nbsp;закрашен или&nbsp;нет. </p> <h2 id="realization">Реализация</h2> <p> Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку O_Slider, в&nbsp;неё&nbsp;кладём файлы jsx и&nbsp;css, в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем описываем функционал слайдера. Получаем следующий код. </p> <pre><code class="language-javascript">import React, { Component } from 'react'
+<!doctype html><html lang="ru" dir="ltr"><head><meta name="viewport" content="width=device-width,initial-scale=1"/><meta charset="utf-8"/><title>Компонент O_Slider | ADC Code Tutorial</title><script defer="defer" src="../index.js"></script><link href="../index.css" rel="stylesheet"></head><body class="article"><menu class="menubar"><a href="../index.html"></a><div class="menu_text"><a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a></div><div class="media"><a target="blank" href="https://vk.com/adc_code_tutorial"></a> <a target="blank" href="https://t.me/adc_code_tutorial"></a></div></menu><div class="contentAreaWrapper"><menu class="sidebar"><a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a></menu><article><figure class="articleCover O_Slider"></figure><h1 id="initiation">Slider</h1><p>Слайдер&nbsp;&mdash; это анимированный элемент интерфейса, используемый для&nbsp;отображения видео и&nbsp;изображений на&nbsp;веб-сайте. Как и&nbsp;слайд-шоу, слайдеры изображений показывают по&nbsp;одному видео или изображению за&nbsp;раз. Содержимое меняется, когда пользователь нажимают на&nbsp;контроллеры, чтобы увидеть следующий слайд.</p><h2 id="structure">Структура компонента</h2><p>Компонент состоит из&nbsp;фрейма, в&nbsp;котором будут отражаться нужные элементы, они в&nbsp;свою очередь объединены в&nbsp;группу rail, именно их&nbsp;пользователь и&nbsp;будет перелистывать, а&nbsp;также из&nbsp;контроллеров управления. В&nbsp;контроллеры входят кнопки и&nbsp;коллекция из&nbsp;meatball. Количество точек индикатора (meatball) равно количеству элементов в&nbsp;rail. Именно для этого и&nbsp;нужны meatballs, чтобы показывать на&nbsp;каком слайде находится пользователь и&nbsp;как много элементов находится в&nbsp;slider.</p><h3>Slider Controller</h3><p>Slider Controller это функциональный элемент индикации и&nbsp;переключения картинок или любой другой информации в&nbsp;слайдере. Подробнее про <a href="/molecules/M_SliderController.html">slider controller</a>.</p><img srcset="../images/099f6bd290d7ce1407df.png, ../images/c9bd20486d68dbd55cd5.png 2x, ../images/8fff6c078e06596eb229.png 3x" src="../images/099f6bd290d7ce1407df.png" alt="Структура слайдера"/><p>Вот как выглядит слйдер у нас.</p><img srcset="../images/498ea98981f438356d31.png, ../images/d18c29a1d13be955e3f7.png 2x, ../images/4aa7361b381ddca4fab1.png 3x" src="../images/498ea98981f438356d31.png" alt="Структура слайдера"/><h2 id="state">Состояние компонента</h2><p>В&nbsp;основном видимое состояние меняется только у&nbsp;meatball, когда пользователь перелистывает слайды. Фон у&nbsp;meatball или&nbsp;закрашен или&nbsp;нет.</p><h2 id="realization">Реализация</h2><p>Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку O_Slider, в&nbsp;неё&nbsp;кладём файлы jsx и&nbsp;css, в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем описываем функционал слайдера. Получаем следующий код.</p><pre><code class="language-js">import React, { Component } from 'react'
 import './O_Slider.scss'
 import '../../quarks/Q_Icon.scss'
 import M_SliderControllers from '../../molecules/M_SliderControllers/M_SliderControllers.jsx'
@@ -29,40 +29,36 @@ export default class O_Slider extends Component {
     const { activeIndex, imageUrls } = this.state
 
     return (
-      &lt;div className="O_Slider"&gt;,
-        &lt;div className="W_SliderFrame"&gt;,
-          &lt;div
-            className="C_SliderRail"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          &gt;,
+      &lt;div className="O_Slider"&gt;
+        &lt;div className="W_SliderFrame"&gt;
+          &lt;div className="C_SliderRail" style={{ transform: `translateX(-${activeIndex * 100}%)` }} &gt;
             {imageUrls.map((imageUrl) => (
-              &lt;img key={imageUrl} className="Q_SliderImage" src={imageUrl} /&gt;,
+              &lt;img key={imageUrl} className="Q_SliderImage" src={imageUrl} /&gt;
             ))}
-          &lt;/div&gt;,
-        &lt;/div&gt;,
+          &lt;/div&gt;
+        &lt;/div&gt;
 
         &lt;M_SliderControllers
           imageUrls={imageUrls}
           activeIndex={activeIndex}
           handleChangeIndex={this.updateIndex}
-        /&gt;,
-      &lt;/div&gt;,
+        /&gt;
+      &lt;/div&gt;
     )
   }
-}
-</code></pre> <p> Сами картинки мы&nbsp;не&nbsp;добавляем в&nbsp;проект, как например icon, для этого используем ссылки, их&nbsp;мы&nbsp;указываем в&nbsp;файле рендера компонента. Выглядит он&nbsp;у&nbsp;нас так. </p> <pre><code class="language-javascript">import React from 'react'
+}</code></pre><p>Сами картинки мы&nbsp;не&nbsp;добавляем в&nbsp;проект, как например icon, для этого используем ссылки, их&nbsp;мы&nbsp;указываем в&nbsp;файле рендера компонента. Выглядит он&nbsp;у&nbsp;нас <a target="_blank" href="https://codetutorial-system.adc.ac/example_8/example_8.html">так</a>.</p><pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import O_Slider from '../../components/organisms/O_Slider/O_Slider.jsx'
 
 const imageUrls = [
   'https://bipbap.ru/wp-content/uploads/2017/04/priroda_kartinki_foto_03.jpg',
-  'https://www.imgonline.com.ua/examples/bee-on-daisy.jpg',
+  'https://imgonline.com.ua/examples/bee-on-daisy.jpg',
   'https://secretmag.ru/thumb/1200x0/filters:quality(75):no_upscale()/imgs/2021/11/02/12/4999384/d53776b3b010f6c92bdf3e0d7946b938aabd8c08.webp'
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(&lt;O_Slider imageUrls={imageUrls} /&gt;, document.body)
-})</code></pre> <p> Затем прописываем стили для O_Slider. </p> <pre><code class="language-css">.O_Slider {
+})</code></pre><p>Затем прописываем стили для O_Slider.</p><pre><code class="language-css">.O_Slider {
   margin: 10% auto;
   position: relative;
   width: 760px;
@@ -70,16 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
   display: flex;
   flex-direction: column;
 }
- .O_Slider .W_SliderFrame {
+
+.O_Slider .W_SliderFrame {
   width: 760px;
   border-radius: 12px;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
- .O_Slider .C_SliderRail {
+
+.O_Slider .C_SliderRail {
   display: flex;
   transition: transform 0.3s;
 }
- .O_Slider .Q_SliderImage {
+
+.O_Slider .Q_SliderImage {
   width: 760px;
-}</code></pre> <p> Получаем следующий результат: </p> <img srcset="../images/498ea98981f438356d31.png, ../images/d18c29a1d13be955e3f7.png 2x, ../images/4aa7361b381ddca4fab1.png 3x" src="../images/498ea98981f438356d31.png" alt="Структура слайдера"/> <h2 id="links">Ссылки</h2> <p> Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов. </p> <div class="links"> <a class="figma" href="/atoms/A_Button.html"></a> <a class="github" href="/atoms/A_Button.html"></a> </div> <h2>Составляющие</h2> <p> В этот компонент часто выводятся следующие компоненты. </p> <div class="suggest"> <a href="/atoms/A_MeatBall.html"> <figure class="suggestCover A_MeatBall"></figure> <h4>MeatBall</h4> <p>Точки индикотора видимого элемента слайдера.</p> </a> <a href="/molecules/M_SliderController.html"> <figure class="suggestCover M_SliderController"></figure> <h4>Slider Controller</h4> <p> Функциональный элемент слайдера. </p> </a> </div> </article> </div> <footer class="footerbar"> <div> <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a> </div> <div> <a href="../index.html">ADC Code Tutorial © 2021</a> </div> </footer> <script src="../index.js?6359722c1ede33767fd0"></script></body> </html> 
+}</code></pre><p>Получаем следующий результат:</p><img srcset="../images/498ea98981f438356d31.png, ../images/d18c29a1d13be955e3f7.png 2x, ../images/4aa7361b381ddca4fab1.png 3x" src="../images/498ea98981f438356d31.png" alt="Структура слайдера"/><h2 id="links">Ссылки</h2><p>Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов.</p><div class="links"><a class="figma" target="_blank" href="https://www.figma.com/community/file/1113088338359696612"></a> <a class="github" target="_blank" href="https://github.com/HSEADC/ADC-Code-Tutorial-Design-System"></a></div><h2>Составляющие</h2><p>В этот компонент часто выводятся следующие компоненты.</p><div class="suggest"><a href="/atoms/A_MeatBall.html"><figure class="suggestCover A_MeatBall"></figure><h4>MeatBall</h4><p>Точки индикотора видимого элемента слайдера.</p></a><a href="/molecules/M_SliderController.html"><figure class="suggestCover M_SliderController"></figure><h4>Slider Controller</h4><p>Функциональный элемент слайдера.</p></a></div></article></div><footer class="footerbar"><div><a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a></div><div><a href="../index.html">ADC Code Tutorial © 2021</a></div></footer></body></html>

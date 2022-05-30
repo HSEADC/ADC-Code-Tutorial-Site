@@ -1,6 +1,6 @@
-<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta name="viewport" content="width=device-width,initial-scale=1"/> <meta charset="utf-8"/> <title>O_Menu</title> <link href="../index.css?6359722c1ede33767fd0" rel="stylesheet"></head> <body class="article"> <menu class="menubar"> <a href="../index.html"> <img class="logo" srcset="../images/e6dd8078c0b977e8198c.png, ../images/f5a2eda1cb7e2fef775f.png 2x, ../images/c4532ea7317722dbd3a2.png 3x" src="../images/e6dd8078c0b977e8198c.png" alt="логотип"/> </a> <div class="menu_text"> <a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a> </div> <div class="media"> <a target="blank" href="https://vk.com/adc_code_tutorial"> <img class="media_logo" srcset="../images/89a37502849261e73aa4.png, ../images/ebfe645e3b5450b75e83.png 2x, ../images/591579389ef3bafd0cdc.png 3x" src="../images/89a37502849261e73aa4.png" alt="вк"/> </a> <a target="blank" href="https://t.me/adc_code_tutorial"> <img class="media_logo" srcset="../images/89dbf3e9df143a1665c7.png, ../images/dcb81caa2a9f192e8a74.png 2x, ../images/e4dd14c54ec93c30117f.png 3x" src="../images/89dbf3e9df143a1665c7.png" alt="телеграм"/> </a> </div> </menu> <div class="contentAreaWrapper"> <menu class="sidebar"> <a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a> </menu> <article> <figure class="articleCover O_Menu"></figure> <h1 id="initiation">SideBarMenu</h1> <p> SideBarMenu отображает список вариантов доступных переходов на странице. Обычно это боковая панель, которая визуально разграничивает контент на странице. Благодаря этому элементу интерфейса посетители понимают принцип навигации. </p> <p> Menu должно быть легко открывать, закрывать и&nbsp;взаимодействовать. Содержимое меню должно соответствовать потребностям пользователя. Пункты меню должно быть легко считывать и понимать, на какой имеено странице находится пользователь. </p> <h2 id="structure">Структура компонента</h2> <p> Меню должно быть расположено относительно края экрана или браузера. Обычно оно появляются рядом (или перед) элементом, который их генерирует. Если оно находятся в&nbsp;положении, которое должно быть обрезано браузером или краем экрана, меню может отображаться слева, справа или над элементом, который его генерирует. Данное меню состоит из&nbsp;menu item, которые собраны в&nbsp;коллекцию. </p> <h3>Menu Item</h3> <p> Menu item может содержать в&nbsp;себе различные типы данных: иконку, текст, картинку, в&nbsp;зависимости от&nbsp;назначения. Подробнее о <a href="/atoms/A_MenuItem">menu item.</a> </p> <img srcset="../images/dd124199ba0929e89f9f.png, ../images/096a9ecfb2472dfe9201.png 2x, ../images/db18632e7de449eaaebc.png 3x" src="../images/dd124199ba0929e89f9f.png" alt="Структура чипса"/> <p> Когда menu item собраны в коллекции, получаем следующий результат. </p> <img srcset="../images/b2a97cd132aeb0fa5bad.png, ../images/1de3e8eb5032af9ea164.png 2x, ../images/5862ef514baa63528ac0.png 3x" src="../images/b2a97cd132aeb0fa5bad.png" alt="Структура чипса"/> <h2 id="state">Состояние компонента</h2> <p> Исходя из&nbsp;структуры, мы&nbsp;можем выявить несколько состояний компонента при пользовательском действии. </p> <img srcset="../images/c7c6c1cb93c27cb213ca.png, ../images/8596208b3447acf983a7.png 2x, ../images/e496d528da9c6947fa41.png 3x" src="../images/c7c6c1cb93c27cb213ca.png" alt="Структура чипса"/> <img srcset="../images/21fe1dd29dec7f44d278.png, ../images/23501891655b8d5ac6e4.png 2x, ../images/0ede2fbb0fa7d526cdc3.png 3x" src="../images/21fe1dd29dec7f44d278.png" alt="Структура чипса"/> <h2 id="realization">Реализация</h2> <p> Для начала создаем O_Menu.jsx. Прописывем функционал и собираем menu item в коллекции. </p> <pre><code class="language-javascript">import React, { PureComponent } from 'react'
+<!doctype html><html lang="ru" dir="ltr"><head><meta name="viewport" content="width=device-width,initial-scale=1"/><meta charset="utf-8"/><title>Компонент O_SideBarMenu | ADC Code Tutorial</title><script defer="defer" src="../index.js"></script><link href="../index.css" rel="stylesheet"></head><body class="article"><menu class="menubar"><a href="../index.html"></a><div class="menu_text"><a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a></div><div class="media"><a target="blank" href="https://vk.com/adc_code_tutorial"></a> <a target="blank" href="https://t.me/adc_code_tutorial"></a></div></menu><div class="contentAreaWrapper"><menu class="sidebar"><a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a></menu><article><figure class="articleCover O_Menu"></figure><h1 id="initiation">SideBarMenu</h1><p>SideBarMenu отображает список вариантов доступных переходов на странице. Обычно это боковая панель, которая визуально разграничивает контент на странице. Благодаря этому элементу интерфейса посетители понимают принцип навигации.</p><p>Menu должно быть легко открывать, закрывать и&nbsp;взаимодействовать. Содержимое меню должно соответствовать потребностям пользователя. Пункты меню должно быть легко считывать и понимать, на какой имеено странице находится пользователь.</p><h2 id="structure">Структура компонента</h2><p>Меню должно быть расположено относительно края экрана или браузера. Обычно оно появляются рядом (или перед) элементом, который их генерирует. Если оно находятся в&nbsp;положении, которое должно быть обрезано браузером или краем экрана, меню может отображаться слева, справа или над элементом, который его генерирует. Данное меню состоит из&nbsp;menu item, которые собраны в&nbsp;коллекцию.</p><h3>Menu Item</h3><p>Menu item может содержать в&nbsp;себе различные типы данных: иконку, текст, картинку, в&nbsp;зависимости от&nbsp;назначения. Подробнее о <a href="/atoms/A_MenuItem.html">menu item</a>.</p><img srcset="../images/dd124199ba0929e89f9f.png, ../images/096a9ecfb2472dfe9201.png 2x, ../images/db18632e7de449eaaebc.png 3x" src="../images/dd124199ba0929e89f9f.png" alt="Структура чипса"/><p>Когда menu item собраны в коллекции, получаем следующий результат.</p><img srcset="../images/b2a97cd132aeb0fa5bad.png, ../images/1de3e8eb5032af9ea164.png 2x, ../images/5862ef514baa63528ac0.png 3x" src="../images/b2a97cd132aeb0fa5bad.png" alt="Структура чипса"/><h2 id="state">Состояние компонента</h2><p>Исходя из&nbsp;структуры, мы&nbsp;можем выявить несколько состояний компонента при пользовательском действии.</p><img srcset="../images/c7c6c1cb93c27cb213ca.png, ../images/8596208b3447acf983a7.png 2x, ../images/e496d528da9c6947fa41.png 3x" src="../images/c7c6c1cb93c27cb213ca.png" alt="Структура чипса"/> <img srcset="../images/21fe1dd29dec7f44d278.png, ../images/23501891655b8d5ac6e4.png 2x, ../images/0ede2fbb0fa7d526cdc3.png 3x" src="../images/21fe1dd29dec7f44d278.png" alt="Структура чипса"/><h2 id="realization">Реализация</h2><p>Для начала создаем O_Menu.jsx. Прописывем функционал и собираем menu item в коллекции.</p><pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
-import './O_Menu.scss'
+import './O_Menu.css'
 
 export default class O_Menu extends PureComponent {
   constructor(props) {
@@ -28,19 +28,21 @@ export default class O_Menu extends PureComponent {
       &lt;/div&gt;
     )
   }
-}</code></pre> <p> По принципу изоляции прописываем стили. </p> <pre><code class="language-css">.O_Menu {
-   width: 360px;
-   padding: 40px 28px;
-   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
-   border-radius: 10px;
+}</code></pre><p>По принципу изоляции прописываем стили.</p><pre><code class="language-css">.O_Menu {
+  width: 360px;
+  padding: 40px 28px;
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
 }
- .O_Menu .C_MenuItems {
-   display: flex;
-   flex-direction: column;
+
+.O_Menu .C_MenuItems {
+  display: flex;
+  flex-direction: column;
 }
- .O_Menu .C_MenuItems:last-child {
-   margin-top: 100px;
-}</code></pre> <p> В файле сборщика заполняем массивы top и botton и выводим компонент. Ты можшь посмотреть как выглядит рабочий комопнент <a href="/atoms/A_MenuItem">menu.</a> </p> <pre><code class="language-javascript">import React from 'react'
+
+.O_Menu .C_MenuItems:last-child {
+  margin-top: 100px;
+}</code></pre><p>В файле сборщика заполняем массивы top и botton и выводим компонент.</p><pre><code class="language-javascript">import React from 'react'
 import ReactDOM from 'react-dom'
 import O_Menu from '../../components/organisms/O_Menu/O_Menu.jsx'
 
@@ -49,35 +51,35 @@ const menu = {
     {
       text: 'Галерея',
       icon: 'dashboard',
-      url: 'https://instagram.com'
+      url: 'https://codetutorial.adc.ac'
     },
     {
       text: 'Сообщения',
       icon: 'messages',
-      url: 'https://facebook.com'
+      url: 'https://codetutorial.adc.ac'
       // active: true
     },
     {
       text: 'Заметки',
       icon: 'pages',
-      url: 'https://instagram.com'
+      url: 'https://codetutorial.adc.ac'
     },
     {
       text: 'Профиль',
       icon: 'user',
-      url: 'https://facebook.com'
+      url: 'https://codetutorial.adc.ac'
     }
   ],
   bottom: [
     {
       text: 'Помощь',
       icon: 'help',
-      url: 'https://instagram.com'
+      url: 'https://codetutorial.adc.ac'
     },
     {
       text: 'Настройки',
       icon: 'settings',
-      url: 'https://facebook.com'
+      url: 'https://codetutorial.adc.ac'
     }
   ]
 }
@@ -87,4 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
     &lt;O_Menu menu={menu} /&gt;,
     document.body.appendChild(document.createElement('div'))
   )
-})</code></pre> <p> Получаем следующий результат: </p> <img srcset="../images/b2a97cd132aeb0fa5bad.png, ../images/1de3e8eb5032af9ea164.png 2x, ../images/5862ef514baa63528ac0.png 3x" src="../images/b2a97cd132aeb0fa5bad.png" alt="Структура чипса"/> <h2 id="links">Ссылки</h2> <p> Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов. </p> <div class="links"> <a class="figma" href="/articles/organism/a_button.html"></a> <a class="github" href="/articles/organism/a_button.html"></a> </div> <h2>Составляющие</h2> <p> В этот компонент часто выводятся следующие компоненты. </p> <div class="suggest"> <a href="/atoms/A_MenuItem.html"> <figure class="suggestCover A_MenuItem"></figure> <h4>Menu Item</h4> <p>Интерактивный элемент коллекции меню.</p> </a> </div> </article> </div> <footer class="footerbar"> <div> <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a> </div> <div> <a href="../index.html">ADC Code Tutorial © 2021</a> </div> </footer> <script src="../index.js?6359722c1ede33767fd0"></script></body> </html> 
+})</code></pre><p>Получаем следующий результат:</p><img srcset="../images/b2a97cd132aeb0fa5bad.png, ../images/1de3e8eb5032af9ea164.png 2x, ../images/5862ef514baa63528ac0.png 3x" src="../images/b2a97cd132aeb0fa5bad.png" alt="Структура чипса"/><h2 id="links">Ссылки</h2><p>Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой и&nbsp;GitHub с&nbsp;библиотекой компонентов.</p><div class="links"><a class="figma" target="_blank" href="https://www.figma.com/community/file/1113088338359696612"></a> <a class="github" target="_blank" href="https://github.com/HSEADC/ADC-Code-Tutorial-Design-System"></a></div><h2>Составляющие</h2><p>В этот компонент часто выводятся следующие компоненты.</p><div class="suggest"><a href="/atoms/A_MenuItem.html"><figure class="suggestCover A_MenuItem"></figure><h4>Menu Item</h4><p>Интерактивный элемент коллекции меню.</p></a></div></article></div><footer class="footerbar"><div><a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a> <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a></div><div><a href="../index.html">ADC Code Tutorial © 2021</a></div></footer></body></html>

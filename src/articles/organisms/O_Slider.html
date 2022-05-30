@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>O_Slider</title>
+    <title>Компонент O_Slider | ADC Code Tutorial</title>
   </head>
 
   <body class="article">
-    <menu class="menubar">
-      <a href="../index.html">
-        <img
-          class="logo"
-          srcset="
-            ../../images/general/Main/Logo-navigation-content-desktop.png,
-            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-          "
-          src="../../images/general/Main/Logo-navigation-content-desktop.png"
-          alt="логотип"
-        />
-      </a>
-      <div class="menu_text">
-        <a href="../index.html#principles">Принципы</a>
-        <a href="../index.html#features">Фишки</a>
-        <a href="../index.html#components">Компоненты</a>
-        <a href="../index.html#about">О нас</a>
-      </div>
-      <div class="media">
-        <a target="blank" href="https://vk.com/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/VK-navigation-content-desktop.png,
-              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/VK-navigation-content-desktop.png"
-            alt="вк"
-          />
-        </a>
-        <a target="blank" href="https://t.me/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/Telegram-navigation-content-desktop.png,
-              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
-            alt="телеграм"
-          />
-        </a>
-      </div>
-    </menu>
+    <menubar></menubar>
 
     <div class="contentAreaWrapper">
       <menu class="sidebar">
@@ -136,7 +91,7 @@
           функционал слайдера. Получаем следующий код.
         </p>
 
-        <pre><code class="language-javascript">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { Component } from 'react'
 import './O_Slider.scss'
 import '../../quarks/Q_Icon.scss'
 import M_SliderControllers from '../../molecules/M_SliderControllers/M_SliderControllers.jsx'
@@ -167,51 +122,56 @@ export default class O_Slider extends Component {
     const { activeIndex, imageUrls } = this.state
 
     return (
-      &lt;div className="O_Slider"&gt;,
-        &lt;div className="W_SliderFrame"&gt;,
-          &lt;div
-            className="C_SliderRail"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          &gt;,
+      &lt;div className="O_Slider"&gt;
+        &lt;div className="W_SliderFrame"&gt;
+          &lt;div className="C_SliderRail" style={{ transform: `translateX(-${activeIndex * 100}%)` }} &gt;
             {imageUrls.map((imageUrl) => (
-              &lt;img key={imageUrl} className="Q_SliderImage" src={imageUrl} /&gt;,
+              &lt;img key={imageUrl} className="Q_SliderImage" src={imageUrl} /&gt;
             ))}
-          &lt;/div&gt;,
-        &lt;/div&gt;,
+          &lt;/div&gt;
+        &lt;/div&gt;
 
         &lt;M_SliderControllers
           imageUrls={imageUrls}
           activeIndex={activeIndex}
           handleChangeIndex={this.updateIndex}
-        /&gt;,
-      &lt;/div&gt;,
+        /&gt;
+      &lt;/div&gt;
     )
   }
-}
-</code></pre>
+}</code></pre>
 
         <p>
           Сами картинки мы&nbsp;не&nbsp;добавляем в&nbsp;проект, как например
           icon, для этого используем ссылки, их&nbsp;мы&nbsp;указываем
-          в&nbsp;файле рендера компонента. Выглядит он&nbsp;у&nbsp;нас так.
+          в&nbsp;файле рендера компонента. Выглядит он&nbsp;у&nbsp;нас
+
+          <a
+            target="_blank"
+            href="https://codetutorial-system.adc.ac/example_8/example_8.html"
+          >
+            так</a
+          >.
         </p>
 
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import O_Slider from '../../components/organisms/O_Slider/O_Slider.jsx'
 
 const imageUrls = [
   'https://bipbap.ru/wp-content/uploads/2017/04/priroda_kartinki_foto_03.jpg',
-  'https://www.imgonline.com.ua/examples/bee-on-daisy.jpg',
+  'https://imgonline.com.ua/examples/bee-on-daisy.jpg',
   'https://secretmag.ru/thumb/1200x0/filters:quality(75):no_upscale()/imgs/2021/11/02/12/4999384/d53776b3b010f6c92bdf3e0d7946b938aabd8c08.webp'
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(&lt;O_Slider imageUrls={imageUrls} /&gt;, document.body)
 })</code></pre>
+
         <p>
           Затем прописываем стили для O_Slider.
         </p>
+
         <pre><code class="language-css">.O_Slider {
   margin: 10% auto;
   position: relative;
@@ -220,17 +180,20 @@ document.addEventListener('DOMContentLoaded', () => {
   display: flex;
   flex-direction: column;
 }
- .O_Slider .W_SliderFrame {
+
+.O_Slider .W_SliderFrame {
   width: 760px;
   border-radius: 12px;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
- .O_Slider .C_SliderRail {
+
+.O_Slider .C_SliderRail {
   display: flex;
   transition: transform 0.3s;
 }
- .O_Slider .Q_SliderImage {
+
+.O_Slider .Q_SliderImage {
   width: 760px;
 }</code></pre>
 
@@ -248,17 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alt="Структура слайдера"
         />
 
-        <h2 id="links">Ссылки</h2>
-
-        <p>
-          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
-          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
-        </p>
-
-        <div class="links">
-          <a class="figma" href="/atoms/A_Button.html"></a>
-          <a class="github" href="/atoms/A_Button.html"></a>
-        </div>
+        <links></links>
 
         <h2>Составляющие</h2>
 
@@ -284,15 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </article>
     </div>
 
-    <footer class="footerbar">
-      <div>
-        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
-        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
-      </div>
-
-      <div>
-        <a href="../index.html">ADC Code Tutorial © 2021</a>
-      </div>
-    </footer>
+    <footerbar></footerbar>
   </body>
 </html>

@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>SingIn</title>
+    <title>Компонент O_SingIn | ADC Code Tutorial</title>
   </head>
 
   <body class="article">
-    <menu class="menubar">
-      <a href="../index.html">
-        <img
-          class="logo"
-          srcset="
-            ../../images/general/Main/Logo-navigation-content-desktop.png,
-            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-          "
-          src="../../images/general/Main/Logo-navigation-content-desktop.png"
-          alt="логотип"
-        />
-      </a>
-      <div class="menu_text">
-        <a href="../index.html#principles">Принципы</a>
-        <a href="../index.html#features">Фишки</a>
-        <a href="../index.html#components">Компоненты</a>
-        <a href="../index.html#about">О нас</a>
-      </div>
-      <div class="media">
-        <a target="blank" href="https://vk.com/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/VK-navigation-content-desktop.png,
-              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/VK-navigation-content-desktop.png"
-            alt="вк"
-          />
-        </a>
-        <a target="blank" href="https://t.me/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/Telegram-navigation-content-desktop.png,
-              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
-            alt="телеграм"
-          />
-        </a>
-      </div>
-    </menu>
+    <menubar></menubar>
 
     <div class="contentAreaWrapper">
       <menu class="sidebar">
@@ -166,13 +121,15 @@
           случае выводим их в console. Получаем следующий код.
         </p>
 
-        <pre><code class="language-javascript">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { Component } from 'react'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
-import './O_Login.scss'
+import './O_Login.css'
+
 export default class O_Login extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       login: '',
       password: ''
@@ -185,6 +142,7 @@ export default class O_Login extends Component {
 
   handleLoginChange(e) {
     const value = e.target.value
+
     this.setState((prevState) => ({
       ...prevState,
       login: value
@@ -193,6 +151,7 @@ export default class O_Login extends Component {
 
   handlePasswordChange(e) {
     const value = e.target.value
+
     this.setState((prevState) => ({
       ...prevState,
       password: value
@@ -219,11 +178,13 @@ export default class O_Login extends Component {
           value={login}
           onChange={this.handleLoginChange}
         /&gt;
+
         &lt;A_Input
           placeholder="Пароль"
           value={password}
           onChange={this.handlePasswordChange}
         /&gt;
+
         &lt;A_Button
           text="Войти"
           handleClick={this.handleButtonClick}
@@ -245,32 +206,37 @@ export default class O_Login extends Component {
   align-items: center;
   justify-content: space-around;
 }
- .W_LoginContainer .A_InputContainer {
+
+.W_LoginContainer .A_InputContainer {
   width: 570px;
   background-color: #f4f4f4;
   box-shadow: none;
 }
- .W_LoginContainer .A_InputContainer .A_Input {
+
+.W_LoginContainer .A_InputContainer .A_Input {
   background-color: #f4f4f4;
-}
- </code></pre>
+}</code></pre>
 
         <p>
           Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
           теперь его&nbsp;нужно отрендерить. Можешь вывести компонент в своем
           файде сборщика, но не забудь про обертку popup. Вот как это делаем мы
-          <a href="#">sing in</a>.
+          <a
+            target="_blank"
+            href="https://codetutorial-system.adc.ac/example_11/example_11.html"
+            >sing in</a
+          >.
         </p>
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import S_Popup from '../../components/superorganisms/S_Popup/S_Popup.jsx'
 import O_Login from '../../components/organisms/O_Login/O_Login.jsx'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-      &ltS_Popup popupButtonText="Войти в систему" popupTitle="Вход в систему"&gt;
-        &ltO_Login /&gt;
-      &lt/S_Popup&gt;,
+    &ltS_Popup popupButtonText="Войти в систему" popupTitle="Вход в систему"&gt;
+      &ltO_Login /&gt;
+    &lt/S_Popup&gt;,
     document.body
   )
 })
@@ -299,17 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alt="Структура чипса"
         />
 
-        <h2 id="links">Ссылки</h2>
-
-        <p>
-          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
-          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
-        </p>
-
-        <div class="links">
-          <a class="figma" href="/articles/atoms/a_button.html"></a>
-          <a class="github" href="/articles/atoms/a_button.html"></a>
-        </div>
+        <links></links>
 
         <h2>Составляющие</h2>
 
@@ -335,15 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </article>
     </div>
 
-    <footer class="footerbar">
-      <div>
-        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
-        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
-      </div>
-
-      <div>
-        <a href="../index.html">ADC Code Tutorial © 2021</a>
-      </div>
-    </footer>
+    <footerbar></footerbar>
   </body>
 </html>

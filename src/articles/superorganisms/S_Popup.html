@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>A_Chip</title>
+    <title>Компонент S_Popup | ADC Code Tutorial</title>
   </head>
 
   <body class="article">
-    <menu class="menubar">
-      <a href="../index.html">
-        <img
-          class="logo"
-          srcset="
-            ../../images/general/Main/Logo-navigation-content-desktop.png,
-            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-          "
-          src="../../images/general/Main/Logo-navigation-content-desktop.png"
-          alt="логотип"
-        />
-      </a>
-      <div class="menu_text">
-        <a href="../index.html#principles">Принципы</a>
-        <a href="../index.html#features">Фишки</a>
-        <a href="../index.html#components">Компоненты</a>
-        <a href="../index.html#about">О нас</a>
-      </div>
-      <div class="media">
-        <a target="blank" href="https://vk.com/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/VK-navigation-content-desktop.png,
-              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/VK-navigation-content-desktop.png"
-            alt="вк"
-          />
-        </a>
-        <a target="blank" href="https://t.me/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/Telegram-navigation-content-desktop.png,
-              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
-            alt="телеграм"
-          />
-        </a>
-      </div>
-    </menu>
+    <menubar></menubar>
 
     <div class="contentAreaWrapper">
       <menu class="sidebar">
@@ -148,13 +103,15 @@
           со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре CSS.
         </p>
 
-        <pre><code class="language-javascript">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { Component } from 'react'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
-import './S_Popup.scss'
-import '../../quarks/Q_Icon.scss'
+import './S_Popup.css'
+import '../../quarks/Q_Icon.css'
+
 export default class S_Popup extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       showPopup: false
     }
@@ -180,25 +137,28 @@ export default class S_Popup extends Component {
   render() {
     const { showPopup } = this.state
     const { popupButtonText, popupTitle, children } = this.props
+
     return (
-        &lt;div className="S_Popup"&gt;
-          &lt;A_Button text={popupButtonText} handleClick={this.openPopup} /&gt;
+      &lt;div className="S_Popup"&gt;
+        &lt;A_Button text={popupButtonText} handleClick={this.openPopup} /&gt;
+
         {showPopup && (
-            &lt;div className="W_PopupBackground"&gt;
-              &lt;div className="W_PopupBox"&gt;
-                &lt;div className="W_PopupBoxHeader"&gt;
-                  &lt;h3&gt;{popupTitle}  &lt;/h3>
-                  &lt;div className="Q_Icon close" onClick={this.closePopup}&gt;  &lt;/div&gt;
-                &lt;/div&gt;
-              {children}
+          &lt;div className="W_PopupBackground"&gt;
+            &lt;div className="W_PopupBox"&gt;
+              &lt;div className="W_PopupBoxHeader"&gt;
+                &lt;h3&gt;{popupTitle}&lt;/h3>
+                &lt;div className="Q_Icon close" onClick={this.closePopup}&gt;&lt;/div&gt;
               &lt;/div&gt;
+
+              {children}
             &lt;/div&gt;
+          &lt;/div&gt;
         )}
-        &lt;/div&gt;
+
+       &lt;/div&gt;
     )
   }
-}
-</code></pre>
+}</code></pre>
 
         <p>
           Затем, в файле S_Popup.css прописываем стили для всех структур popup,
@@ -210,7 +170,8 @@ export default class S_Popup extends Component {
   width: 200px;
   margin: 20% auto;
 }
- .S_Popup .W_PopupBackground {
+
+.S_Popup .W_PopupBackground {
   width: 100%;
   height: 100%;
   top: 0;
@@ -220,7 +181,8 @@ export default class S_Popup extends Component {
   justify-content: center;
   align-items: center;
 }
- .S_Popup .W_PopupBox {
+
+.S_Popup .W_PopupBox {
   width: 610px;
   height: 298px;
   padding: 20px;
@@ -230,20 +192,23 @@ export default class S_Popup extends Component {
   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
   border-radius: 10px;
 }
- .S_Popup .W_PopupBoxHeader {
+
+.S_Popup .W_PopupBoxHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   align-items: center;
 }
- .S_Popup .W_PopupBoxHeader h3 {
+
+.S_Popup .W_PopupBoxHeader h3 {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
   color: #495151;
 }
- .S_Popup .W_PopupBoxHeader .Q_Icon.close {
+
+.S_Popup .W_PopupBoxHeader .Q_Icon.close {
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -253,24 +218,26 @@ export default class S_Popup extends Component {
           Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
           теперь его&nbsp;нужно отрендерить. Можешь вывести получившийся
           компонент согласно своей структуре проекта. Ты можешь увидеть как это
-          делаем мы, а также посмотреть получившийся <a href="#">popup</a>.
+          делаем мы, а также посмотреть получившийся
+          <a
+            target="_blank"
+            href="https://codetutorial-system.adc.ac/example_13/example_13.html"
+            >popup</a
+          >.
         </p>
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import S_Popup from '../../components/superorganisms/S_Popup/S_Popup.jsx'
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =&gt; {
   ReactDOM.render(
-      &lt;S_Popup
-      popupButtonText="Открыть"
-      popupTitle="Заголовок"
-    &gt;  &lt;/S_Popup&gt;,
+    &lt;S_Popup popupButtonText="Открыть попап" popupTitle="Заголовок" /&gt;,
     document.body
   )
 })</code></pre>
 
         <p>
-          Получаем следующий результат
+          Получаем следующий результат.
         </p>
 
         <img
@@ -283,17 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alt="Структура чипса"
         />
 
-        <h2 id="links">Ссылки</h2>
-
-        <p>
-          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
-          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
-        </p>
-
-        <div class="links">
-          <a class="figma" href="/articles/atoms/a_button.html"></a>
-          <a class="github" href="/articles/atoms/a_button.html"></a>
-        </div>
+        <links></links>
 
         <h2>Составляющие</h2>
 
@@ -320,15 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </article>
     </div>
 
-    <footer class="footerbar">
-      <div>
-        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
-        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
-      </div>
-
-      <div>
-        <a href="../index.html">ADC Code Tutorial © 2021</a>
-      </div>
-    </footer>
+    <footerbar></footerbar>
   </body>
 </html>

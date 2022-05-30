@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>O_SelectInput</title>
+    <title>Компонент O_SelectInput | ADC Code Tutorial</title>
   </head>
 
   <body class="article">
-    <menu class="menubar">
-      <a href="../index.html">
-        <img
-          class="logo"
-          srcset="
-            ../../images/general/Main/Logo-navigation-content-desktop.png,
-            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-          "
-          src="../../images/general/Main/Logo-navigation-content-desktop.png"
-          alt="логотип"
-        />
-      </a>
-      <div class="menu_text">
-        <a href="../index.html#principles">Принципы</a>
-        <a href="../index.html#features">Фишки</a>
-        <a href="../index.html#components">Компоненты</a>
-        <a href="../index.html#about">О нас</a>
-      </div>
-      <div class="media">
-        <a target="blank" href="https://vk.com/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/VK-navigation-content-desktop.png,
-              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/VK-navigation-content-desktop.png"
-            alt="вк"
-          />
-        </a>
-        <a target="blank" href="https://t.me/adc_code_tutorial">
-          <img
-            class="media_logo"
-            srcset="
-              ../../images/general/Main/Telegram-navigation-content-desktop.png,
-              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
-              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
-            "
-            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
-            alt="телеграм"
-          />
-        </a>
-      </div>
-    </menu>
+    <menubar></menubar>
 
     <div class="contentAreaWrapper">
       <menu class="sidebar">
@@ -84,9 +39,8 @@
           option list&nbsp;и,&nbsp;в&nbsp;зависимости от&nbsp;функционала,
           иконки chevrone, которая анимируется во&nbsp;время пользовательского
           действия. Этот пример не&nbsp;содержит chevrone, так как option list
-          открывается при нажатии на&nbsp;<a href="/atoms/A_Input.html"
-            >input.</a
-          >
+          открывается при нажатии на&nbsp;<a href="/atoms/A_Input.html">input</a
+          >.
         </p>
 
         <h3>Placeholder</h3>
@@ -142,10 +96,10 @@
           но&nbsp;стили для нее прописываем в&nbsp;A_SelectIput.scss.
         </p>
 
-        <pre><code class="language-javascript">import React, { PureComponent } from 'react'
-import './O_Select.scss'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_OptionItem from '../../atoms/A_OptionItem/A_OptionItem.jsx'
+import './O_Select.css'
 
 export default class O_Select extends PureComponent {
   constructor(props) {
@@ -199,11 +153,11 @@ export default class O_Select extends PureComponent {
     ))
 
     const optionCollection = (
-      &lt;div className="C_OptionsList"&gt{optionElements}&lt;/div&gt
+      &lt;div className="C_OptionsList"&gt{optionElements}&lt;/div&gt;
     )
 
     return (
-      &lt;div className="O_Select">
+      &lt;div className="O_Select"&gt;
         &lt;A_Input
           placeholder={placeholder}
           value={value}
@@ -211,9 +165,10 @@ export default class O_Select extends PureComponent {
           onFocus={() => {
             this.setVisibleOptions(true)
           }}
-        /&gt
+        /&gt;
+
         {showOptions && optionCollection}
-      &lt;/div&gt
+      &lt;/div&gt;
     )
   }
 }</code></pre>
@@ -223,25 +178,31 @@ export default class O_Select extends PureComponent {
         </p>
 
         <pre><code class="language-css">.O_Select {
-   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
-   margin: 20% auto;
-   width: 610px;
-   border-radius: 10px;
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  margin: 20% auto;
+  width: 610px;
+  border-radius: 10px;
 }
- .O_Select .C_OptionsList {
-   margin-top: -15px;
-   background-color: #fff f;
-   padding: 40px 20px 20px 20px;
+
+.O_Select .C_OptionsList {
+  margin-top: -15px;
+  background-color: #fff f;
+  padding: 40px 20px 20px 20px;
 }</code></pre>
 
         <p>
           Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
           теперь его&nbsp;нужно отрендерить. Выведи получившийся компонент
           согласно своей структуре проекта. Ты можешь увидеть как это делаем мы,
-          а также посмотреть получившийся <a href="#">select input</a>.
+          а также посмотреть получившийся
+          <a
+            target="_blank"
+            href="https://codetutorial-system.adc.ac/example_6/example_6.html"
+            >select input</a
+          >.
         </p>
 
-        <pre><code class="language-javascript">import React from 'react'
+        <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 import O_Select from '../../components/organisms/O_Select/O_Select.jsx'
 
@@ -264,13 +225,12 @@ const options = [
   }
 ]
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =&gt; {
   ReactDOM.render(
     &lt;O_Select placeholder="Твой любимый фрукт" options={options} /&gt;,
     document.body.appendChild(document.createElement('div'))
   )
-})
-</code></pre>
+})</code></pre>
         <p>
           Получаем следующий результат:
         </p>
@@ -285,17 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alt="Структура чипса"
         />
 
-        <h2 id="links">Ссылки</h2>
-
-        <p>
-          Также для тебя ссылки на&nbsp;Figma с&nbsp;дизайн системой
-          и&nbsp;GitHub с&nbsp;библиотекой компонентов.
-        </p>
-
-        <div class="links">
-          <a class="figma" href="/articles/organism/a_button.html"></a>
-          <a class="github" href="/articles/organism/a_button.html"></a>
-        </div>
+        <links></links>
 
         <h2>Составляющие</h2>
 
@@ -337,15 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </article>
     </div>
 
-    <footer class="footerbar">
-      <div>
-        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
-        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
-      </div>
-
-      <div>
-        <a href="../index.html">ADC Code Tutorial © 2021</a>
-      </div>
-    </footer>
+    <footerbar></footerbar>
   </body>
 </html>
