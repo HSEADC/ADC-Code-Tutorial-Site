@@ -211,6 +211,13 @@ module.exports = {
       template: './src/articles/superorganisms/S_Popup.html',
       filename: './superorganisms/S_Popup.html',
       chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/articles/general/scroll.html',
+      filename: './general/scroll.html',
+      chunks: ['index']
     })
   ],
   optimization: {

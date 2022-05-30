@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>UDF</title>
+  </head>
+
+  <body class="article">
+    <menu class="menubar">
+      <a href="../index.html">
+        <img
+          class="logo"
+          srcset="
+            ../../images/general/Main/Logo-navigation-content-desktop.png,
+            ../../images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
+            ../../images/general/Main/Logo-navigation-content-desktop@3x.png 3x
+          "
+          src="../../images/general/Main/Logo-navigation-content-desktop.png"
+          alt="логотип"
+        />
+      </a>
+      <div class="menu_text">
+        <a href="../index.html#principles">Принципы</a>
+        <a href="../index.html#features">Фишки</a>
+        <a href="../index.html#components">Компоненты</a>
+        <a href="../index.html#about">О нас</a>
+      </div>
+      <div class="media">
+        <a target="blank" href="https://vk.com/adc_code_tutorial">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/VK-navigation-content-desktop.png,
+              ../../images/general/Main/VK-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/VK-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/VK-navigation-content-desktop.png"
+            alt="вк"
+          />
+        </a>
+        <a target="blank" href="https://t.me/adc_code_tutorial">
+          <img
+            class="media_logo"
+            srcset="
+              ../../images/general/Main/Telegram-navigation-content-desktop.png,
+              ../../images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
+              ../../images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
+            "
+            src="../../images/general/Main/Telegram-navigation-content-desktop.png"
+            alt="телеграм"
+          />
+        </a>
+      </div>
+    </menu>
+
+    <div class="contentAreaWrapper">
+      <menu class="sidebar">
+        <a href="#initiation">Введение</a>
+        <a href="#realization">Пример</a>
+        <a href="#conclution">Заключение</a>
+        <a href="#links">Компоненты</a>
+      </menu>
+
+      <article>
+        <figure class="articleCover Scroll"></figure>
+
+        <h1 id="initiation">Скрываем scroll</h1>
+        <p>
+          Scroll появляется в&nbsp;вёрстке компонентов когда элементов, например
+          ссылок в&nbsp;меню, больше, чем может вместить в&nbsp;себе ширина
+          этого меню. Аналогичная ситуация и&nbsp;при верстке компонента под
+          разные разрешения. Обычно мы&nbsp;всегда скрываем scroll, чтобы
+          на&nbsp;странице у&nbsp;пользователя не появлялись ненужные артефакты.
+        </p>
+        <p>
+          В&nbsp;этом туториале мы&nbsp;расскажем на примере sidebar как мы
+          избавляемся от scroll.
+        </p>
+
+        <h2 id="realization">Пример</h2>
+
+        <p>
+          Для начала нам нужно создать структуру будущего sidebar. Создаем
+          &lt;div&gt; sidebar и&nbsp;кладем в&nbsp;него еще один &lt;div&gt;
+          sidebar_csroll_off и&nbsp;уже в&nbsp;него кладем ссылки &lt;a&gt;. Вот
+          так она выглядит.
+        </p>
+
+        <pre><code class="language-html">import React, { PureComponent } from 'react'
+import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
+import './O_ScrollMenu.scss'
+
+export default class O_ScrollMenu extends PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const { menu } = this.props
+    const { top } = menu
+    const menuElements = []
+
+    top.forEach((item, i) => {
+      menuElements.push(<A_MenuItem {...item} key={'top' + i} />)
+    })
+
+    return (
+        &lt;div className="O_ScrollMenu"&gt;
+          &lt;div className="C_MenuItems">{menuElements}  &lt;/div&gt;
+        &lt;/div&gt;
+    )
+  }
+}</code></pre>
+
+        <p>
+          Теперь нужно задать стили для sidebar. Именно в&nbsp;css
+          мы&nbsp;и&nbsp;будем убирать scroll. Главные параметры это overflow-y:
+          hidden и&nbsp;overflow-x: scroll. Вот&nbsp;так это выглядит
+          в&nbsp;коде.
+        </p>
+
+        <pre><code class="language-css">.O_ScrollMenu {
+  display: flex;
+  justify-content: center;
+  margin: 10% auto;
+  height: 300px;
+  overflow-x: hidden;
+  width: 360px;
+  padding: 40px 28px;
+  box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+}
+ .O_ScrollMenu .C_MenuItems {
+  display: flex;
+  flex-direction: column;
+  padding-right: 380px;
+  white-space: nowrap;
+  margin-left: 84px;
+  overflow-y: scroll;
+}
+ </code></pre>
+
+        <h2 id="conclution">Заключение</h2>
+        <p>
+          С помощью этого метода мы эффективно убираем ненужные
+          для&nbsp;пользователя элементы.
+        </p>
+
+        <h2>Компоненты</h2>
+        <p>
+          Продолжи изучать комопненты с&nbsp;новыми знаниями о&nbsp;фишках
+          в&nbsp;работе scroll.
+        </p>
+
+        <div class="suggest">
+          <a href="/organisms/O_SingIn.html">
+            <figure class="suggestCover O_SingIn"></figure>
+            <h4>Sing in</h4>
+            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
+          </a>
+
+          <a href="/organisms/O_MultiselectInput.html">
+            <figure class="suggestCover O_MultiselectInput"></figure>
+            <h4>Multiselect Input</h4>
+            <p>
+              Интерактивный компонент, который предназначен для управления
+              данными.
+            </p>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footerbar">
+      <div>
+        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
+        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
+      </div>
+
+      <div>
+        <a href="../index.html">ADC Code Tutorial © 2021</a>
+      </div>
+    </footer>
+  </body>
+</html>

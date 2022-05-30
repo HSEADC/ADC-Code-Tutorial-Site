@@ -27,7 +27,7 @@
         <a href="../index.html#about">О нас</a>
       </div>
       <div class="media">
-        <a href="https://vk.com/adc_code_tutorial">
+        <a target="blank" href="https://vk.com/adc_code_tutorial">
           <img
             class="media_logo"
             srcset="
@@ -39,7 +39,7 @@
             alt="вк"
           />
         </a>
-        <a href="https://t.me/adc_code_tutorial">
+        <a target="blank" href="https://t.me/adc_code_tutorial">
           <img
             class="media_logo"
             srcset="
@@ -139,7 +139,7 @@
         <pre><code class="language-javascript">import React, { Component } from 'react'
 import './O_Slider.scss'
 import '../../quarks/Q_Icon.scss'
-import M_SliderController from '../../molecules/M_SliderController/M_SliderController.jsx'
+import M_SliderControllers from '../../molecules/M_SliderControllers/M_SliderControllers.jsx'
 
 export default class O_Slider extends Component {
   constructor(props) {
@@ -179,7 +179,7 @@ export default class O_Slider extends Component {
           &lt;/div&gt;,
         &lt;/div&gt;,
 
-        &lt;M_SliderController
+        &lt;M_SliderControllers
           imageUrls={imageUrls}
           activeIndex={activeIndex}
           handleChangeIndex={this.updateIndex}
@@ -286,8 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <footer class="footerbar">
       <div>
-        <a href="https://t.me/adc_code_tutorial">Telegram</a>
-        <a href="https://vk.com/adc_code_tutorial">VK</a>
+        <a target="blank" href="https://t.me/adc_code_tutorial">Telegram</a>
+        <a target="blank" href="https://vk.com/adc_code_tutorial">VK</a>
       </div>
 
       <div>

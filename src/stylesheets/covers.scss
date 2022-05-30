@@ -25,6 +25,9 @@
   &.UDF {
     background-image: url('images/general/UDF/UDF-article-cover-desktop.png');
   }
+  &.Scroll {
+    background-image: url('images/general/Scroll/Scroll-article-cover-desktop.png');
+  }
   &.Isolation {
     background-image: url('images/general/Isolation/Isolation-article-cover-desktop.png');
   }
@@ -105,6 +108,9 @@
     &.UDF {
       background-image: url('images/general/UDF/UDF-article-cover-desktop@2x.png');
     }
+    &.Scroll {
+      background-image: url('images/general/Scroll/Scroll-article-cover-desktop@2x.png');
+    }
     &.Isolation {
       background-image: url('images/general/Isolation/Isolation-article-cover-desktop@2x.png');
     }
@@ -160,7 +166,7 @@
     }
     @media (max-width: 578px) {
       width: 374px;
-      height: 235px;
+      height: 194px;
 
       &.A_Chip {
         background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile@2x.png');
@@ -388,76 +394,183 @@
   &.S_Popup {
     background-image: url('images/superorganism/S_Popup/S_Popup-teaser-cover.png');
   }
-}
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .teaserCover {
-    &.UDF {
-      background-image: url('images/general/UDF/UDF-teaser-cover@2x.png');
-    }
-    &.Scroll {
-      background-image: url('images/general/Scroll/Scroll-teaser-cover@2x.png');
+  @media (max-width: 600px) {
+    &.O_SingIn {
+      background-image: url('images/organism/O_SingIn/O_SingIn-article-cover-mobile.png');
     }
     &.O_ModalAlert {
-      background-image: url('images/organism/O_ModalAlert/O_ModalAlert-teaser-cover@2x.png');
-    }
-    &.O_SingIn {
-      background-image: url('images/organism/O_SingIn/O_SingIn-teaser-cover@2x.png');
-    }
-    &.O_Slider {
-      background-image: url('images/organism/O_Slider/O_Slider-teaser-cover@2x.png');
+      background-image: url('images/organism/O_ModalAlert/O_ModalAlert-article-cover-mobile.png');
     }
     &.O_Select {
-      background-image: url('images/organism/O_Select/O_Select-teaser-cover@2x.png');
+      background-image: url('images/organism/O_Select/O_Select-article-cover-mobile.png');
     }
     &.O_MultiselectInput {
-      background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-teaser-cover@2x.png');
+      background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-suggest-cover-mobile.png');
     }
     &.O_Menu {
-      background-image: url('images/organism/O_Menu/O_Menu-teaser-cover@2x.png');
+      background-image: url('images/organism/O_Menu/O_Menu-article-cover-mobile.png');
     }
     &.A_Input {
-      background-image: url('images/atoms/A_Input/A_Input-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_Input/A_Input-article-cover-mobile.png');
     }
     &.A_Chip {
-      background-image: url('images/atoms/A_Chip/A_Chip-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile.png');
     }
     &.A_Button {
-      background-image: url('images/atoms/A_Button/A_Button-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_Button/A_Button-article-cover-mobile.png');
     }
     &.A_TextButton {
-      background-image: url('images/atoms/A_TextButton/A_TextButton-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_TextButton/A_TextButton-article-cover-mobile.png');
     }
     &.O_SelectInput {
-      background-image: url('images/organism/O_SelectInput/O_SelectInput-teaser-cover@2x.png');
+      background-image: url('images/organism/O_SelectInput/O_SelectInput-article-cover-mobile.png');
     }
     &.A_OptionItem {
-      background-image: url('images/atoms/A_OptionItem/A_OptionItem-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_OptionItem/A_OptionItem-article-cover-mobile.png');
     }
     &.A_MenuItem {
-      background-image: url('images/atoms/A_MenuItem/A_MenuItem-teaser-cover@2x.png');
-    }
-    &.Process {
-      background-image: url('images/general/Process/Process-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_MenuItem/A_MenuItem-article-cover-mobile.png');
     }
     &.Q_Icon {
-      background-image: url('images/quark/Q_Icon/Q_Icon-teaser-cover@2x.png');
+      background-image: url('images/quark/Q_Icon/Q_Icon-article-cover-mobile.png');
     }
     &.A_MeatBall {
-      background-image: url('images/atoms/A_MeatBall/A_MeatBall-teaser-cover@2x.png');
+      background-image: url('images/atoms/A_MeatBall/A_MeatBall-article-cover-mobile.png');
     }
     &.M_SliderController {
-      background-image: url('images/molecules/M_SliderController/M_SliderController-teaser-cover@2x.png');
+      background-image: url('images/molecules/M_SliderController/M_SliderController-article-cover-mobile.png');
     }
     &.O_SliderComments {
-      background-image: url('images/organism/O_SliderComments/O_SliderComments-teaser-cover@2x.png');
+      background-image: url('images/organism/O_SliderComments/O_SliderComments-article-cover-mobile.png');
     }
     &.S_Popup {
-      background-image: url('images/superorganism/S_Popup/S_Popup-teaser-cover@2x.png');
+      background-image: url('images/superorganism/S_Popup/S_Popup-article-cover-mobile.png');
+    }
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .teaserCover {
+      &.UDF {
+        background-image: url('images/general/UDF/UDF-teaser-cover@2x.png');
+      }
+      &.Scroll {
+        background-image: url('images/general/Scroll/Scroll-teaser-cover@2x.png');
+      }
+      &.O_ModalAlert {
+        background-image: url('images/organism/O_ModalAlert/O_ModalAlert-teaser-cover@2x.png');
+      }
+      &.O_SingIn {
+        background-image: url('images/organism/O_SingIn/O_SingIn-teaser-cover@2x.png');
+      }
+      &.O_Slider {
+        background-image: url('images/organism/O_Slider/O_Slider-teaser-cover@2x.png');
+      }
+      &.O_Select {
+        background-image: url('images/organism/O_Select/O_Select-teaser-cover@2x.png');
+      }
+      &.O_MultiselectInput {
+        background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-teaser-cover@2x.png');
+      }
+      &.O_Menu {
+        background-image: url('images/organism/O_Menu/O_Menu-teaser-cover@2x.png');
+      }
+      &.A_Input {
+        background-image: url('images/atoms/A_Input/A_Input-teaser-cover@2x.png');
+      }
+      &.A_Chip {
+        background-image: url('images/atoms/A_Chip/A_Chip-teaser-cover@2x.png');
+      }
+      &.A_Button {
+        background-image: url('images/atoms/A_Button/A_Button-teaser-cover@2x.png');
+      }
+      &.A_TextButton {
+        background-image: url('images/atoms/A_TextButton/A_TextButton-teaser-cover@2x.png');
+      }
+      &.O_SelectInput {
+        background-image: url('images/organism/O_SelectInput/O_SelectInput-teaser-cover@2x.png');
+      }
+      &.A_OptionItem {
+        background-image: url('images/atoms/A_OptionItem/A_OptionItem-teaser-cover@2x.png');
+      }
+      &.A_MenuItem {
+        background-image: url('images/atoms/A_MenuItem/A_MenuItem-teaser-cover@2x.png');
+      }
+      &.Process {
+        background-image: url('images/general/Process/Process-teaser-cover@2x.png');
+      }
+      &.Q_Icon {
+        background-image: url('images/quark/Q_Icon/Q_Icon-teaser-cover@2x.png');
+      }
+      &.A_MeatBall {
+        background-image: url('images/atoms/A_MeatBall/A_MeatBall-teaser-cover@2x.png');
+      }
+      &.M_SliderController {
+        background-image: url('images/molecules/M_SliderController/M_SliderController-teaser-cover@2x.png');
+      }
+      &.O_SliderComments {
+        background-image: url('images/organism/O_SliderComments/O_SliderComments-teaser-cover@2x.png');
+      }
+      &.S_Popup {
+        background-image: url('images/superorganism/S_Popup/S_Popup-teaser-cover@2x.png');
+      }
+    }
+
+    @media (max-width: 600px) {
+      &.O_SingIn {
+        background-image: url('images/organism/O_SingIn/O_SingIn-article-cover-mobile@2x.png');
+      }
+      &.O_ModalAlert {
+        background-image: url('images/organism/O_ModalAlert/O_ModalAlert-article-cover-mobile@2x.png');
+      }
+      &.O_Select {
+        background-image: url('images/organism/O_Select/O_Select-article-cover-mobile@2x.png');
+      }
+      &.O_MultiselectInput {
+        background-image: url('images/organism/O_MultiselectInput/O_MultiselectInput-article-cover-mobile@2x.png');
+      }
+      &.O_Menu {
+        background-image: url('images/organism/O_Menu/O_Menu-article-cover-mobile@2x.png');
+      }
+      &.A_Input {
+        background-image: url('images/atoms/A_Input/A_Input-article-cover-mobile@2x.png');
+      }
+      &.A_Chip {
+        background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile@2x.png');
+      }
+      &.A_Button {
+        background-image: url('images/atoms/A_Button/A_Button-article-cover-mobile@2x.png');
+      }
+      &.A_TextButton {
+        background-image: url('images/atoms/A_TextButton/A_TextButton-article-cover-mobile@2x.png');
+      }
+      &.O_SelectInput {
+        background-image: url('images/organism/O_SelectInput/O_SelectInput-article-cover-mobile@2x.png');
+      }
+      &.A_OptionItem {
+        background-image: url('images/atoms/A_OptionItem/A_OptionItem-article-cover-mobile@2x.png');
+      }
+      &.A_MenuItem {
+        background-image: url('images/atoms/A_MenuItem/A_MenuItem-article-cover-mobile@2x.png');
+      }
+      &.Q_Icon {
+        background-image: url('images/quark/Q_Icon/Q_Icon-article-cover-mobile@2x.png');
+      }
+      &.A_MeatBall {
+        background-image: url('images/atoms/A_MeatBall/A_MeatBall-article-cover-mobile@2x.png');
+      }
+      &.M_SliderController {
+        background-image: url('images/molecules/M_SliderController/M_SliderController-article-cover-mobile@2x.png');
+      }
+      &.O_SliderComments {
+        background-image: url('images/organism/O_SliderComments/O_SliderComments-article-cover-mobile@2x.png');
+      }
+      &.S_Popup {
+        background-image: url('images/superorganism/S_Popup/S_Popup-article-cover-mobile@2x.png');
+      }
     }
   }
 }
-
 // @media only screen and (-webkit-min-device-pixel-ratio: 3),
 //   only screen and (min--moz-device-pixel-ratio: 3),
 //   only screen and (-o-min-device-pixel-ratio: 3/1),
