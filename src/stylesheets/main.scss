@@ -166,21 +166,22 @@ body.main {
       }
 
       .blur_main_cover_3 {
-        width: 400px;
-        height: 400px;
-        top: 50%;
-        left: 43%;
+        width: 600px;
+        height: 600px;
+        top: 49%;
+        left: 33%;
+
         background-color: #3dffff;
       }
 
       .blob_main_cover_1 {
-        width: 47%;
-        top: -37%;
+        width: 30%;
+        top: -17%;
         left: 85%;
       }
 
       .blob_main_cover_2 {
-        top: -50%;
+        top: -40%;
         left: -8%;
       }
 
@@ -210,6 +211,7 @@ body.main {
       position: relative;
       right: 0;
       z-index: 2;
+      top: 8%;
     }
 
     .nav_1 {
@@ -236,6 +238,7 @@ body.main {
     .principles_tittle_image {
       margin-top: 330px;
     }
+
     .information_bbe {
       .button_information {
         width: 408px;
@@ -262,7 +265,7 @@ body.main {
       width: 400px;
       height: 400px;
       left: 80%;
-      top: 120%;
+      top: 100%;
       background-color: #79ff39;
     }
 
@@ -1229,6 +1232,18 @@ body.main {
 
     .header {
       .main_cover {
+        .blur_main_cover_1 {
+          width: 500px;
+          height: 500px;
+        }
+
+        .blur_main_cover_3 {
+          width: 300px;
+          height: 300px;
+          left: 12%;
+          top: 70%;
+        }
+
         .blob_main_cover_2 {
           top: -59%;
           left: -19%;
@@ -1237,6 +1252,13 @@ body.main {
           top: 13%;
           left: 17%;
         }
+      }
+
+      .nav_1,
+      .nav_2,
+      .nav_3,
+      .nav_4 {
+        width: 200px;
       }
     }
 
@@ -1292,7 +1314,7 @@ body.main {
 
     .about {
       .about_text {
-        width: 380px;
+        width: 340px;
       }
     }
   }
