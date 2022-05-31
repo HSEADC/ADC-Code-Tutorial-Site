@@ -21,20 +21,23 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env']]
+              }
+            }
+          }
+        ]
       },
-      // { test: /\.ejs$/, use: 'ejs-compiled-loader' },
       {
         test: /\.html$/i,
-        // use: {
-        //   loader: 'html-loader',
-        //   options: {
-        //     interpolate: true
-        //   }
-        // }
-        // use: [HtmlWebpackPlugin.loader, 'html-loader']
         loader: 'html-loader'
-        // loader: HtmlWebpackPlugin.loader
       },
       {
         resourceQuery: /raw/,
