@@ -89,6 +89,10 @@
       background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile.png');
     }
   }
+  @media (max-width: 390px) {
+    width: 320px;
+    height: 164px;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -171,6 +175,11 @@
       &.A_Chip {
         background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile@2x.png');
       }
+    }
+
+    @media (max-width: 390px) {
+      width: 320px;
+      height: 164px;
     }
   }
 }

@@ -1169,13 +1169,12 @@ body.main {
         margin-top: 100px;
 
         .blob_2 {
-          width: 50%;
-          top: -50%;
+          display: none;
         }
       }
 
       .slider {
-        margin-top: 280px;
+        margin-top: 140px;
       }
 
       .blur_7 {
@@ -1235,14 +1234,14 @@ body.main {
         }
 
         .about_text {
-          width: 404px;
+          width: 400px;
         }
       }
     }
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 420px) {
   body.main {
     .all {
       .information_bbe,
@@ -1319,12 +1318,12 @@ body.main {
         }
 
         .blob_2 {
-          margin-top: 230%;
+          display: none;
         }
       }
 
       .slider {
-        margin-top: 230px;
+        margin-top: 100px;
         flex-direction: column-reverse;
 
         .features_content_images {

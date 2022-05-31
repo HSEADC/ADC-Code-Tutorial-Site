@@ -283,4 +283,27 @@ body.article {
       }
     }
   }
+
+  @media (max-width: 390px) {
+    .contentAreaWrapper {
+      article {
+        width: 330px;
+
+        h1 {
+          font-size: 28px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        .links {
+          a {
+            height: 84px;
+            width: 157px;
+          }
+        }
+      }
+    }
+  }
 }
