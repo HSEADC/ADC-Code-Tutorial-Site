@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
   <head>
-    <metatags></metatags>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
     <title>ADC Code Tutorial</title>
-    <analytics></analytics>
   </head>
 
   <body class="main">
     <menubar></menubar>
 
-    <section class="header">
+    <section class="all">
       <!-- <figure class="main_cover"></figure> -->
       <div class="main_cover">
         <div class="blur_main_cover_1"></div>
@@ -120,58 +120,10 @@
         </a>
       </div>
 
-      <!-- <menu class="menubar">
-        <a href="../index.html"
-          ><img
-            class="logo"
-            srcset="
-              images/general/Main/Logo-navigation-content-desktop.png,
-              images/general/Main/Logo-navigation-content-desktop@2x.png 2x,
-              images/general/Main/Logo-navigation-content-desktop@3x.png 3x
-            "
-            src="images/general/Main/Logo-navigation-content-desktop.png"
-            alt="логотип"
-        /></a>
-
-        <div class="menu_text">
-          <a href="#principles">Принципы</a>
-          <a href="#features">Фишки</a>
-          <a href="#components">Компоненты</a>
-          <a href="#about">О нас</a>
-        </div>
-        <div class="media">
-          <a target="blank" href="https://vk.com/adc_code_tutorial">
-            <img
-              class="media_logo"
-              srcset="
-                images/general/Main/VK-navigation-content-desktop.png,
-                images/general/Main/VK-navigation-content-desktop@2x.png 2x,
-                images/general/Main/VK-navigation-content-desktop@3x.png 3x
-              "
-              src="images/general/Main/VK-navigation-content-desktop.png"
-              alt="вк"
-            />
-          </a>
-          <a target="blank" href="https://t.me/adc_code_tutorial">
-            <img
-              class="media_logo"
-              srcset="
-                images/general/Main/Telegram-navigation-content-desktop.png,
-                images/general/Main/Telegram-navigation-content-desktop@2x.png 2x,
-                images/general/Main/Telegram-navigation-content-desktop@3x.png 3x
-              "
-              src="images/general/Main/Telegram-navigation-content-desktop.png"
-              alt="телеграм"
-            />
-          </a>
-        </div>
-      </menu> -->
-    </section>
-
-    <section class="principles" id="principles">
       <div class="blur_1"></div>
       <div class="blur_2"></div>
       <img
+        id="principles"
         class="principles_tittle_image"
         srcset="
           images/general/Main/Principles-title-content-desktop.png,
@@ -182,6 +134,7 @@
         alt="заголовок "
       />
       <img
+        id="principles"
         class="principles_tittle_image_2"
         srcset="
           images/general/Main/Principles-title-content-mobile.png,
@@ -338,11 +291,11 @@
         />
         <div class="blur_5"></div>
       </div>
-    </section>
-    <section class="features" id="features">
+
       <div class="blur_6"></div>
       <div class="blur_7"></div>
       <img
+        id="features"
         class="features_title_image"
         srcset="
           images/general/Main/Features-title-content-desktop.png,
@@ -353,6 +306,7 @@
         alt="фишки"
       />
       <img
+        id="features"
         class="features_title_image_2"
         srcset="
           images/general/Main/Features-title-content-mobile.png,
@@ -516,11 +470,11 @@
           </a>
         </div>
       </div>
-    </section>
-    <section class="content_title" id="components">
+
       <div class="blur_11"></div>
       <div class="blur_12"></div>
       <img
+        id="components"
         class="content_title_image"
         srcset="
           images/general/Main/Components-title-content-desktop.png,
@@ -531,6 +485,7 @@
         alt="компоненты"
       />
       <img
+        id="components"
         class="content_title_image_2"
         srcset="
           images/general/Main/Components-title-content-mobile.png,
@@ -540,230 +495,236 @@
         src="images/general/Main/Components-title-content-mobile.png"
         alt="компоненты"
       />
-    </section>
 
-    <section class="content">
-      <div class="section">
-        <div class="section_titile">
-          <h1>Superorganisms</h1>
-          <p class="section_titile_text">
-            Это самые большие структуры, в&nbsp;которых организовываются
-            все&nbsp;остальные. Этот раздел содержит несколько примеров
-            комбинации и&nbsp;взаимодействий разных по&nbsp;строению
-            компонентов.
+      <section class="content">
+        <div class="section">
+          <div class="section_titile">
+            <h1>Superorganisms</h1>
+            <p class="section_titile_text">
+              Это самые большие структуры, в&nbsp;которых организовываются
+              все&nbsp;остальные. Этот раздел содержит несколько примеров
+              комбинации и&nbsp;взаимодействий разных по&nbsp;строению
+              компонентов.
+            </p>
+          </div>
+
+          <div class="tutorial">
+            <a href="/superorganisms/S_Popup.html">
+              <figure class="teaserCover S_Popup"></figure>
+              <h4>Popup</h4>
+              <p>Обертка для всплывющих окон.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section_titile">
+            <h1>Organisms</h1>
+            <p class="section_titile_text">
+              Это компоненты, которые состоят из&nbsp;групп молекул,
+              объединенных вместе, образуют относительно сложный, отдельный
+              участок интерфейса.
+            </p>
+          </div>
+
+          <div class="tutorial">
+            <a href="/organisms/O_SingIn.html" id="opacity">
+              <figure class="teaserCover O_SingIn"></figure>
+              <h4>Sing In</h4>
+              <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
+            </a>
+
+            <a href="/organisms/O_Alert.html" id="opacity">
+              <figure class="teaserCover O_ModalAlert"></figure>
+              <h4>Alert</h4>
+              <p>
+                Всплывающее модальное интерактивное окно различного назначения.
+              </p>
+            </a>
+          </div>
+          <div class="tutorial">
+            <a href="/organisms/O_SliderComments.html">
+              <figure class="teaserCover O_SliderComments"></figure>
+              <h4>Slider Comments</h4>
+              <p>
+                Распространенный вариант хранения текстовой информации
+                на&nbsp;сайте или в приложении.
+              </p>
+            </a>
+
+            <a href="/organisms/O_SelectInput.html">
+              <figure class="teaserCover O_SelectInput"></figure>
+              <h4>Select Input</h4>
+              <p>
+                Стандартный селект едничного выбора элемента списска.
+              </p>
+            </a>
+          </div>
+          <div class="tutorial">
+            <a href="/organisms/O_MultiselectInput.html">
+              <figure class="teaserCover O_MultiselectInput"></figure>
+              <h4>Multiselect Input</h4>
+              <p>
+                Расширенный функционал Select, который продполагаем
+                множественный выбор.
+              </p>
+            </a>
+
+            <a href="/organisms/O_Menu.html">
+              <figure class="teaserCover O_Menu"></figure>
+              <h4>Side Bar Menu</h4>
+              <p>
+                Стандрартный компонент навигации.
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section_titile">
+            <h1>Molecules</h1>
+            <p class="section_titile_text">
+              Молекулы&nbsp;&mdash; это группы атомов, связанных друг
+              с&nbsp;другом, и&nbsp;являются наименьшими функциональными
+              единицами интерфейса. Как правило, молекулы берут на&nbsp;себя
+              индивидуальние свойства и&nbsp;служат фундаментом систем
+              проектирования.
+            </p>
+          </div>
+
+          <div class="tutorial">
+            <a href="/molecules/M_SliderController.html">
+              <figure class="teaserCover M_SliderController"></figure>
+              <h4>Slider Controller</h4>
+              <p>
+                Функциональный элемент слайдера.
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section_titile">
+            <h1>Atoms</h1>
+            <p class="section_titile_text">
+              Атомы являются основными строительными блоками интерфейсов.
+              Атомы&nbsp;&mdash; это наши HTML теги, такие как метка формы, вход
+              или кнопка. Они также могут включать в&nbsp;себя более абстрактные
+              элементы, такие как цветовые палитры и&nbspшрифты.
+            </p>
+          </div>
+          <div class="tutorial">
+            <a href="/atoms/A_Button.html">
+              <figure class="teaserCover A_Button"></figure>
+              <h4>Button</h4>
+              <p>
+                Стандартная кнопка действия.
+              </p>
+            </a>
+
+            <a href="/atoms/A_Chip.html">
+              <figure class="teaserCover A_Chip"></figure>
+              <h4>Chip</h4>
+              <p>
+                Интерактивный элемент множественного выбора.
+              </p>
+            </a>
+          </div>
+
+          <div class="tutorial">
+            <a href="/atoms/A_OptionItem.html">
+              <figure class="teaserCover A_OptionItem"></figure>
+              <h4>Option Item</h4>
+              <p>
+                Функциональный элемент выпадающего списка.
+              </p>
+            </a>
+            <a href="/atoms/A_MenuItem.html">
+              <figure class="teaserCover A_MenuItem"></figure>
+              <h4>Menu Item</h4>
+              <p>
+                Интерактивный элемент коллекции меню.
+              </p>
+            </a>
+          </div>
+
+          <div class="tutorial">
+            <a href="/atoms/A_Input.html">
+              <figure class="teaserCover A_Input"></figure>
+              <h4>Input</h4>
+              <p>
+                Функциональный элемент взяимодействия с&nbsp;интерфейсом.
+              </p>
+            </a>
+            <a href="/quarks/Q_Icon.html">
+              <figure class="teaserCover Q_Icon"></figure>
+              <h4>Icon</h4>
+              <p>
+                Стандартные иконки.
+              </p>
+            </a>
+          </div>
+          <div class="tutorial">
+            <a href="/atoms/A_MeatBall.html">
+              <figure class="teaserCover A_MeatBall"></figure>
+              <h4>Meat Ball</h4>
+              <p>
+                Точки индикотора видимого элемента слайдера.
+              </p>
+            </a>
+            <a href="/atoms/A_TextButton.html">
+              <figure class="teaserCover A_TextButton"></figure>
+              <h4>Text Button</h4>
+              <p>
+                Стандартная кнопка действия.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="blur_13"></div>
+        <img
+          id="about"
+          class="about_title_image"
+          srcset="
+            images/general/Main/About-title-content-desktop.png,
+            images/general/Main/About-title-content-desktop@2x.png 2x,
+            images/general/Main/About-title-content-desktop@3x.png 3x
+          "
+          src="images/general/Main/About-title-content-desktop.png"
+          alt="О нас"
+        />
+        <img
+          id="about"
+          class="about_title_image_2"
+          srcset="
+            images/general/Main/About-title-content-mobile.png,
+            images/general/Main/About-title-content-mobile@2x.png 2x,
+            images/general/Main/About-title-content-mobile@3x.png 3x
+          "
+          src="images/general/Main/About-title-content-mobile.png"
+          alt="О нас"
+        />
+        <div class="about_text">
+          <h1>О Нас</h1>
+          <p>
+            ADC Code Tutorial — это веб-учебник с&nbsp;туториалами для изучения
+            продвинутой веб–вёрстки, разработанный в рамках зонтичного бренда
+            кафедры «Дизайн и&nbsp;программирование» в&nbspШколе Дизайна НИУ
+            ВШЭ.
+          </p>
+          <p>
+            Этот веб-учебник появился как дипломный проект студентки профиля
+            Филачевой Полины. Куратором работы является руководитель направления
+            Захар День.
+          </p>
+          <p>
+            Нашей задачей является собрать личный опыт из&nbspпринципов и фишек
+            по веб-версте в&nbsp;одном месте, чтобы&nbsp;упростить процесс
+            перехода от&nbsp;простых статичных сайтов к&nbsp;интерактивным
+            интерфейсам.
           </p>
         </div>
-
-        <div class="tutorial">
-          <a href="/superorganisms/S_Popup.html">
-            <figure class="teaserCover S_Popup"></figure>
-            <h4>Popup</h4>
-            <p>Обертка для всплывющих окон.</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section_titile">
-          <h1>Organisms</h1>
-          <p class="section_titile_text">
-            Это компоненты, которые состоят из&nbsp;групп молекул, объединенных
-            вместе, образуют относительно сложный, отдельный участок интерфейса.
-          </p>
-        </div>
-
-        <div class="tutorial">
-          <a href="/organisms/O_SingIn.html" id="opacity">
-            <figure class="teaserCover O_SingIn"></figure>
-            <h4>Sing In</h4>
-            <p>Стандартная форма входа в какое-либо приложение или сервис.</p>
-          </a>
-
-          <a href="/organisms/O_Alert.html" id="opacity">
-            <figure class="teaserCover O_ModalAlert"></figure>
-            <h4>Alert</h4>
-            <p>
-              Всплывающее модальное интерактивное окно различного назначения.
-            </p>
-          </a>
-        </div>
-        <div class="tutorial">
-          <a href="/organisms/O_SliderComments.html">
-            <figure class="teaserCover O_SliderComments"></figure>
-            <h4>Slider Comments</h4>
-            <p>
-              Распространенный вариант хранения текстовой информации
-              на&nbsp;сайте или в приложении.
-            </p>
-          </a>
-
-          <a href="/organisms/O_SelectInput.html">
-            <figure class="teaserCover O_SelectInput"></figure>
-            <h4>Select Input</h4>
-            <p>
-              Стандартный селект едничного выбора элемента списска.
-            </p>
-          </a>
-        </div>
-        <div class="tutorial">
-          <a href="/organisms/O_MultiselectInput.html">
-            <figure class="teaserCover O_MultiselectInput"></figure>
-            <h4>Multiselect Input</h4>
-            <p>
-              Расширенный функционал Select, который продполагаем множественный
-              выбор.
-            </p>
-          </a>
-
-          <a href="/organisms/O_Menu.html">
-            <figure class="teaserCover O_Menu"></figure>
-            <h4>Side Bar Menu</h4>
-            <p>
-              Стандрартный компонент навигации.
-            </p>
-          </a>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section_titile">
-          <h1>Molecules</h1>
-          <p class="section_titile_text">
-            Молекулы&nbsp;&mdash; это группы атомов, связанных друг
-            с&nbsp;другом, и&nbsp;являются наименьшими функциональными единицами
-            интерфейса. Как правило, молекулы берут на&nbsp;себя индивидуальние
-            свойства и&nbsp;служат фундаментом систем проектирования.
-          </p>
-        </div>
-
-        <div class="tutorial">
-          <a href="/molecules/M_SliderController.html">
-            <figure class="teaserCover M_SliderController"></figure>
-            <h4>Slider Controller</h4>
-            <p>
-              Функциональный элемент слайдера.
-            </p>
-          </a>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section_titile">
-          <h1>Atoms</h1>
-          <p class="section_titile_text">
-            Атомы являются основными строительными блоками интерфейсов.
-            Атомы&nbsp;&mdash; это наши HTML теги, такие как метка формы, вход
-            или кнопка. Они также могут включать в&nbsp;себя более абстрактные
-            элементы, такие как цветовые палитры и&nbspшрифты.
-          </p>
-        </div>
-        <div class="tutorial">
-          <a href="/atoms/A_Button.html">
-            <figure class="teaserCover A_Button"></figure>
-            <h4>Button</h4>
-            <p>
-              Стандартная кнопка действия.
-            </p>
-          </a>
-
-          <a href="/atoms/A_Chip.html">
-            <figure class="teaserCover A_Chip"></figure>
-            <h4>Chip</h4>
-            <p>
-              Интерактивный элемент множественного выбора.
-            </p>
-          </a>
-        </div>
-
-        <div class="tutorial">
-          <a href="/atoms/A_OptionItem.html">
-            <figure class="teaserCover A_OptionItem"></figure>
-            <h4>Option Item</h4>
-            <p>
-              Функциональный элемент выпадающего списка.
-            </p>
-          </a>
-          <a href="/atoms/A_MenuItem.html">
-            <figure class="teaserCover A_MenuItem"></figure>
-            <h4>Menu Item</h4>
-            <p>
-              Интерактивный элемент коллекции меню.
-            </p>
-          </a>
-        </div>
-
-        <div class="tutorial">
-          <a href="/atoms/A_Input.html">
-            <figure class="teaserCover A_Input"></figure>
-            <h4>Input</h4>
-            <p>
-              Функциональный элемент взяимодействия с&nbsp;интерфейсом.
-            </p>
-          </a>
-          <a href="/quarks/Q_Icon.html">
-            <figure class="teaserCover Q_Icon"></figure>
-            <h4>Icon</h4>
-            <p>
-              Стандартные иконки.
-            </p>
-          </a>
-        </div>
-        <div class="tutorial">
-          <a href="/atoms/A_MeatBall.html">
-            <figure class="teaserCover A_MeatBall"></figure>
-            <h4>Meat Ball</h4>
-            <p>
-              Точки индикотора видимого элемента слайдера.
-            </p>
-          </a>
-          <a href="/atoms/A_TextButton.html">
-            <figure class="teaserCover A_TextButton"></figure>
-            <h4>Text Button</h4>
-            <p>
-              Стандартная кнопка действия.
-            </p>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="about" id="about">
-      <div class="blur_13"></div>
-      <img
-        class="about_title_image"
-        srcset="
-          images/general/Main/About-title-content-desktop.png,
-          images/general/Main/About-title-content-desktop@2x.png 2x,
-          images/general/Main/About-title-content-desktop@3x.png 3x
-        "
-        src="images/general/Main/About-title-content-desktop.png"
-        alt="О нас"
-      />
-      <img
-        class="about_title_image_2"
-        srcset="
-          images/general/Main/About-title-content-mobile.png,
-          images/general/Main/About-title-content-mobile@2x.png 2x,
-          images/general/Main/About-title-content-mobile@3x.png 3x
-        "
-        src="images/general/Main/About-title-content-mobile.png"
-        alt="О нас"
-      />
-      <div class="about_text">
-        <h1>О Нас</h1>
-        <p>
-          ADC Code Tutorial — это веб-учебник с&nbspтуториалами для изучения
-          продвинутой веб–вёрстки, разработанный в рамках зонтичного бренда
-          кафедры «Дизайн и&nbspпрограммирование» в&nbspШколе Дизайна НИУ ВШЭ.
-        </p>
-        <p>
-          Этот веб-учебник появился как дипломный проект студентки профиля
-          Филачевой Полины. Куратором работы является руководитель направления
-          Захар День.
-        </p>
-        <p>
-          Нашей задачей является собрать личный опыт из&nbspпринципов и фишек по
-          веб-версте в&nbspодном месте, чтобы упростить процесс перехода
-          от&nbspпростых статичных сайтов к&nbspинтерактивным интерфейсам.
-        </p>
-      </div>
+      </section>
     </section>
 
     <footerbar></footerbar>
