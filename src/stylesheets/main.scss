@@ -832,6 +832,7 @@ body.main {
     }
   }
 }
+
 @media (max-width: 768px) and (min-width: 391px) {
   body.main {
     .all {
@@ -1352,6 +1353,30 @@ body.main {
           width: 340px;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body.main {
+    .blur_main_cover_1,
+    .blur_main_cover_2,
+    .blur_main_cover_3,
+    .blur_1,
+    .blur_2,
+    .blur_3,
+    .blur_4,
+    .blur_5,
+    .blur_6,
+    .blur_7,
+    .blur_8,
+    .blur_9,
+    .blur_10,
+    .blur_11,
+    .blur_12,
+    .blur_13 {
+      filter: blur(45px);
+      -webkit-filter: blur(45px);
     }
   }
 }
