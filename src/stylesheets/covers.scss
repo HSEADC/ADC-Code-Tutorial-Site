@@ -89,6 +89,10 @@
       background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile.png');
     }
   }
+  @media (max-width: 390px) {
+    width: 320px;
+    height: 164px;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -171,6 +175,11 @@
       &.A_Chip {
         background-image: url('images/atoms/A_Chip/A_Chip-article-cover-mobile@2x.png');
       }
+    }
+
+    @media (max-width: 390px) {
+      width: 320px;
+      height: 164px;
     }
   }
 }
@@ -355,6 +364,9 @@
   &.O_Menu {
     background-image: url('images/organism/O_Menu/O_Menu-teaser-cover.png');
   }
+  &.O_BurgerMenu {
+    background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-teaser-cover.png');
+  }
   &.A_Input {
     background-image: url('images/atoms/A_Input/A_Input-teaser-cover.png');
   }
@@ -410,6 +422,9 @@
     }
     &.O_Menu {
       background-image: url('images/organism/O_Menu/O_Menu-article-cover-mobile.png');
+    }
+    &.O_BurgerMenu {
+      background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-article-cover-mobile.png');
     }
     &.A_Input {
       background-image: url('images/atoms/A_Input/A_Input-article-cover-mobile.png');
@@ -475,6 +490,9 @@
       &.O_Menu {
         background-image: url('images/organism/O_Menu/O_Menu-teaser-cover@2x.png');
       }
+      &.O_BurgerMenu {
+        background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-teaser-cover@2x.png');
+      }
       &.A_Input {
         background-image: url('images/atoms/A_Input/A_Input-teaser-cover@2x.png');
       }
@@ -531,6 +549,9 @@
       }
       &.O_Menu {
         background-image: url('images/organism/O_Menu/O_Menu-article-cover-mobile@2x.png');
+      }
+      &.O_BurgerMenu {
+        background-image: url('images/organism/O_BurgerMenu/O_BurgerMenu-article-cover-mobile@2x.png');
       }
       &.A_Input {
         background-image: url('images/atoms/A_Input/A_Input-article-cover-mobile@2x.png');

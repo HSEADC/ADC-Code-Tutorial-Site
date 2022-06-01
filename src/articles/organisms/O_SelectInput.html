@@ -23,13 +23,15 @@
 
         <h1 id="initiation">Select Input</h1>
         <p>
-          Тег &ltselect&gt (от англ. select — выбрать) позволяет создать элемент
-          интерфейса в&nbsp;виде раскрывающегося списка, а&nbsp;также список
-          с&nbsp;одним или&nbsp;множественным выбором.
+          В&nbsp;HTML тег &amp;ltselect&amp;gt позволяет создать элемент
+          интерфейса в&nbsp;виде раскрывающегося списка. Но&nbsp;обычно
+          мы&nbsp;его не&nbsp;используем из-за сложной кастомизации стилей.
+          Вместо &lt;select&gt; работаем с обычным &lt;div&gt; для которого
+          задаем все необходимые параметры.
         </p>
         <p>
-          В&nbsp;основном select input используют в&nbsp;различных формах входа
-          или заполнения данных, когда нужно сделать единичный выбор
+          В&nbsp;основном select input используют в&nbsp;различных формах
+          входа&nbsp;заполнения данных, когда нужно сделать единичный выбор
           из&nbsp;выпадающего option list.
         </p>
 
@@ -228,7 +230,7 @@ const options = [
 document.addEventListener('DOMContentLoaded', () =&gt; {
   ReactDOM.render(
     &lt;O_Select placeholder="Твой любимый фрукт" options={options} /&gt;,
-    document.body.appendChild(document.createElement('div'))
+    document.body
   )
 })</code></pre>
         <p>

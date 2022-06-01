@@ -36,7 +36,7 @@
         <h2 id="structure">Структура компонента</h2>
         <p>
           Alert состоит из&nbsp;текста сообщения и&nbsp;кнопки целевого
-          действия. Мы&nbsp;просто оборачиваем эти два элемента в&nbsp;обертку
+          действия. Мы&nbsp;просто оборачиваем эти два элемента в&nbsp;обёртку
           и&nbsp;выводим в&nbsp;контейнер
           <a href="/superorganisms/S_Popup.html">popup</a>.
         </p>
@@ -80,22 +80,24 @@
 
         <h2 id="state">Состояние компонента</h2>
         <p>
-          Состояние у&nbsp;компонента такое&nbsp;же как и&nbsp;у&nbsp;popup,
-          можешь прочитаать про это подробнее.
+          Состояние у&nbsp;компонента такое&nbsp;же как и&nbsp;у&nbsp;<a
+            href="/superorganisms/S_Popup.html"
+            >popup</a
+          >, можешь прочитаать про&nbsp;это подробнее.
         </p>
 
         <h2 id="realization">Реализация</h2>
         <p>
           Так как вся механика закрытия и&nbsp;открытия компонента прописана
-          в&nbsp;<a href="/superorganisms/S_Popup.html">popup</a>, в&nbsp;alert
-          мы&nbsp;только прописываем функцию нажатия на&nbsp;кнопку.
+          в&nbsp;popup, в&nbsp;alert мы&nbsp;только прописываем функцию нажатия
+          на&nbsp;кнопку.
         </p>
 
-        <pre><code class="language-js">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
 import './O_Alert.css'
 
-export default class O_Alert extends Component {
+export default class O_Alert extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -166,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     &lt;S_Popup popupButtonText="Открыть попап" popupTitle="Информация о подписке"&gt;
       &lt;O_Alert content={content} /&gt;
     &lt;/S_Popup&gt;,
-    document.body.appendChild(document.createElement('div'))
+    document.body
   )
 })
 </code></pre>

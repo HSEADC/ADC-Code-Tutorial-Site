@@ -23,9 +23,10 @@
 
         <h1 id="initiation">SingIn</h1>
         <p>
-          SingIn – это основа любого пользовательского приложния. Как в alert
-          проектируем sing in как наполнение для большего компонента popup. Мы
-          решили показать как можно использовать компоненты вместе.
+          SingIn&nbsp;&mdash; это основа любого пользовательского приложения.
+          Как в&nbsp;alert проектируем sing in&nbsp;как наполнение для большего
+          компонента popup. Мы&nbsp;решили показать как можно использовать
+          компоненты вместе.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
@@ -36,8 +37,8 @@
         <h3>Input</h3>
         <p>
           Элемент <a href="/atoms/A_Input.html">input</a> является основным
-          элементом формы (HTML тег &ltform&gt) и&nbspопределяет интерактивное
-          поле для ввода информации.
+          элементом формы и&nbspопределяет интерактивное поле для ввода
+          информации.
         </p>
 
         <img
@@ -52,8 +53,8 @@
 
         <h3>Button</h3>
         <p>
-          Кнопки передают действия, которые пользователи могут
-          применять.Кнопки&nbsp;должны указывать на&nbsp;то, что они&nbsp;могут
+          Кнопки передают действия, которые пользователи могут совершить.
+          Кнопки&nbsp;должны указывать на&nbsp;то, что они&nbsp;могут
           инициировать действие, их&nbsp;состояние должно быть чётким,
           а&nbsp;также их&nbsp;должно быть легко найти среди других элементов
           интерфейса. Подробнее про кнопки
@@ -115,18 +116,18 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем
+          Для начала в&nbsp;папке спроекта создаём новую, в&nbsp;неё&nbsp;кладем
           файлы O_SingIn.jsx и&nbsp;O_SingIn.css. Затем описываем функционал.
           Необходимо принимать при на жатии на кнопку введенные данные, в нашем
           случае выводим их в console. Получаем следующий код.
         </p>
 
-        <pre><code class="language-js">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_Input from '../../atoms/A_Input/A_Input.jsx'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
 import './O_Login.css'
 
-export default class O_Login extends Component {
+export default class O_Login extends PureComponent {
   constructor(props) {
     super(props)
 

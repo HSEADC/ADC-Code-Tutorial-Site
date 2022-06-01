@@ -24,22 +24,23 @@
         <p>
           Scroll появляется в&nbsp;вёрстке компонентов когда элементов, например
           ссылок в&nbsp;меню, больше, чем может вместить в&nbsp;себе ширина
-          этого меню. Аналогичная ситуация и&nbsp;при верстке компонента под
+          этого меню. Аналогичная ситуация и&nbsp;при вёрстке компонента под
           разные разрешения. Обычно мы&nbsp;всегда скрываем scroll, чтобы
-          на&nbsp;странице у&nbsp;пользователя не появлялись ненужные артефакты.
+          на&nbsp;странице у&nbsp;пользователя не&nbsp;появлялись ненужные
+          артефакты.
         </p>
         <p>
-          В&nbsp;этом туториале мы&nbsp;расскажем на примере sidebar как мы
-          избавляемся от scroll.
+          В&nbsp;этом туториале мы&nbsp;расскажем на примере scroll menu
+          как&nbsp;мы&nbsp;избавляемся от scroll.
         </p>
 
         <h2 id="realization">Пример</h2>
 
         <p>
-          Для начала нам нужно создать структуру будущего sidebar. Создаем
-          &lt;div&gt; sidebar и&nbsp;кладем в&nbsp;него еще один &lt;div&gt;
-          sidebar_csroll_off и&nbsp;уже в&nbsp;него кладем ссылки &lt;a&gt;. Вот
-          так она выглядит.
+          Для начала нам нужно создать структуру будущего scroll menu. Делаем
+          &lt;div&gt; O_ScrollMenu и&nbsp;кладем в&nbsp;него еще один
+          &lt;div&gt; C_MenuItems. У нас уже есть туториал про
+          <a href="/atoms/A_MenuItem">menu items</a>.
         </p>
 
         <pre><code class="language-js">import React, { PureComponent } from 'react'
@@ -69,7 +70,7 @@ export default class O_ScrollMenu extends PureComponent {
 }</code></pre>
 
         <p>
-          Теперь нужно задать стили для sidebar. Именно в&nbsp;css
+          Теперь нужно задать стили для O_ScrollMenu. Именно в&nbsp;css
           мы&nbsp;и&nbsp;будем убирать scroll. Главные параметры это overflow-y:
           hidden и&nbsp;overflow-x: scroll. Вот&nbsp;так это выглядит
           в&nbsp;коде. Можешь посмотреть получившийся
@@ -99,6 +100,7 @@ export default class O_ScrollMenu extends PureComponent {
   white-space: nowrap;
   margin-left: 84px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
  </code></pre>
 
@@ -110,7 +112,7 @@ export default class O_ScrollMenu extends PureComponent {
 
         <h2>Компоненты</h2>
         <p>
-          Продолжи изучать комопненты с&nbsp;новыми знаниями о&nbsp;фишках
+          Продолжи изучать туториалы с&nbsp;новыми знаниями о&nbsp;фишках
           в&nbsp;работе scroll.
         </p>
 

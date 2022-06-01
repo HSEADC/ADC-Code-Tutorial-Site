@@ -146,7 +146,6 @@ body.main {
   .all {
     position: relative;
     overflow-x: hidden;
-    overflow-y: hidden;
 
     .main_cover {
       .blur_main_cover_1 {
@@ -414,29 +413,6 @@ body.main {
   margin-top: 100px;
 }
 
-.about_title_image {
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  margin-top: -170px;
-}
-
-.about_text {
-  position: relative;
-  width: 910px;
-  margin: 0 auto;
-  z-index: 2;
-}
-
-.footerbar div a {
-  width: 100%;
-  height: 113px;
-  margin-top: 200px;
-  font-size: 18px;
-  font-weight: 300;
-  color: var(--light);
-}
-
 .content {
   position: relative;
   flex-direction: column;
@@ -487,6 +463,31 @@ body.main {
       }
     }
   }
+}
+
+.about {
+  .about_title_image {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    margin-top: -170px;
+  }
+
+  .about_text {
+    position: relative;
+    width: 910px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+}
+
+.footerbar div a {
+  width: 100%;
+  height: 113px;
+  margin-top: 200px;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--light);
 }
 
 @media (max-width: 1440px) and (min-width: 1281px) {
@@ -1031,7 +1032,7 @@ body.main {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 636px) {
   body.main {
     .all {
       h1 {
@@ -1170,13 +1171,12 @@ body.main {
         margin-top: 100px;
 
         .blob_2 {
-          width: 50%;
-          top: -50%;
+          display: none;
         }
       }
 
       .slider {
-        margin-top: 280px;
+        margin-top: 140px;
       }
 
       .blur_7 {
@@ -1236,14 +1236,14 @@ body.main {
         }
 
         .about_text {
-          width: 404px;
+          width: 400px;
         }
       }
     }
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 420px) {
   body.main {
     .all {
       .information_bbe,
@@ -1320,12 +1320,12 @@ body.main {
         }
 
         .blob_2 {
-          margin-top: 230%;
+          display: none;
         }
       }
 
       .slider {
-        margin-top: 230px;
+        margin-top: 100px;
         flex-direction: column-reverse;
 
         .features_content_images {

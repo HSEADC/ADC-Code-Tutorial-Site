@@ -34,7 +34,8 @@
           Структура компонента так&nbsp;же похожа на&nbsp;структуру slider.
           Однако вместо фотографий представлены параграфы с&nbsp;заголовками.
           Расположение элементов управления также отличается. Видимое состояние
-          так&nbsp;же опирается на meatballs. Вот как выглядит этот слайдер.
+          так&nbsp;же&nbsp;опирается на meatballs. Вот как выглядит этот
+          слайдер.
         </p>
 
         <img
@@ -49,21 +50,18 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
+          Для начала в&nbsp;папке с&nbsp;компонентами создаём новую папку
           O_SliderComments, в&nbsp;неё кладём файлы jsx и&nbsp;css,
           в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем
           описываем функционал слайдера с компонентами. Получаем следующий код.
         </p>
 
-        <pre><code class="language-js">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import Q_MeatBall from '../../quarks/Q_MeatBall/Q_MeatBall.jsx'
 import './O_SliderComments.css'
 import '../../quarks/Q_Icon.css'
 
-// Remove this
-const SLIDE_WIDTH = 600
-
-export default class O_SliderComments extends Component {
+export default class O_SliderComments extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -95,7 +93,7 @@ export default class O_SliderComments extends Component {
           &lt;div className="Q_Icon arrow-left" onClick={() => this.updateIndex(activeIndex - 1)}&gt;&lt;/div&gt;
 
           &lt;div className="W_SliderCommentOpenFrame">
-            &lt;div className="C_SliderCommentRail" style={{ transform: `translateX(-${activeIndex * SLIDE_WIDTH}px)` }}&gt;
+            &lt;div className="C_SliderCommentRail" style={{ transform: `translateX(-${activeIndex * 600}px)` }}&gt;
               {slides.map(({ title, content }) => (
                 &lt;div key={title} className="W_SliderCommentText"&gt;
                   &lt;h3&gt;{title}&lt;/h3&gt;
