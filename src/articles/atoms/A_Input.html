@@ -24,11 +24,10 @@
         <h1 id="initiation">Input</h1>
         <p>
           Текстовые поля позволяют пользователям вводить текст
-          в&nbsp;пользовательский интерфейс. Обычно они появляются в формах
-          и&nbsp;диалогах. Чаще всего в формах используется тег &ltinput&gt.<br />
-          Он&nbsp;не имеет закрывающего тега. Вся информация, необходимая
-          браузеру&nbsp;для&nbsp;обработки, содержится непосредственно в теге
-          &ltinput&gt и&nbsp;задается&nbsp;с&nbsp;помощью различных атрибутов.
+          в&nbsp;пользовательский интерфейс. Обычно они появляются в&nbsp;формах
+          и&nbsp;диалогах. Мы&nbsp;используем для проектирования input обычный
+          &lt;div&gt;, для&nbsp;которого задаём все необходимые параметры
+          и&nbsp;стилизуем под себя.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
@@ -71,7 +70,7 @@
         <h2 id="realization">Реализация</h2>
 
         <p>
-          Мы&nbsp;создаем сложный компонент, который сможет может хранить
+          Мы&nbsp;создаём сложный компонент, который сможет может хранить
           в&nbsp;себе массив с&nbsp;данными, напрмер с&nbsp;<a
             href="/atoms/A_Chip.html"
             >chip</a
@@ -140,7 +139,7 @@ import A_InputContainer from '../../components/atoms/A_Input/A_Input.jsx'
 document.addEventListener('DOMContentLoaded', () =&gt; {
   ReactDOM.render(
     &lt;A_InputContainer placeholder="Введи что-то про фрукты" /&gt;,
-    document.body.appendChild(document.createElement('div'))
+    document.body
   )
 })</code></pre>
 

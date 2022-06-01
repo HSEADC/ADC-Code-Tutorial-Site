@@ -25,8 +25,8 @@
         <p>
           Popup мы&nbsp;называем всплывающее модальное окно, с&nbsp;которым
           пользователь должен обязательно как либо провзаимодействовать.
-          Он&nbsp;может его или закрыть или сделать действие, которое предлагает
-          в&nbsp;popup. Этот компонент выступает в&nbsp;роли обертки
+          Он&nbsp;может его или закрыть или сделать действие, которое
+          предлагает&nbsp;popup. Этот компонент выступает в&nbsp;роли обёртки
           в&nbsp;которую мы&nbsp;заворачиваем такие компоненты как
           <a href="/organisms/O_Alert.html">alert</a> и
           <a href="/organisms/O_SingIn.html">sing in</a>.
@@ -58,7 +58,7 @@
           Внутри popup состоит из&nbsp;header, в&nbsp;него входит заголовок
           и&nbsp;кнопка закрытия окна в&nbsp;виде
           <a href="/quarks/Q_Icon.html">icon</a>, а&nbsp;также пустая область
-          в&nbsp;которую передаем необходимый контент.
+          в&nbsp;которую передаём необходимый контент.
         </p>
 
         <img
@@ -90,25 +90,17 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в&nbsp;папке спроекта создаем новую, в&nbsp;неё&nbsp;кладем
+          Для начала в&nbsp;папке спроекта создаём новую, в&nbsp;неё&nbsp;кладем
           файлы S_Popup.jsx и&nbsp;S_Popup.css. Затем описываем функционал popup
-          и его структуру. Получаем следующий код.
+          и&nbsp;его&nbsp;структуру. Получаем следующий код.
         </p>
 
-        <p>
-          Popup содержит <a href="/quarks/Q_Icon.html">icon</a> Q_Icon close,
-          которая лежит в отдельной папке image в&nbsp;файле Q_Icon.css.
-          В&nbsp;нем мы&nbsp;храним все иконки, которые нужны для&nbsp;различных
-          компонентов, а&nbsp;их&nbsp;фон и&nbsp;размер задаем в файле
-          со&nbsp;стилем всего chip. Это мы&nbsp;покажем в&nbsp;структуре CSS.
-        </p>
-
-        <pre><code class="language-js">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_Button from '../../atoms/A_Button/A_Button.jsx'
 import './S_Popup.css'
 import '../../quarks/Q_Icon.css'
 
-export default class S_Popup extends Component {
+export default class S_Popup extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -162,8 +154,8 @@ export default class S_Popup extends Component {
 
         <p>
           Затем, в файле S_Popup.css прописываем стили для всех структур popup,
-          в основном это обертки, которые помогают правильно выстроить структуру
-          не перегружая ее компонентами.
+          в основном это обёртки, которые помогают правильно выстроить структуру
+          не перегружая её компонентами.
         </p>
         <pre><code class="language-css">.S_Popup {
   position: relative;

@@ -27,7 +27,7 @@
           используемый для&nbsp;отображения видео и&nbsp;изображений
           на&nbsp;веб-сайте. Как и&nbsp;слайд-шоу, слайдеры изображений
           показывают по&nbsp;одному видео или изображению за&nbsp;раз.
-          Содержимое меняется, когда пользователь нажимают на&nbsp;контроллеры,
+          Содержимое меняется, когда пользователь нажимет на&nbsp;контроллеры,
           чтобы увидеть следующий слайд.
         </p>
 
@@ -44,12 +44,12 @@
           в&nbsp;slider.
         </p>
 
-        <h3>Slider Controller</h3>
+        <h3>Slider Controllers</h3>
         <p>
-          Slider Controller это функциональный элемент индикации
+          Slider Controllers это функциональный элемент индикации
           и&nbsp;переключения картинок или любой другой информации
           в&nbsp;слайдере. Подробнее про
-          <a href="/molecules/M_SliderController.html">slider controller</a>.
+          <a href="/molecules/M_SliderController.html">slider controllers</a>.
         </p>
 
         <img
@@ -85,18 +85,18 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку
+          Для начала в&nbsp;папке с&nbsp;компонентами создаём новую папку
           O_Slider, в&nbsp;неё&nbsp;кладём файлы jsx и&nbsp;css, в&nbsp;которых
           будем создавать и&nbsp;стилизовать компонент. Затем описываем
           функционал слайдера. Получаем следующий код.
         </p>
 
-        <pre><code class="language-js">import React, { Component } from 'react'
+        <pre><code class="language-js">import React, { PureComponent } from 'react'
 import './O_Slider.scss'
 import '../../quarks/Q_Icon.scss'
 import M_SliderControllers from '../../molecules/M_SliderControllers/M_SliderControllers.jsx'
 
-export default class O_Slider extends Component {
+export default class O_Slider extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -165,7 +165,8 @@ const imageUrls = [
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(&lt;O_Slider imageUrls={imageUrls} /&gt;, document.body)
+  ReactDOM.render(&lt;O_Slider imageUrls={imageUrls} /&gt;,
+  document.body)
 })</code></pre>
 
         <p>
