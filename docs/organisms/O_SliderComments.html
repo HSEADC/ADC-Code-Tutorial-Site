@@ -3,15 +3,12 @@
     dataLayer.push(arguments)
   }
   gtag('js', new Date())
-  gtag('config', 'G-NC7GJFSD5S')</script><script defer="defer" src="../index.js"></script><link href="../index.css" rel="stylesheet"></head><body class="article"><menu class="menubar"><a href="../index.html" id="logo"></a><div class="menu_text"><a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a></div><div class="media"><a id="vk" href="https://vk.com/adc_code_tutorial" target="blank"></a> <a id="tg" href="https://t.me/adc_code_tutorial" target="blank"></a></div></menu><div class="contentAreaWrapper"><menu class="sidebar"><a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a></menu><article><figure class="articleCover O_SliderComments"></figure><h1 id="initiation">Slider Comments</h1><p>Слайлер с&nbsp;комментариями это тот&nbsp;же слайдер, но&nbsp;вместо фотографий используем текстовую информацию. Обычно так визуализируют на&nbsp;сайтах комментарии или какую либо информацию. Прочитать подробнее о&nbsp;<a href="/organisms/O_Slider.html">slider</a>.</p><h2 id="structure">Структура компонента</h2><p>Структура компонента так&nbsp;же похожа на&nbsp;структуру slider. Однако вместо фотографий представлены параграфы с&nbsp;заголовками. Расположение элементов управления также отличается. Видимое состояние так&nbsp;же опирается на meatballs. Вот как выглядит этот слайдер.</p><img srcset="../images/fd2081dc3792f80f1071.png, ../images/7f967de1a848b9278734.png 2x, ../images/c11d697f599dbc1c22cd.png 3x" src="../images/fd2081dc3792f80f1071.png" alt="Структура слайдера"/><h2 id="realization">Реализация</h2><p>Для начала в&nbsp;папке с&nbsp;компонентами создаем новую папку O_SliderComments, в&nbsp;неё кладём файлы jsx и&nbsp;css, в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем описываем функционал слайдера с компонентами. Получаем следующий код.</p><pre><code class="language-js">import React, { Component } from 'react'
+  gtag('config', 'G-NC7GJFSD5S')</script><script defer="defer" src="../index.js"></script><link href="../index.css" rel="stylesheet"></head><body class="article"><menu class="menubar"><a href="../index.html" id="logo"></a><div class="menu_text"><a href="../index.html#principles">Принципы</a> <a href="../index.html#features">Фишки</a> <a href="../index.html#components">Компоненты</a> <a href="../index.html#about">О нас</a></div><div class="media"><a id="vk" href="https://vk.com/adc_code_tutorial" target="blank"></a> <a id="tg" href="https://t.me/adc_code_tutorial" target="blank"></a></div></menu><div class="contentAreaWrapper"><menu class="sidebar"><a href="#initiation">Введение</a> <a href="#structure">Струтура компонента</a> <a href="#state">Состояние компонента</a> <a href="#realization">Реализация</a> <a href="#links">Ссылки</a></menu><article><figure class="articleCover O_SliderComments"></figure><h1 id="initiation">Slider Comments</h1><p>Слайлер с&nbsp;комментариями это тот&nbsp;же слайдер, но&nbsp;вместо фотографий используем текстовую информацию. Обычно так визуализируют на&nbsp;сайтах комментарии или какую либо информацию. Прочитать подробнее о&nbsp;<a href="/organisms/O_Slider.html">slider</a>.</p><h2 id="structure">Структура компонента</h2><p>Структура компонента так&nbsp;же похожа на&nbsp;структуру slider. Однако вместо фотографий представлены параграфы с&nbsp;заголовками. Расположение элементов управления также отличается. Видимое состояние так&nbsp;же&nbsp;опирается на meatballs. Вот как выглядит этот слайдер.</p><img srcset="../images/fd2081dc3792f80f1071.png, ../images/7f967de1a848b9278734.png 2x, ../images/c11d697f599dbc1c22cd.png 3x" src="../images/fd2081dc3792f80f1071.png" alt="Структура слайдера"/><h2 id="realization">Реализация</h2><p>Для начала в&nbsp;папке с&nbsp;компонентами создаём новую папку O_SliderComments, в&nbsp;неё кладём файлы jsx и&nbsp;css, в&nbsp;которых будем создавать и&nbsp;стилизовать компонент. Затем описываем функционал слайдера с компонентами. Получаем следующий код.</p><pre><code class="language-js">import React, { PureComponent } from 'react'
 import Q_MeatBall from '../../quarks/Q_MeatBall/Q_MeatBall.jsx'
 import './O_SliderComments.css'
 import '../../quarks/Q_Icon.css'
 
-// Remove this
-const SLIDE_WIDTH = 600
-
-export default class O_SliderComments extends Component {
+export default class O_SliderComments extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -43,7 +40,7 @@ export default class O_SliderComments extends Component {
           &lt;div className="Q_Icon arrow-left" onClick={() => this.updateIndex(activeIndex - 1)}&gt;&lt;/div&gt;
 
           &lt;div className="W_SliderCommentOpenFrame">
-            &lt;div className="C_SliderCommentRail" style={{ transform: `translateX(-${activeIndex * SLIDE_WIDTH}px)` }}&gt;
+            &lt;div className="C_SliderCommentRail" style={{ transform: `translateX(-${activeIndex * 600}px)` }}&gt;
               {slides.map(({ title, content }) => (
                 &lt;div key={title} className="W_SliderCommentText"&gt;
                   &lt;h3&gt;{title}&lt;/h3&gt;
