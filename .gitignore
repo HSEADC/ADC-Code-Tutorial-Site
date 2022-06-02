@@ -9,4 +9,5 @@ yarn-error.log
 /dev_build/*.jpeg
 /dev_build/*.gif
 /dev_build/*.svg
+/dev_build/*.ico
 /dev_build/*/*.*
