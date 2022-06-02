@@ -9,6 +9,7 @@
 .articleCover {
   width: 744px;
   height: 386px;
+  border-radius: 5px;
 
   &.Q_Icon {
     background-image: url('images/quark/Q_Icon/Q_Icon-article-cover-desktop.png');
@@ -90,8 +91,8 @@
     }
   }
   @media (max-width: 390px) {
-    width: 320px;
-    height: 164px;
+    width: 330px;
+    height: 174px;
   }
 }
 
@@ -178,8 +179,8 @@
     }
 
     @media (max-width: 390px) {
-      width: 320px;
-      height: 164px;
+      width: 330px;
+      height: 174px;
     }
   }
 }
