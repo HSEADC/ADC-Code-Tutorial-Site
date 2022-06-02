@@ -17,6 +17,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        }
+      },
+      {
         test: /\.scss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
@@ -193,6 +203,12 @@ module.exports = {
       {
         path: path.join(__dirname, './src/partials/menubar.html'),
         location: 'menubar',
+        template_filename: '*',
+        priority: 'replace'
+      },
+      {
+        path: path.join(__dirname, './src/partials/menubar_index.html'),
+        location: 'menubarindex',
         template_filename: '*',
         priority: 'replace'
       },
