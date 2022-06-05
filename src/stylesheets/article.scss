@@ -324,3 +324,48 @@ body.article {
     }
   }
 }
+
+@media (max-width: 340px) {
+  body.article {
+    .contentAreaWrapper {
+      article {
+        width: 310px;
+        p {
+          font-weight: 120px;
+          font-size: 14px;
+        }
+
+        .links {
+          justify-content: space-around;
+          a {
+            width: 140px;
+            height: 81px;
+          }
+        }
+
+        .articleCover {
+          width: 300px;
+          height: 153px;
+        }
+
+        .suggest {
+          justify-content: space-around;
+          a {
+            width: 140px;
+
+            .suggestCover {
+              width: 140px;
+              height: 87px;
+            }
+            h4 {
+              font-size: 17px;
+            }
+            p {
+              width: 140px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

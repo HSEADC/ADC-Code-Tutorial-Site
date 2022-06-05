@@ -834,7 +834,7 @@ body.main {
   }
 }
 
-@media (max-width: 768px) and (min-width: 391px) {
+@media (max-width: 768px) {
   body.main {
     .all {
       .nav_1,
@@ -1277,7 +1277,7 @@ body.main {
         }
 
         .cover_logo {
-          top: 1%;
+          top: 2%;
           left: 17%;
         }
       }
@@ -1352,6 +1352,61 @@ body.main {
       .about {
         .about_text {
           width: 340px;
+        }
+      }
+    }
+  }
+  @media (max-width: 350px) {
+    body.main {
+      .all {
+        h1 {
+          font-size: 26px;
+        }
+        p {
+          font-size: 14px;
+        }
+
+        .text_information {
+          width: 300px;
+        }
+
+        .main_cover {
+          .cover_logo {
+            top: 2%;
+          }
+        }
+
+        .content {
+          .section {
+            width: 300px;
+            .section_titile {
+              .section_titile_text {
+                font-size: 14px;
+                width: 300px;
+              }
+            }
+
+            .tutorial {
+              margin-bottom: 20px;
+              figure {
+                width: 144px;
+                height: 88px;
+              }
+
+              h4 {
+                font-size: 16px;
+              }
+              p {
+                width: 140px;
+              }
+            }
+          }
+        }
+
+        .about {
+          .about_text {
+            width: 300px;
+          }
         }
       }
     }

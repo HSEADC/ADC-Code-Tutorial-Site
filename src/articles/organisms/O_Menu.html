@@ -23,26 +23,27 @@
 
         <h1 id="initiation">SideBarMenu</h1>
         <p>
-          SideBarMenu отображает список вариантов доступных переходов на
-          странице. Обычно это боковая панель, которая визуально разграничивает
-          контент на странице. Благодаря этому элементу интерфейса посетители
-          понимают принцип навигации.
+          SideBarMenu отображает список вариантов доступных переходов
+          на&nbsp;странице. Обычно это боковая панель, которая визуально
+          разграничивает контент на&nbsp;странице. Благодаря этому элементу
+          интерфейса посетители понимают принцип навигации.
         </p>
         <p>
           Menu должно быть легко открывать, закрывать и&nbsp;взаимодействовать.
           Содержимое меню должно соответствовать потребностям пользователя.
-          Пункты меню должно быть легко считывать и понимать, на какой имеено
-          странице находится пользователь.
+          Пункты меню должно быть легко считывать и&nbsp;понимать, на&nbsp;какой
+          именно странице находится пользователь.
         </p>
 
         <h2 id="structure">Структура компонента</h2>
         <p>
           Меню должно быть расположено относительно края экрана или браузера.
-          Обычно оно появляются рядом (или перед) элементом, который их
-          генерирует. Если оно находятся в&nbsp;положении, которое должно быть
-          обрезано браузером или краем экрана, меню может отображаться слева,
-          справа или над элементом, который его генерирует. Данное меню состоит
-          из&nbsp;menu item, которые собраны в&nbsp;коллекцию.
+          Обычно оно появляются рядом (или перед) элементом, который
+          их&nbsp;генерирует. Если оно находятся в&nbsp;положении, которое
+          должно быть обрезано браузером или краем экрана, меню может
+          отображаться слева, справа или над элементом, который его генерирует.
+          Данное меню состоит из&nbsp;menu item, которые собраны
+          в&nbsp;коллекцию.
         </p>
 
         <h3>Menu Item</h3>
@@ -106,14 +107,14 @@
         <h2 id="realization">Реализация</h2>
 
         <p>
-          Для начала создаем O_Menu.jsx. Прописывем функционал и собираем menu
-          item в коллекции.
+          Для начала создаем S_Menu.jsx. Прописываем функционал и&nbsp;собираем
+          menu item в&nbsp;коллекции.
         </p>
         <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
-import './O_Menu.css'
+import './S_Menu.css'
 
-export default class O_Menu extends PureComponent {
+export default class S_Menu extends PureComponent {
   constructor(props) {
     super(props)
   }
@@ -133,7 +134,7 @@ export default class O_Menu extends PureComponent {
     })
 
     return (
-      &lt;div className="O_Menu"&gt;
+      &lt;div className="S_Menu"&gt;
         &lt;div className="C_MenuItems"v&gt;{topMenuElements}&lt;/div&gt;
         &lt;div className="C_MenuItems"v&gt;{bottomMenuElements}&lt;/div&gt;
       &lt;/div&gt;
@@ -145,29 +146,29 @@ export default class O_Menu extends PureComponent {
           По принципу изоляции прописываем стили.
         </p>
 
-        <pre><code class="language-css">.O_Menu {
+        <pre><code class="language-css">.S_Menu {
   width: 360px;
   padding: 40px 28px;
   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
   border-radius: 10px;
 }
 
-.O_Menu .C_MenuItems {
+.S_Menu .C_MenuItems {
   display: flex;
   flex-direction: column;
 }
 
-.O_Menu .C_MenuItems:last-child {
+.S_Menu .C_MenuItems:last-child {
   margin-top: 100px;
 }</code></pre>
 
         <p>
-          В файле сборщика заполняем массивы top и botton и выводим компонент.
+          В файле сборщика заполняем массивы top и bottom и выводим компонент.
         </p>
 
         <pre><code class="language-javascript">import React from 'react'
 import ReactDOM from 'react-dom'
-import O_Menu from '../../components/organisms/O_Menu/O_Menu.jsx'
+import S_Menu from '../../components/organisms/O_Menu/O_Menu.jsx'
 
 const menu = {
   top: [
@@ -209,7 +210,7 @@ const menu = {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    &lt;O_Menu menu={menu} /&gt;,
+    &lt;S_Menu menu={menu} /&gt;,
     document.body
   )
 })</code></pre>

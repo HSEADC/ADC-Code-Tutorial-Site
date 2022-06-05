@@ -87,15 +87,15 @@
         <h2 id="realization">Реализация</h2>
 
         <p>
-          Для начала создаём O_BurgerMenu.jsx. Прописывем функционал, собираем
-          menu item в коллекции а также прописываем функионал открытия и
+          Для начала создаём S_BurgerMenu.jsx. Прописываем функционал, собираем
+          menu item в коллекции а также прописываем функционал открытия и
           закрытия компонента.
         </p>
         <pre><code class="language-js">import React, { PureComponent } from 'react'
 import A_MenuItem from '../../atoms/A_MenuItem/A_MenuItem.jsx'
-import './O_Menu.scss'
+import './S_BurgerMenu.scss'
 
-export default class O_Menu extends PureComponent {
+export default class S_BurgerMenu extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -137,7 +137,7 @@ export default class O_Menu extends PureComponent {
     })
 
     return (
-      &lt;div className="O_Menu"&gt;
+      &lt;div className="S_BurgerMenu"&gt;
         {!showMenu && (
           &lt;div className="Q_Icon burger" onClick={this.openMenu}>&lt;/div&gt;
         )}
@@ -157,7 +157,7 @@ export default class O_Menu extends PureComponent {
           По принципу изоляции прописываем стили.
         </p>
 
-        <pre><code class="language-css">.O_Menu {
+        <pre><code class="language-css">.S_BurgerMenu {
   width: 360px;
   padding: 40px 28px;
   box-shadow: 9px 9px 35px rgba(0, 0, 0, 0.09);
@@ -166,28 +166,28 @@ export default class O_Menu extends PureComponent {
   justify-content: center;
 }
 
-.O_Menu .W_MenuContent {
+.S_BurgerMenu .W_MenuContent {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.O_Menu .C_MenuItems {
+.S_BurgerMenu .C_MenuItems {
   display: flex;
   flex-direction: column;
 }
 
-.O_Menu .C_MenuItems:last-child {
+.S_BurgerMenu .C_MenuItems:last-child {
   margin-top: 100px;
 }
 
-.O_Menu .Q_Icon.close {
+.S_BurgerMenu .Q_Icon.close {
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
 
-.O_Menu .Q_Icon.burger {
+.S_BurgerMenu .Q_Icon.burger {
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -195,7 +195,7 @@ export default class O_Menu extends PureComponent {
 
         <p>
           В файле сборщика заполняем массивы top и bottom и выводим компонент.
-          Ты можшь посмотреть как мы это делаем в туториале про
+          Ты можешь посмотреть как мы это делаем в туториале про
           <a href="/organisms/O_Menu.html">sidebar menu</a>. А так выглядит
           рабочий компонент
           <a
