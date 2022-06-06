@@ -2,6 +2,19 @@
 <html lang="ru" dir="ltr">
   <head>
     <metatags></metatags>
+    <meta property="og:title" content="Компонент A_OptionItem" />
+    <meta
+      property="og:description"
+      content="Интеракивный элемент выпадающего списка в селекте."
+    />
+    <!-- <meta
+      property="og:image"
+      content="images/metatags_cover/A_OptionItem-cover-metatag.png"
+    /> -->
+    <meta
+      property="og:url"
+      content="https://codetutorial.adc.ac/atoms/A_OptionItem.html"
+    />
     <title>Компонент A_OptionItem | ADC Code Tutorial</title>
     <analytics></analytics>
   </head>
@@ -23,7 +36,7 @@
 
         <h1 id="initiation">Option Item</h1>
         <p>
-          HTML элемент &ltoption&gt используется для определения пункта списка
+          HTML элемент option item используется для определения пункта списка
           контейнера.
         </p>
 
@@ -77,8 +90,8 @@
 
         <h2 id="realization">Реализация</h2>
         <p>
-          Создаем папку с названием A_OptionItem.jsx. Стоит уточнить, что мы не
-          используем тег &lt;option&gt, вместо него создаем &lt;div&gt; с
+          Создаём папку с названием A_OptionItem.jsx. Стоит уточнить, что мы не
+          используем тег &lt;option&gt, вместо него создаём &lt;div&gt; с
           классом A_OptionItem и устанавливаем необходимые для реализации
           заявленной функциональности атрибуты.
         </p>
@@ -103,7 +116,7 @@ export default class A_OptionItem extends PureComponent {
 }</code></pre>
 
         <p>
-          Теперь задаем стили для option item.
+          Теперь задаём стили для option item.
         </p>
 
         <pre><code class="language-css">.A_OptionItem {
@@ -120,7 +133,7 @@ export default class A_OptionItem extends PureComponent {
 }</code></pre>
 
         <p>
-          Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
+          Мы&nbsp;создали компонент, но&nbsp;описали только его функционал,
           теперь его&nbsp;нужно отрендерить. Попробуй теперь этот компонент
           вывести согласно своей структуре проекта. Ты можешь увидеть как это
           делаем мы, а также посмотреть получившийся
@@ -177,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
             <figure class="suggestCover O_MultiselectInput"></figure>
             <h4>Multiselect Input</h4>
             <p>
-              Расширенный функционал Select, который продполагаем множественный
+              Расширенный функционал select, который предполагает множественный
               выбор.
             </p>
           </a>

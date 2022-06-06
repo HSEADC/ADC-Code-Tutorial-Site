@@ -2,6 +2,19 @@
 <html lang="ru" dir="ltr">
   <head>
     <metatags></metatags>
+    <meta
+      property="og:url"
+      content="https://codetutorial.adc.ac/general/scroll.html"
+    />
+    <meta property="og:title" content="Скрываем scroll" />
+    <meta
+      property="og:description"
+      content="Scroll появляется в вёрстке компонентов когда элементов, например ссылок в меню, больше, чем может вместить в себе ширина этого меню. Аналогичная ситуация и при вёрстке компонента под разные разрешения. "
+    />
+    <!-- <meta
+      property="og:image"
+      content="images/metatags_cover/Scroll-cover-metatag.png"
+    /> -->
     <title>Компонент O_ScrollMenu | ADC Code Tutorial</title>
     <analytics></analytics>
   </head>
@@ -23,9 +36,9 @@
         <h1 id="initiation">Скрываем scroll</h1>
         <p>
           Scroll появляется в&nbsp;вёрстке компонентов когда элементов, например
-          ссылок в&nbsp;меню, больше, чем может вместить в&nbsp;себе ширина
-          этого меню. Аналогичная ситуация и&nbsp;при вёрстке компонента под
-          разные разрешения. Обычно мы&nbsp;всегда скрываем scroll, чтобы
+          ссылок в&nbsp;меню, больше, чем может вместить в&nbsp;себе ширина или
+          высота этого меню. Аналогичная ситуация и&nbsp;при вёрстке компонента
+          под разные разрешения. Обычно мы&nbsp;всегда скрываем scroll, чтобы
           на&nbsp;странице у&nbsp;пользователя не&nbsp;появлялись ненужные
           артефакты.
         </p>
@@ -127,8 +140,8 @@ export default class O_ScrollMenu extends PureComponent {
             <figure class="suggestCover O_MultiselectInput"></figure>
             <h4>Multiselect Input</h4>
             <p>
-              Интерактивный компонент, который предназначен для управления
-              данными.
+              Расширенный функционал select, который предполагает множественный
+              выбор.
             </p>
           </a>
         </div>

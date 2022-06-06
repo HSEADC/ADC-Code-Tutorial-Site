@@ -2,6 +2,20 @@
 <html lang="ru" dir="ltr">
   <head>
     <metatags></metatags>
+    <meta property="og:title" content="Компонент O_MultiselectInput" />
+    <meta
+      property="og:description"
+      content="Multiselect Input это вид компонента select, который позволяет
+      пользователю выбрать несколько пунктов из option list."
+    />
+    <!-- <meta
+      property="og:image"
+      content="images/metatags_cover/O_MultiselectInput-cover-metatag.png"
+    /> -->
+    <meta
+      property="og:url"
+      content="https://codetutorial.adc.ac/organisms/O_MultiselectInput.html"
+    />
     <title>Компонент O_MultiselectInput | ADC Code Tutorial</title>
     <analytics></analytics>
   </head>
@@ -78,7 +92,7 @@
 
         <p>
           Исходя из&nbsp;структуры, мы&nbsp;можем выявить несколько состояний
-          компонента с данными и&nbsp;без них. Так как заполненный
+          компонента с данными и&nbsp;без них. Заполненный
           <a href="/atoms/A_Input.html">input</a> отображает не&nbsp;строку, а
           отдельный компонент или несколько компонентов в&nbsp;виде
           <a href="/atoms/A_Chip.html">chip</a>. Multiselect input изменяется
@@ -131,10 +145,10 @@
 
         <p>
           Компонент должен принимать параметры: placeholder, current selection,
-          option list. Также мы прописываем его функционатьность при выборе
-          элемента списска и когда уже из input мы удаляем выбранный chip.
-          Особенность этого компонента в том, что при выборе строки из масссива
-          option list мы переносим ее в масссив с chip.
+          option list. Также мы прописываем его функциональность при выборе
+          элемента списка и когда уже из input мы удаляем выбранный chip.
+          Особенность этого компонента в том, что при выборе строки из массива
+          option list мы переносим ее в массив с chip.
         </p>
 
         <pre><code class="language-js">import React, { PureComponent } from 'react'
@@ -249,7 +263,7 @@ export default class O_MultiselectInput extends PureComponent {
 
         <p>
           Затем прописываем стили для multiselect input и&nbsp;задаем среду
-          для&nbsp;остальных комопнентов, которые используем. Подробнее про
+          для&nbsp;остальных компонентов, которые используем. Подробнее про
           <a href="/general/isolation.html"> проектирование в&nbsp;изоляции</a>
           можешь прочитать тут.
         </p>
@@ -278,7 +292,7 @@ export default class O_MultiselectInput extends PureComponent {
 }</code></pre>
 
         <p>
-          Мы&nbsp;создали компонет, но&nbsp;описали только его функционал,
+          Мы&nbsp;создали компонент, но&nbsp;описали только его функционал,
           теперь его&nbsp;нужно отрендерить. Попробуй теперь этот компонент
           вывести согласно своей структуре проекта. Ты можешь увидеть как это
           делаем мы, а также посмотреть получившийся
